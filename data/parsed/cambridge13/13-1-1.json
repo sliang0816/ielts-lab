@@ -1,0 +1,266 @@
+{
+  "schema": 1,
+  "book": 13,
+  "test": 1,
+  "passage": 1,
+  "title": "Case Study: Tourism New Zealand website",
+  "subtitle": "",
+  "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
+  "sourceSha256": "f52f605f6b296954d33f6f7e6b235854ea6c96e4876eb9d5d339dc66292ba994",
+  "reviewed": false,
+  "reviewStatus": "OCR draft; question groups and answer keys structured, full line-by-line verification pending",
+  "sourcePages": [
+    17,
+    18,
+    19,
+    20
+  ],
+  "articlePages": [
+    17,
+    18
+  ],
+  "questionPages": [
+    19,
+    20
+  ],
+  "answerPage": 120,
+  "paragraphs": [
+    {
+      "id": "1",
+      "text": "New Zealand is a small country of four million inhabitants, a long-haul flight from all the major tourist-generating markets of the world. Tourism currently makes up 9% of the country’s gross domestic product, and is the country’s largest export sector. Unlike other export sectors, which make products and then sell them overseas, tourism brings its customers to New Zealand. The product is the country itself — the people, the places and the experiences. In 1999, Tourism New Zealand launched a campaign to communicate a new brand position to the world. The campaign focused on New Zealand's scenic beauty, exhilarating outdoor activities and authentic Maori culture, and it made New Zealand one of the strongest national brands in the world.",
+      "sourcePages": [
+        17
+      ]
+    },
+    {
+      "id": "2",
+      "text": "A key feature of the campaign was the website www.newzealand.com, which provided potential visitors to New Zealand with a single gateway to everything the destination had to offer. The heart of the website was a database of tourism services operators, both those based in New Zealand and those based abroad which offered tourism services to the country. Any tourism-related business could be listed by filling in a simple form. This meant that even the smallest bed and breakfast address or specialist activity provider could gain a web presence with access to an audience of long-haul visitors. In addition, because participating businesses were able to update the details they gave on a regular basis, the information provided remained accurate. And to maintain and improve standards, Tourism New Zealand organised a scheme whereby organisations appearing on the website underwent an independent evaluation against a set of agreed national standards of quality. As part of this, the effect of each business on the environment was considered.",
+      "sourcePages": [
+        17
+      ]
+    },
+    {
+      "id": "3",
+      "text": "To communicate the New Zealand experience, the site also carried features relating to famous people and places. One of the most popular was an interview with former New Zealand All Blacks rugby captain Tana Umaga. Another feature that attracted a lot of attention was an interactive journey through a number of the locations chosen for blockbuster films which had made use of New Zealand’s stunning scenery as a backdrop. As the site developed, additional features were added to help independent travellers devise their own customised itineraries. To make it easier to plan motoring holidays, the site catalogued the most popular driving routes in the country, highlighting different routes according to the season and indicating distances and times.",
+      "sourcePages": [
+        17
+      ]
+    },
+    {
+      "id": "4",
+      "text": "Later, a Travel Planner feature was added, which allowed visitors to click and ‘bookmark’ places or attractions they were interested in, and then view the results on a map. The Travel Planner offered suggested routes and public transport options between the chosen locations. There were also links to accommodation in the area. By registering with the website, users could save their Travel Plan and return to it later, or print it out to take on the visit. The website also had a ‘Your Words’ section where anyone could submit a blog of their New Zealand travels for possible inclusion on the website.",
+      "sourcePages": [
+        18
+      ]
+    },
+    {
+      "id": "5",
+      "text": "The Tourism New Zealand website won two Webby awards for online achievement and innovation. More importantly perhaps, the growth of tourism to New Zealand was impressive. Overall tourism expenditure increased by an average of 6.9% per year between 1999 and 2004. From Britain, visits to New Zealand grew at an average annual rate of 13% between 2002 and 2006, compared to a rate of 4% overall for British visits abroad.",
+      "sourcePages": [
+        18
+      ]
+    },
+    {
+      "id": "6",
+      "text": "The website was set up to allow both individuals and travel organisations to create itineraries and travel packages to suit their own needs and interests. On the website, visitors can search for activities not solely by geographical location, but also by the particular nature of the activity. This is important as research shows that activities are the key driver of visitor satisfaction, contributing 74% to visitor satisfaction, while transport and accommodation account for the remaining 26%. The more activities that visitors undertake, the more satisfied they will be. It has also been found that visitors enjoy cultural activities most when they are interactive, such as visiting a marae (meeting ground) to learn about traditional Maori life. Many long-haul travellers enjoy such learning experiences, which provide them with stories to take home to their friends and family. In addition, it appears that visitors to New Zealand don’t want to be ‘one of the crowd’ and find activities that involve only a few people more special and meaningful.",
+      "sourcePages": [
+        18
+      ]
+    },
+    {
+      "id": "7",
+      "text": "It could be argued that New Zealand is not a typical destination. New Zealand is a small country with a visitor economy composed mainly of small businesses. It is generally perceived as a safe English-speaking country with a reliable transport infrastructure. Because of the long-haul flight, most visitors stay for longer (average 20 days) and want to see as much of the country as possible on what is often seen as a once-in-a-lifetinme visit. However, the underlying lessons apply anywhere — the effectiveness of a strong brand, a strategy based on unique experiences and a comprehensive and user-friendly website.",
+      "sourcePages": [
+        18
+      ]
+    }
+  ],
+  "questionGroups": [
+    {
+      "id": "1-7",
+      "first": 1,
+      "last": 7,
+      "sourcePage": 19,
+      "type": "table",
+      "instructions": "Complete the table. Choose ONE WORD ONLY from the passage for each answer.",
+      "text": "Section of website | Comments\nDatabase of tourism services: easy for tourism-related businesses to get on the list."
+    },
+    {
+      "id": "8-13",
+      "first": 8,
+      "last": 13,
+      "sourcePage": 20,
+      "type": "tfng",
+      "instructions": "Do the following statements agree with the information given in the passage?"
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "type": "table",
+      "prompt": "Database of tourism services: allowed businesses to [1] information regularly.",
+      "groupId": "1-7",
+      "sourcePage": 19,
+      "answer": "update"
+    },
+    {
+      "number": 2,
+      "type": "table",
+      "prompt": "Database of tourism services: provided a country-wide evaluation of businesses, including their impact on the [2].",
+      "groupId": "1-7",
+      "sourcePage": 19,
+      "answer": "environment"
+    },
+    {
+      "number": 3,
+      "type": "table",
+      "prompt": "Special features on local topics: an interview with a former sports [3].",
+      "groupId": "1-7",
+      "sourcePage": 19,
+      "answer": "captain"
+    },
+    {
+      "number": 4,
+      "type": "table",
+      "prompt": "Special features on local topics: an interactive tour of various locations used in [4].",
+      "groupId": "1-7",
+      "sourcePage": 19,
+      "answer": "films"
+    },
+    {
+      "number": 5,
+      "type": "table",
+      "prompt": "Information on driving routes: varied depending on the [5].",
+      "groupId": "1-7",
+      "sourcePage": 19,
+      "answer": "season"
+    },
+    {
+      "number": 6,
+      "type": "table",
+      "prompt": "Travel Planner: included a map showing selected places, details of public transport and local [6].",
+      "groupId": "1-7",
+      "sourcePage": 19,
+      "answer": "accommodation"
+    },
+    {
+      "number": 7,
+      "type": "table",
+      "prompt": "Your Words: travellers could send a link to their [7].",
+      "groupId": "1-7",
+      "sourcePage": 19,
+      "answer": "blog"
+    },
+    {
+      "number": 8,
+      "type": "tfng",
+      "prompt": "The website www.newzealand.com aimed to provide ready-made itineraries and packages for travel companies and individual tourists.",
+      "groupId": "8-13",
+      "sourcePage": 20,
+      "answer": "FALSE",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 9,
+      "type": "tfng",
+      "prompt": "It was found that most visitors started searching on the website by geographical location.",
+      "groupId": "8-13",
+      "sourcePage": 20,
+      "answer": "NOT GIVEN",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 10,
+      "type": "tfng",
+      "prompt": "According to research, 26% of visitor satisfaction is related to their accommodation.",
+      "groupId": "8-13",
+      "sourcePage": 20,
+      "answer": "FALSE",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 11,
+      "type": "tfng",
+      "prompt": "Visitors to New Zealand like to become involved in the local culture.",
+      "groupId": "8-13",
+      "sourcePage": 20,
+      "answer": "TRUE",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 12,
+      "type": "tfng",
+      "prompt": "Visitors like staying in small hotels in New Zealand rather than in larger ones.",
+      "groupId": "8-13",
+      "sourcePage": 20,
+      "answer": "NOT GIVEN",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 13,
+      "type": "tfng",
+      "prompt": "Many visitors feel it is unlikely that they will return to New Zealand after their visit.",
+      "groupId": "8-13",
+      "sourcePage": 20,
+      "answer": "TRUE",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    }
+  ],
+  "keys": [
+    "update",
+    "environment",
+    "captain",
+    "films",
+    "season",
+    "accommodation",
+    "blog",
+    "FALSE",
+    "NOT GIVEN",
+    "FALSE",
+    "TRUE",
+    "NOT GIVEN",
+    "TRUE"
+  ],
+  "ocrPages": [
+    {
+      "page": 17,
+      "text": "Test 1\n\nREADING\n\nREADING PASSAGE 1\n\nYou should spend about 20 minutes on Questions 1—13, which are based on Reading\nPassage 1 below.\n\nCase Study: Tourism New Zealand website\n\nNew Zealand is a small country of four million inhabitants, a long-haul flight from all the\nmajor tourist-generating markets of the world. Tourism currently makes up 9% of the\ncountry’s gross domestic product, and is the country’s largest export sector. Unlike other\nexport sectors, which make products and then sell them overseas, tourism brings its\ncustomers to New Zealand. The product is the country itself — the people, the places and\nthe experiences. In 1999, Tourism New Zealand launched a campaign to communicate\n\na new brand position to the world. The campaign focused on New Zealand's scenic\nbeauty, exhilarating outdoor activities and authentic Maori culture, and it made New\nZealand one of the strongest national brands in the world.\n\nAkey feature of the campaign was the website www.newzealand.com, which provided\npotential visitors to New Zealand with a single gateway to everything the destination had\nto offer. The heart of the website was a database of tourism services operators, both\nthose based in New Zealand and those based abroad which offered tourism services to\nthe country. Any tourism-related business could be listed by filling in a simple form. This\nmeant that even the smallest bed and breakfast address or specialist activity provider\ncould gain a web presence with access to an audience of long-haul visitors. In addition,\nbecause participating businesses were able to update the details they gave on a\nregular basis, the information provided remained accurate. And to maintain and improve\nstandards, Tourism New Zealand organised a scheme whereby organisations appearing\non the website underwent an independent evaluation against a set of agreed national\nstandards of quality. As part of this, the effect of each business on the environment was\nconsidered.\n\nTo communicate the New Zealand experience, the site also carried features relating\n\nto famous people and places. One of the most popular was an interview with former\nNew Zealand All Blacks rugby captain Tana Umaga. Another feature that attracted a\nlot of attention was an interactive journey through a number of the locations chosen\nfor blockbuster films which had made use of New Zealand’s stunning scenery as a\nbackdrop. As the site developed, additional features were added to help independent\ntravellers devise their own customised itineraries. To make it easier to plan motoring\nholidays, the site catalogued the most popular driving routes in the country, highlighting\ndifferent routes according to the season and indicating distances and times.\n\n16"
+    },
+    {
+      "page": 18,
+      "text": "Reading\n\nLater, a Travel Planner feature was added, which allowed visitors to click and ‘bookmark’\nplaces or attractions they were interested in, and then view the results on a map. The\nTravel Planner offered suggested routes and public transport options between the\nchosen locations. There were also links to accommodation in the area. By registering\nwith the website, users could save their Travel Plan and return to it later, or print it out\n\nto take on the visit. The website also had a ‘Your Words’ section where anyone could\nsubmit a blog of their New Zealand travels for possible inclusion on the website.\n\nThe Tourism New Zealand website won two Webby awards for online achievement\n\nand innovation. More importantly perhaps, the growth of tourism to New Zealand was\nimpressive. Overall tourism expenditure increased by an average of 6.9% per year\nbetween 1999 and 2004. From Britain, visits to New Zealand grew at an average annual\nrate of 13% between 2002 and 2006, compared to a rate of 4% overall for British\n\nvisits abroad.\n\nThe website was set up to allow both individuals and travel organisations to create\nitineraries and travel packages to suit their own needs and interests. On the website,\nvisitors can search for activities not solely by geographical location, but also by the\nparticular nature of the activity. This is important as research shows that activities are the\nkey driver of visitor satisfaction, contributing 74% to visitor satisfaction, while transport\nand accommodation account for the remaining 26%. The more activities that visitors\nundertake, the more satisfied they will be. It has also been found that visitors enjoy\ncultural activities most when they are interactive, such as visiting a marae (meeting\nground) to learn about traditional Maori life. Many long-haul travellers enjoy such\nlearning experiences, which provide them with stories to take home to their friends and\nfamily. In addition, it appears that visitors to New Zealand don’t want to be ‘one of the\ncrowd’ and find activities that involve only a few people more special and meaningful.\n\nIt could be argued that New Zealand is not a typical destination. New Zealand is a small\ncountry with a visitor economy composed mainly of small businesses. It is generally\nperceived as a safe English-speaking country with a reliable transport infrastructure.\nBecause of the long-haul flight, most visitors stay for longer (average 20 days) and want\nto see as much of the country as possible on what is often seen as a once-in-a-lifetinme\nvisit. However, the underlying lessons apply anywhere — the effectiveness of a strong\nbrand, a strategy based on unique experiences and a comprehensive and user-friendly\nwebsite.\n\n17"
+    },
+    {
+      "page": 19,
+      "text": "Test 1\n\nQuestions 1-7\n\nComplete the table below.\n\nChoose ONE WORD ONLY from the passage for each answer.\n\nWrite your answers in boxes 1-7 on your answer sheet.\n\nSection of website\n\nComments\n\nDatabase of tourism |.\nservices\n\neasy for tourism-related businesses to get on the list\n\nallowed businesses to 1...\ninformation regularly\n\nprovided a country-wide evaluation of businesses,\nincluding their impact ON the 2...\n\nSpecial features on .\nlocal topics\n\ne.g. an interview with a former sports 3 ...\n\nand an interactive tour of various locations used in in\n\nInformation on driving |.\nroutes\n\nvaried depending ON the 5 oss\n\nTravel Planner * included a map showing selected places, details of\npublic transport ANd lOCAI 6 uve\n‘Your Words’ * travellers could send a link to theif 7 ..scnmsnssnnnnnnse\n\n18"
+    },
+    {
+      "page": 20,
+      "text": "Reading\n\nQuestions 8-13\n\nDo the following statements agree with the information given in Reading Passage 1?\n\nIn boxes 8-13 on your answer sheet, write\n\nTRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this\n\n8 The website www.newzealand.com aimed to provide ready-made itineraries and\npackages for travel companies and individual tourists.\n\n9 It was found that most visitors started searching on the website by\ngeographical location.\n\n10 According to research, 26% of visitor satisfaction is related to their accommodation.\n11 Visitors to New Zealand like to become involved in the local culture.\n\n12 Visitors like staying in small hotels in New Zealand rather than in larger ones.\n\n13 Many visitors feel it is unlikely that they will return to New Zealand after their visit.\n\n19"
+    }
+  ]
+}

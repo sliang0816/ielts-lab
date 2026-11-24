@@ -1,0 +1,250 @@
+{
+  "schema": 1,
+  "book": 13,
+  "test": 2,
+  "passage": 1,
+  "title": "Bringing cinnamon to Europe",
+  "subtitle": "",
+  "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
+  "sourceSha256": "f52f605f6b296954d33f6f7e6b235854ea6c96e4876eb9d5d339dc66292ba994",
+  "reviewed": false,
+  "reviewStatus": "OCR draft; question groups and answer keys structured, full line-by-line verification pending",
+  "sourcePages": [
+    39,
+    40,
+    41,
+    42
+  ],
+  "articlePages": [
+    39,
+    40
+  ],
+  "questionPages": [
+    41,
+    42
+  ],
+  "answerPage": 122,
+  "paragraphs": [
+    {
+      "id": "1",
+      "text": "Cinnamon is a sweet, fragrant spice produced from the inner bark of trees of the genus Cinnamomum, which is native to the Indian sub-continent. It was known in biblical times, and is mentioned in several books of the Bible, both as an ingredient that was mixed with oils for anointing people’s bodies, and also as a token indicating friendship among lovers and friends. In ancient Rome, mourners attending funerals burnt cinnamon to create a pleasant scent. Most often, however, the spice found its primary use as an additive to food and drink. In the Middle Ages, Europeans who could afford the spice used it to flavour food, particularly meat, and to impress those around them with their ability to purchase an expensive condiment from the ‘exotic’ East. At a banquet, a host would offer guests a plate with various spices piled upon it as a sign of the wealth at his or her disposal. Cinnamon was also reported to have health benefits, and was thought to cure various ailments, such as indigestion.",
+      "sourcePages": [
+        39
+      ]
+    },
+    {
+      "id": "2",
+      "text": "Toward the end of the Middle Ages, the European middle classes began to desire the lifestyle of the elite, including their consumption of spices. This led to a growth in demand for cinnamon and other spices. At that time, cinnamon was transported by Arab merchants, who closely guarded the secret of the source of the spice from potential rivals. They took it from India, where it was grown, on camels via an overland route to the Mediterranean. Their journey ended when they reached Alexandria. European traders sailed there to purchase their supply of cinnamon, then brought it back to Venice. The spice then travelled from that great trading city to markets all around Europe. Because the overland trade route allowed for only small quantities of the spice to reach Europe, and because Venice had a virtual monopoly of the trade, the Venetians could set the price of cinnamon exorbitantly high. These prices, coupled with the increasing demand, spurred the search for new routes to Asia by Europeans eager to take part in the spice trade.",
+      "sourcePages": [
+        39
+      ]
+    },
+    {
+      "id": "3",
+      "text": "Seeking the high profits promised by the cinnamon market, Portuguese traders arrived on the island of Ceylon in the Indian Ocean toward the end of the 15th century. Before Europeans arrived on the island, the state had organized the cultivation of cinnamon. People belonging to the ethnic group called the Salagama would peel the bark off young shoots of the cinnamon plant in the rainy season, when the wet bark was more pliable. During the peeling process, they curled the bark into the ‘stick’ shape still associated with the spice today. The Salagama then gave the finished product to the king as a form of tribute. When the Portuguese arrived, they needed to increase production significantly, and so enslaved many other members of the Ceylonese native population, forcing them to work in cinnamon harvesting. In 1518, the Portuguese built a fort on Ceylon, which enabled them to protect the island, so helping them to develop a monopoly in the cinnamon trade and generate very high profits. In the late 16th century, for example, they enjoyed a tenfold profit when shipping cinnamon over a journey of eight days from Ceylon to India.",
+      "sourcePages": [
+        39,
+        40
+      ]
+    },
+    {
+      "id": "4",
+      "text": "When the Dutch arrived off the coast of southern Asia at the very beginning of the 17th century, they set their sights on displacing the Portuguese as kings of cinnamon. The Dutch allied themselves with Kandy, an inland kingdom on Ceylon. In return for payments of elephants and cinnamon, they protected the native king from the Portuguese. By 1640, the Dutch broke the 150-year Portuguese monopoly when they overran and occupied their factories. By 1658, they had permanently expelled the Portuguese from the island, thereby gaining control of the lucrative cinnamon trade.",
+      "sourcePages": [
+        40
+      ]
+    },
+    {
+      "id": "5",
+      "text": "In order to protect their hold on the market, the Dutch, like the Portuguese before them, treated the native inhabitants harshly. Because of the need to boost production and satisfy Europe's ever-increasing appetite for cinnamon, the Dutch began to alter the harvesting practices of the Ceylonese. Over time, the supply of cinnamon trees on the island became nearly exhausted, due to systematic stripping of the bark. Eventually, the Dutch began cultivating their own cinnamon trees to supplement the diminishing number of wild trees available for use.",
+      "sourcePages": [
+        40
+      ]
+    },
+    {
+      "id": "6",
+      "text": "Then, in 1796, the English arrived on Ceylon, thereby displacing the Dutch from their control of the cinnamon monopoly. By the middle of the 19th century, production of cinnamon reached 1,000 tons a year, after a lower grade quality of the spice became acceptable to European tastes. By that time, cinnamon was being grown in other parts of the Indian Ocean region and in the West Indies, Brazil, and Guyana. Not only was a monopoly of cinnamon becoming impossible, but the spice trade overall was diminishing in economic potential, and was eventually superseded by the rise of trade in coffee, tea, chocolate, and sugar.",
+      "sourcePages": [
+        40
+      ]
+    }
+  ],
+  "questionGroups": [
+    {
+      "id": "1-9",
+      "first": 1,
+      "last": 9,
+      "sourcePage": 41,
+      "type": "notes",
+      "instructions": "Complete the notes. Choose ONE WORD ONLY from the passage for each answer.",
+      "text": "The Early History of Cinnamon\nMiddle Ages: added to food, especially meat."
+    },
+    {
+      "id": "10-13",
+      "first": 10,
+      "last": 13,
+      "sourcePage": 42,
+      "type": "tfng",
+      "instructions": "Do the following statements agree with the information given in the passage?"
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "type": "notes",
+      "prompt": "Biblical times: added to [1]",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "oils"
+    },
+    {
+      "number": 2,
+      "type": "notes",
+      "prompt": "Biblical times: used to show [2] between people",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "friendship"
+    },
+    {
+      "number": 3,
+      "type": "notes",
+      "prompt": "Ancient Rome: used for its sweet smell at [3]",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "funerals"
+    },
+    {
+      "number": 4,
+      "type": "notes",
+      "prompt": "Middle Ages: was an indication of a person’s [4]",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "wealth"
+    },
+    {
+      "number": 5,
+      "type": "notes",
+      "prompt": "Middle Ages: known as a treatment for [5] and other health problems",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "indigestion"
+    },
+    {
+      "number": 6,
+      "type": "notes",
+      "prompt": "Middle Ages: grown in [6]",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "India"
+    },
+    {
+      "number": 7,
+      "type": "notes",
+      "prompt": "Middle Ages: merchants used [7] to bring it to the Mediterranean",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "camels"
+    },
+    {
+      "number": 8,
+      "type": "notes",
+      "prompt": "Middle Ages: arrived in the Mediterranean at [8]",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "Alexandria"
+    },
+    {
+      "number": 9,
+      "type": "notes",
+      "prompt": "Middle Ages: traders took it to [9] and sold it to destinations around Europe",
+      "groupId": "1-9",
+      "sourcePage": 41,
+      "answer": "Venice"
+    },
+    {
+      "number": 10,
+      "type": "tfng",
+      "prompt": "The Portuguese had control over the cinnamon trade in Ceylon throughout the 16th century.",
+      "groupId": "10-13",
+      "sourcePage": 42,
+      "answer": "TRUE",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 11,
+      "type": "tfng",
+      "prompt": "The Dutch took over the cinnamon trade from the Portuguese as soon as they arrived in Ceylon.",
+      "groupId": "10-13",
+      "sourcePage": 42,
+      "answer": "FALSE",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 12,
+      "type": "tfng",
+      "prompt": "The trees planted by the Dutch produced larger quantities of cinnamon than the wild trees.",
+      "groupId": "10-13",
+      "sourcePage": 42,
+      "answer": "NOT GIVEN",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "number": 13,
+      "type": "tfng",
+      "prompt": "The spice trade maintained its economic importance during the 19th century.",
+      "groupId": "10-13",
+      "sourcePage": 42,
+      "answer": "FALSE",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    }
+  ],
+  "keys": [
+    "oils",
+    "friendship",
+    "funerals",
+    "wealth",
+    "indigestion",
+    "India",
+    "camels",
+    "Alexandria",
+    "Venice",
+    "TRUE",
+    "FALSE",
+    "NOT GIVEN",
+    "FALSE"
+  ],
+  "ocrPages": [
+    {
+      "page": 39,
+      "text": "Test 2\n\nREADING\n\nREADING PASSAGE 1\n\nYou should spend about 20 minutes on Questions 1-13, which are based on Reading\nPassage 1 below.\n\nBringing cinnamon to Europe\n\nCinnamon is a sweet, fragrant spice produced from the inner bark of trees of the genus\nCinnamomum, which is native to the Indian sub-continent. It was known in biblical times,\nand is mentioned in several books of the Bible, both as an ingredient that was mixed\nwith oils for anointing people’s bodies, and also as a token indicating friendship among\nlovers and friends. In ancient Rome, mourners attending funerals burnt cinnamon to\ncreate a pleasant scent. Most often, however, the spice found its primary use as an\nadditive to food and drink. In the Middle Ages, Europeans who could afford the spice\nused it to flavour food, particularly meat, and to impress those around them with their\nability to purchase an expensive condiment from the ‘exotic’ East. At a banquet, a host\nwould offer guests a plate with various spices piled upon it as a sign of the wealth at his\nor her disposal. Cinnamon was also reported to have health benefits, and was thought\nto cure various ailments, such as indigestion.\n\nToward the end of the Middle Ages, the European middle classes began to desire\n\nthe lifestyle of the elite, including their consumption of spices. This led to a growth in\ndemand for cinnamon and other spices. At that time, cinnamon was transported by Arab\nmerchants, who closely guarded the secret of the source of the spice from potential\nrivals. They took it from India, where it was grown, on camels via an overland route\n\nto the Mediterranean. Their journey ended when they reached Alexandria. European\ntraders sailed there to purchase their supply of cinnamon, then brought it back to Venice.\nThe spice then travelled from that great trading city to markets all around Europe.\nBecause the overland trade route allowed for only small quantities of the spice to reach\nEurope, and because Venice had a virtual monopoly of the trade, the Venetians could\nset the price of cinnamon exorbitantly high. These prices, coupled with the increasing\ndemand, spurred the search for new routes to Asia by Europeans eager to take part in\nthe spice trade.\n\nSeeking the high profits promised by the cinnamon market, Portuguese traders arrived\non the island of Ceylon in the Indian Ocean toward the end of the 15th century. Before\nEuropeans arrived on the island, the state had organized the cultivation of cinnamon.\nPeople belonging to the ethnic group called the Salagama would peel the bark off\nyoung shoots of the cinnamon plant in the rainy season, when the wet bark was\n\nmore pliable. During the peeling process, they curled the bark into the ‘stick’ shape\nstill associated with the spice today. The Salagama then gave the finished product to\nthe king as a form of tribute. When the Portuguese arrived, they needed to increase\n\n38"
+    },
+    {
+      "page": 40,
+      "text": "Reading\n\nproduction significantly, and so enslaved many other members of the Ceylonese native\npopulation, forcing them to work in cinnamon harvesting. In 1518, the Portuguese built\na fort on Ceylon, which enabled them to protect the island, so helping them to develop a\nmonopoly in the cinnamon trade and generate very high profits. In the late 16th century,\nfor example, they enjoyed a tenfold profit when shipping cinnamon over a journey of\neight days from Ceylon to India.\n\nWhen the Dutch arrived off the coast of southern Asia at the very beginning of the\n17th century, they set their sights on displacing the Portuguese as kings of cinnamon.\nThe Dutch allied themselves with Kandy, an inland kingdom on Ceylon. In return\n\nfor payments of elephants and cinnamon, they protected the native king from the\nPortuguese. By 1640, the Dutch broke the 150-year Portuguese monopoly when they\noverran and occupied their factories. By 1658, they had permanently expelled the\nPortuguese from the island, thereby gaining control of the lucrative cinnamon trade.\n\nIn order to protect their hold on the market, the Dutch, like the Portuguese before them,\ntreated the native inhabitants harshly. Because of the need to boost production and\nsatisfy Europe's ever-increasing appetite for cinnamon, the Dutch began to alter the\nharvesting practices of the Ceylonese. Over time, the supply of cinnamon trees on the\nisland became nearly exhausted, due to systematic stripping of the bark. Eventually, the\nDutch began cultivating their own cinnamon trees to supplement the diminishing number\nof wild trees available for use.\n\nThen, in 1796, the English arrived on Ceylon, thereby displacing the Dutch from their\ncontrol of the cinnamon monopoly. By the middle of the 19th century, production of\ncinnamon reached 1,000 tons a year, after a lower grade quality of the spice became\nacceptable to European tastes. By that time, cinnamon was being grown in other parts\nof the Indian Ocean region and in the West Indies, Brazil, and Guyana. Not only was a\nmonopoly of cinnamon becoming impossible, but the spice trade overall was diminishing\nin economic potential, and was eventually superseded by the rise of trade in coffee, tea,\nchocolate, and sugar.\n\n39"
+    },
+    {
+      "page": 41,
+      "text": "Test 2\n\nQuestions 1-9\n\nComplete the notes below.\n\nChoose ONE WORD ONLY from the passage for each answer.\n\nWrite your answers in boxes 1-9 on your answer sheet.\n\nBiblical times:\n\nAncient Rome:\n\nMiddle Ages:\n\n40\n\nThe Early History of Cinnamon\n\nAMM! £01 aaeecsscsnsssesssnetstnsensnsse\n\nUSE” tO SNOW 2 unecssesesssenssensetnsensees\n\n. between people\n\nused for its sweet SMell at 3 occ\n\nadded to food, especially meat\n\nWAS AN indication Of A PEFSON’S 4 oes\n\nknown as a treatment for 5.............\n\nhealth problems\n\nQFOWN I 6 on ncessssssestsenesstsessesees\n\nMerchants USED 7 .....ssssscssssenesen\nthe Mediterranean\n\nsasesnetsneeneeeneenee and other\n\nwee to bring it to\n\narrived in the Mediterranean at 8 oss\n\ntraders took it 0.9 essence\n\ndestinations around Europe\n\nsun and sold it to"
+    },
+    {
+      "page": 42,
+      "text": "Reading\n\nQuestions 10-13\nDo the following statements agree with the information given in Reading Passage 1?\nIn boxes 10-13 on your answer sheet, write\n\nTRUE if the statement agrees with the information\nFALSE if the statement contradicts the information\nNOT GIVEN if there is no information on this\n\n10 The Portuguese had control over the cinnamon trade in Ceylon throughout the 16th\ncentury.\n\n11 The Dutch took over the cinnamon trade from the Portuguese as soon as they\narrived in Ceylon.\n\n12 The trees planted by the Dutch produced larger quantities of cinnamon than the\nwild trees.\n\n13 The spice trade maintained its economic importance during the 19th century.\n\n4"
+    }
+  ]
+}

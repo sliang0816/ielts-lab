@@ -8,7 +8,30 @@
       "material": "materials/Cambridge-IELTS-13.pdf",
       "index": "data/cambridge13.js",
       "status": "indexed",
-      "parsed": "data/parsed/cambridge13",
+      "pages": 143,
+      "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
+      "passages": 12
+    },
+    {
+      "id": "cambridge14",
+      "book": 14,
+      "edition": "Academic",
+      "material": "materials/Cambridge-IELTS-14.pdf",
+      "index": "data/cambridge14-15.js",
+      "status": "indexed",
+      "pages": 142,
+      "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
+      "passages": 12
+    },
+    {
+      "id": "cambridge15",
+      "book": 15,
+      "edition": "Academic",
+      "material": "materials/Cambridge-IELTS-15.pdf",
+      "index": "data/cambridge14-15.js",
+      "status": "indexed",
+      "pages": 147,
+      "sourceBlob": "05dd207f75b9bbea7a395d4626d9aeb7b94de50a",
       "passages": 12
     }
   ]

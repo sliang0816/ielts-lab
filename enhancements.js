@@ -6,6 +6,7 @@ function rememberPages(){const m=localMeta();m[key()]={from:Number($('pageFrom')
 const origRender=render;
 render=function(){origRender();$('sourceText').value=localStorage.getItem(sourceKey())||'';const m=localMeta()[key()];$('pageFrom').value=m?.from||1;$('pageTo').value=m?.to||2;};
 render();
+for(const id of ['book','test','passage']) $(id).onchange=()=>render();
 const oldFile=$('pdf').onchange;
 $('pdf').onchange=e=>{oldFile(e);pdfInput=e.target.files[0]||null;pdfDoc=null;loadId++;$('pdfStatus').textContent=pdfInput?'已加载 '+pdfInput.name:''};
 $('loadLink').onclick=()=>{try{const u=new URL($('pdfLink').value,location.href);if(u.protocol!=='https:'||u.username||u.password)throw Error('仅支持 HTTPS');pdfInput=u.href;pdfDoc=null;loadId++;$('viewer').src=u.href;$('pdfStatus').textContent='已设置链接；提取文字需要来源支持 CORS。'}catch(e){$('pdfStatus').textContent=e.message}};

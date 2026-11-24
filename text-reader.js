@@ -14,7 +14,7 @@ function validateText(v,k,item){
  return v
 }
 async function loadText(){
- const epoch=++textEpoch,k=key();studyAnalysis=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';for(const x of $('answers').querySelectorAll('.questionPrompt,.choiceLine,.questionTranslation,.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');
+ const epoch=++textEpoch,k=key();clearQuestionReview();studyAnalysis=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';for(const x of $('answers').querySelectorAll('.questionPrompt,.choiceLine,.questionTranslation,.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');
  try{
   const catalog=await catalogReady,item=catalog.books.find(x=>x.book===Number($('book').value));if(!item)throw Error('此册尚未入库');
   const ck=cacheKey(item,k);let v=textCache.get(ck);
@@ -55,6 +55,7 @@ async function loadText(){
   renderQuestionTranslations(v,questionTranslations);
   try{const ar=await fetch('data/analysis/'+item.id+'/'+k+'.json',{cache:'no-cache'});if(ar.ok){const a=await ar.json();if(epoch!==textEpoch||key()!==k||!textMode)return;if(a.sourceBlob===item.sourceBlob&&[a.book,a.test,a.passage].join('-')===k)studyAnalysis=a}}catch{}
   if(epoch!==textEpoch||key()!==k||!textMode)return;
+  if(latestQuestionReview?.key===k)showQuestionReview(latestQuestionReview.record,k);
   $('sourceText').value=v.paragraphs.map(p=>p.text).join('\n\n')+'\n\n'+v.questions.map(q=>q.number+'. '+q.prompt).join('\n');
   textMessage((v.reviewed?'已校对':'待人工校对')+' · 已加载持久化文字 · '+v.questions.length+' 道结构化题目');
  }catch(e){if(epoch===textEpoch)textMessage('文字模式：'+e.message)}
@@ -75,8 +76,31 @@ async function lookupWord(word){const epoch=textEpoch,k=word.toLowerCase();const
  try{const res=await fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(word)+'&langpair=en%7Czh-CN',{signal:AbortSignal.timeout(8000)});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();if(Number(d.responseStatus)!==200||!d.responseData?.translatedText)throw Error('无可用译文');if(epoch!==textEpoch||selectedWord!==word)return;const entry={word,meaning:d.responseData.translatedText};wordCache.set(k,entry);displayWord(entry);$('wordStatus').append(el('div','在线机器翻译，仅供参考。','muted'))}catch{if(epoch===textEpoch&&selectedWord===word)$('wordStatus').textContent='暂无词义，可使用 AI 词义查询。'}
 }
 function selectEnglish(){const s=window.getSelection();if(!s||!s.anchorNode||!s.focusNode)return;const a=s.anchorNode.parentElement,b=s.focusNode.parentElement;if(!a||!b||!a.closest('#textArticle p[data-paragraph],#answers .questionPrompt')||!b.closest('#textArticle p[data-paragraph],#answers .questionPrompt'))return;const w=s.toString().trim();if(!/^[A-Za-z][A-Za-z\s’'-]{0,99}$/.test(w))return;selectedWord=w;wordEntry=null;$('selectedWord').textContent=w;$('wordTools').hidden=false;lookupWord(w)}
-function showMistakeAnalysis(record,k){const result=$('result');result.querySelector('.mistakeAnalysis')?.remove();const section=el('div',undefined,'mistakeAnalysis');section.append(el('h3','错题解析'));const wrong=record.items.filter(x=>!x.correct);if(!wrong.length){section.append(el('p','全部正确！'));result.append(section);return}for(const x of wrong){const q=studyAnalysis?.questions?.find(q=>q.number===x.number);const card=el('div',undefined,'mistakeCard');card.append(el('strong','第 '+x.number+' 题'),el('p','你的答案：'+(x.answer||'未作答')+' ｜ 正确答案：'+x.expected));if(q){card.append(el('p',q.explanation||''));if(q.evidence)card.append(el('p','原文依据：'+q.evidence));if(q.paraphrase)card.append(el('p','同义替换 / 判断线索：'+q.paraphrase));if(q.paragraphId)card.append(makeButton('定位第 '+q.paragraphId+' 段',()=>{const node=[...$('textArticle').querySelectorAll('[data-paragraph]')].find(n=>n.dataset.paragraph===q.paragraphId);if(node){node.scrollIntoView({behavior:'smooth',block:'center'});node.classList.add('evidenceHighlight');setTimeout(()=>node.classList.remove('evidenceHighlight'),3000)}}))}else card.append(el('p','本题尚未整理详细解析。','muted'));section.append(card)}result.append(section)}
-const baseGradeText=$('grade').onclick;$('grade').onclick=()=>{const before=new Set(Object.keys(state.history));baseGradeText();const id=Object.keys(state.history).find(id=>!before.has(id));if(id&&state.history[id].id===key())showMistakeAnalysis(state.history[id],key())};
+let latestQuestionReview=null;
+function clearQuestionReview(){latestQuestionReview=null;for(const n of $('answers').querySelectorAll('.inlineQuestionReview'))n.remove()}
+function showQuestionReview(record,k){
+ if(k!==key())return;
+ for(const n of $('answers').querySelectorAll('.inlineQuestionReview'))n.remove();
+ const labels=[...$('answers').querySelectorAll('label')].filter(n=>n.querySelector('input'));
+ for(const x of record.items){
+  const label=labels[x.number-draft().first];if(!label)continue;
+  const q=studyAnalysis?.questions?.find(q=>q.number===x.number);
+  const card=el('div',undefined,'inlineQuestionReview '+(x.correct?'reviewCorrect':'reviewIncorrect'));
+  card.append(el('strong',(x.correct?'✓ 回答正确':x.answer.trim()?'✗ 回答错误':'— 未作答')+' · 第 '+x.number+' 题','reviewHeading'));
+  card.append(el('p','你的答案：'+(x.answer||'未作答')),el('p','正确答案：'+x.expected));
+  if(q){
+   if(q.explanation)card.append(el('p','解题解析：'+q.explanation));
+   if(q.evidence)card.append(el('p','原文依据：'+q.evidence));
+   if(q.paraphrase)card.append(el('p','同义替换 / 判断线索：'+q.paraphrase));
+   if(q.paragraphId)card.append(makeButton('定位第 '+q.paragraphId+' 段',()=>{const node=[...$('textArticle').querySelectorAll('[data-paragraph]')].find(n=>n.dataset.paragraph===q.paragraphId);if(node){node.scrollIntoView({behavior:'smooth',block:'center'});node.classList.add('evidenceHighlight');setTimeout(()=>node.classList.remove('evidenceHighlight'),3000)}}));
+  }else card.append(el('p','本题详细解析尚未整理。','muted'));
+  label.after(card);
+ }
+ $('result').textContent='正确 '+record.score+'/'+record.total+' · 已在每道题下显示判分和解析。';
+}
+const baseGradeText=$('grade').onclick;
+$('grade').onclick=()=>{const before=new Set(Object.keys(state.history));baseGradeText();const id=Object.keys(state.history).find(id=>!before.has(id));if(id&&state.history[id].id===key()){latestQuestionReview={record:state.history[id],key:key()};showQuestionReview(latestQuestionReview.record,latestQuestionReview.key)}};
+$('answers').addEventListener('input',e=>{if(e.target.matches('input')&&latestQuestionReview){clearQuestionReview();$('result').textContent='答案已修改，请重新提交批改。'}});
 $('pdfMode').onclick=()=>setMode(!textMode);
 $('importParsed').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const item=(await catalogReady).books.find(x=>x.book===Number($('book').value));if(!item)throw Error('此册尚未入库');const k=key(),v=validateText(JSON.parse(await f.text()),k,item);const ck=cacheKey(item,k);localStorage.setItem(ck,JSON.stringify(v));textCache.set(ck,v);setMode(true)}catch(e){textMessage('导入失败：'+e.message)}finally{e.target.value=''}};
 $('textArticle').addEventListener('mouseup',selectEnglish);

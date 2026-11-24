@@ -158,55 +158,94 @@
   "questions": [
     {
       "number": 1,
-      "explanation": "定位第2段：商家可定期修改自身资料。"
+      "explanation": "空格位于 to 后、information 前，需要动词原形。原文明确说企业可以定期更新资料，故填 update。",
+      "paragraphId": "2",
+      "evidence": "update the details",
+      "paraphrase": "regularly → on a regular basis；information → details"
     },
     {
       "number": 2,
-      "explanation": "定位第2段：评估包括经营活动对自然环境的影响。"
+      "explanation": "评估不仅考查质量，也涉及企业对环境的影响。on the 后需要名词，填 environment。",
+      "paragraphId": "2",
+      "evidence": "effect of each business on the environment",
+      "paraphrase": "impact → effect"
     },
     {
       "number": 3,
-      "explanation": "定位第3段：体育人物访谈涉及前队长。"
+      "explanation": "采访对象是橄榄球队前队长。题干泛化为体育运动，不是要求填写人名。",
+      "paragraphId": "3",
+      "evidence": "former New Zealand All Blacks rugby captain",
+      "paraphrase": "former sports → former rugby"
     },
     {
       "number": 4,
-      "explanation": "定位第3段：虚拟游览涉及电影拍摄地点。"
+      "explanation": "互动游览对象为影片取景地。题目限定一个单词，不能把 blockbuster films 整体填入。",
+      "paragraphId": "3",
+      "evidence": "locations chosen for blockbuster films",
+      "paraphrase": "used in → chosen for"
     },
     {
       "number": 5,
-      "explanation": "定位第3段：自驾路线会根据季节变化。"
+      "explanation": "网站随季节推荐不同路线；distances 和 times 是另列的路线信息，不是决定路线变化的因素。",
+      "paragraphId": "3",
+      "evidence": "according to the season",
+      "paraphrase": "depending on → according to"
     },
     {
       "number": 6,
-      "explanation": "定位第4段：规划工具包含住宿信息。"
+      "explanation": "规划器包含当地住宿链接，填 accommodation。",
+      "paragraphId": "4",
+      "evidence": "links to accommodation in the area",
+      "paraphrase": "local → in the area"
     },
     {
       "number": 7,
-      "explanation": "定位第4段：游客可提交旅行博客链接。"
+      "explanation": "游客提交自己的旅行博客；题干提到 link，空格要求其所指向的内容，填 blog。",
+      "paragraphId": "4",
+      "evidence": "submit a blog",
+      "paraphrase": "send → submit"
     },
     {
       "number": 8,
-      "explanation": "第6段强调按游客需求定制行程，而非仅提供预先固定的行程。"
+      "explanation": "题干说提供现成行程，原文说允许用户自行制定，核心含义冲突，因此 FALSE。",
+      "paragraphId": "6",
+      "evidence": "create itineraries and travel packages to suit their own needs",
+      "paraphrase": "ready-made 与按自身需要制定相反"
     },
     {
       "number": 9,
-      "explanation": "第6段列出搜索方式，但未给出大多数人首先使用哪一种。"
+      "explanation": "原文只说明可以按地点和活动性质搜索，没有交代大多数用户先选哪一种，因此 NOT GIVEN。",
+      "paragraphId": "6",
+      "evidence": "not solely by geographical location",
+      "paraphrase": "most；started 为题干额外限定"
     },
     {
       "number": 10,
-      "explanation": "第6段的26%是交通与住宿合计，而不是住宿单项。"
+      "explanation": "26% 是交通和住宿合计贡献，题干把总比例归给住宿单项，属于范围偷换，FALSE。",
+      "paragraphId": "6",
+      "evidence": "transport and accommodation account for the remaining 26%",
+      "paraphrase": "accommodation alone 与 transport and accommodation 不同"
     },
     {
       "number": 11,
-      "explanation": "第6段指出游客喜欢参与当地文化。"
+      "explanation": "互动文化活动意味着游客亲身参与文化体验，参观毛利聚会场所是例证，因此 TRUE。",
+      "paragraphId": "6",
+      "evidence": "cultural activities most when they are interactive",
+      "paraphrase": "become involved in → interactive"
     },
     {
       "number": 12,
-      "explanation": "文章没有比较大小酒店的住宿偏好。"
+      "explanation": "原文描述的是小规模活动的偏好，没有比较酒店规模。不能凭常识推断，NOT GIVEN。",
+      "paragraphId": "6",
+      "evidence": "activities that involve only a few people",
+      "paraphrase": "activities ≠ hotels"
     },
     {
       "number": 13,
-      "explanation": "末段指出许多游客视此行为一生一次的旅行。"
+      "explanation": "一生一次的旅行意味着通常不会再次到访，题干与此一致。原OCR中 lifetinme 为拼写识别误差，语义应为 lifetime。",
+      "paragraphId": "7",
+      "evidence": "once-in-a-lifetinme visit",
+      "paraphrase": "unlikely to return → once-in-a-lifetime"
     }
   ]
 }

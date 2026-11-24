@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "book": 13,
+  "test": 3,
+  "passage": 2,
+  "title": "How baby talk gives infant brains a boost",
+  "subtitle": "",
+  "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
+  "sourceSha256": "f52f605f6b296954d33f6f7e6b235854ea6c96e4876eb9d5d339dc66292ba994",
+  "reviewed": false,
+  "reviewStatus": "OCR draft; question groups and answer keys structured, full line-by-line verification pending",
+  "sourcePages": [
+    65,
+    66,
+    67,
+    68
+  ],
+  "articlePages": [
+    65,
+    66
+  ],
+  "questionPages": [
+    67,
+    68
+  ],
+  "answerPage": 124,
+  "paragraphs": [
+    {
+      "id": "A",
+      "text": "The typical way of talking to a baby — high-pitched, exaggerated and repetitious — is a source of fascination for linguists who hope to understand how ‘baby talk’ impacts on learning. Most babies start developing their hearing while still in the womb, prompting some hopeful parents to play classical music to their pregnant bellies. Some research even suggests that infants are listening to adult speech as early as 10 weeks before being born, gathering the basic building blocks of their family’s native tongue.",
+      "sourcePages": [
+        65
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Early language exposure seems to have benefits to the brain — for instance, studies suggest that babies raised in bilingual homes are better at learning how to mentally prioritize information. So how does the sweet if sometimes absurd sound of infant-directed speech influence a baby’s development? Here are some recent studies that explore the science behind baby talk.",
+      "sourcePages": [
+        65
+      ]
+    },
+    {
+      "id": "C",
+      "text": "Fathers don't use baby talk as often or in the same ways as mothers — and that’s perfectly OK, according to a new study. Mark VanDam of Washington State University at Spokane and colleagues equipped parents with recording devices and speech-recognition software to study the way they interacted with their youngsters during a normal day. ‘We found that moms do exactly what you'd expect and what's been described many times over,’ VanDam explains. ‘But we found that dads aren't doing the same thing. Dads didn't raise their pitch or fundamental frequency when they talked to kids.’ Their role may be rooted in what is called the bridge hypothesis, which dates back to 1975. It suggests that fathers use less familial language to provide their children with a bridge to the kind of speech they'll hear in public. ‘The idea is that a kid gets to practice a certain kind of speech with mom and another kind of speech with dad, so the kid then has a wider repertoire of kinds of speech to practice,’ says VanDam.",
+      "sourcePages": [
+        65
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Scientists from the University of Washington and the University of Connecticut collected thousands of 30-second conversations between parents and their babies, fitting 26 children with audio-recording vests that captured language and sound during a typical eight-hour day. The study found that the more baby talk parents used, the more their youngsters began to babble. And when researchers saw the same babies at age two, they found that frequent baby talk had dramatically boosted vocabulary, regardless of socioeconomic status. ‘Those children who listened to a lot of baby talk were talking more than the babies that listened to more adult talk or standard speech,’ says Nairan Ramirez-Esparza of the University of Connecticut. ‘We also found that it really matters whether you use baby talk ina one-on-one context,’ she adds. ‘The more parents use baby talk one-on-one, the more babies babble, and the more they babble, the more words they produce later in life.’",
+      "sourcePages": [
+        65,
+        66
+      ]
+    },
+    {
+      "id": "E",
+      "text": "Another study suggests that parents might want to pair their youngsters up so they can babble more with their own kind. Researchers from McGill University and Université du Québec a Montréal found that babies seem to like listening to each other rather than to adults — which may be why baby talk is such a universal tool among parents. They played repeating vowel sounds made by a special synthesizing device that mimicked sounds made by either an adult woman or another baby. This way, only the impact of the auditory cues was observed. The team then measured how long each type of sound held the infants’ attention. They found that the ‘infant’ sounds held babies’ attention nearly 40 percent longer. The baby noises also induced more reactions in the listening infants, like smiling or lip moving, which approximates sound making. The team theorizes that this attraction to other infant sounds could help launch the learning process that leads to speech. ‘It may be some property of the sound that is just drawing their attention,’ says study co-author Linda Polka. ‘Or maybe they are really interested in that particular type of sound because they are starting to focus on their own ability to make sounds. We are speculating here but it might catch their attention because they recognize it as a sound they could possibly make.’",
+      "sourcePages": [
+        66
+      ]
+    },
+    {
+      "id": "F",
+      "text": "In a study published in Proceedings of the National Academy of Sciences, a total of 57 babies from two slightly different age groups — seven months and eleven and a half months — were played a number of syllables from both their native language (English) and a non-native tongue (Spanish). The infants were placed in a brain-activation scanner that recorded activity in a brain region known to guide the motor movements that produce speech. The results suggest that listening to baby talk prompts infant brains to start practicing their language skills. ‘Finding activation in motor areas of the brain when infants are simply listening is significant, because it means the baby brain is engaged in trying to talk back right from the start, and suggests that seven-month-olds’ brains are already trying to figure out how to make the right movements that will produce words,’ says co-author Patricia Kuhl. Another interesting finding was that while the seven-month-olds responded to all speech sounds regardless of language, the brains of the older infants worked harder at the motor activations of non-native sounds compared to native sounds. The study may have also uncovered a process by which babies recognize differences between their native language and other tongues.",
+      "sourcePages": [
+        66
+      ]
+    }
+  ],
+  "questionGroups": [
+    {
+      "id": "14-17",
+      "first": 14,
+      "last": 17,
+      "sourcePage": 67,
+      "type": "matching",
+      "instructions": "Choose the correct letter for each item.",
+      "options": [
+        {
+          "value": "A",
+          "label": "Mark VanDam"
+        },
+        {
+          "value": "B",
+          "label": "Nairan Ramirez-Esparza"
+        },
+        {
+          "value": "C",
+          "label": "Patricia Kuhl"
+        }
+      ]
+    },
+    {
+      "id": "18-23",
+      "first": 18,
+      "last": 23,
+      "sourcePage": 68,
+      "type": "summary",
+      "instructions": "Complete the summary. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "text": "Research into how parents talk to babies\nResearchers at Washington State University used [18], together with specialised computer programs, to analyse how parents interacted with their babies during a normal day. The study revealed that [19] tended not to modify their ordinary speech patterns when interacting with their babies. According to an idea known as the [20], they may use a more adult type of speech to prepare infants for the language they will hear outside the family home. According to the researchers, hearing baby talk from one parent and ‘normal’ language from the other expands the baby’s [21] of types of speech which they can practise.\nMeanwhile, another study carried out by scientists from the University of Washington and the University of Connecticut recorded speech and sound using special [22] that the babies were equipped with. When they studied the babies again at age two, they found that those who had heard a lot of baby talk in infancy had a much larger [23] than those who had not."
+    },
+    {
+      "id": "24-26",
+      "first": 24,
+      "last": 26,
+      "sourcePage": 68,
+      "type": "paragraph-matching",
+      "instructions": "Choose the correct letter for each item.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 14,
+      "type": "matching",
+      "prompt": "the importance of adults giving babies individual attention when talking to them",
+      "groupId": "14-17",
+      "sourcePage": 67,
+      "answer": "B",
+      "options": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "number": 15,
+      "type": "matching",
+      "prompt": "the connection between what babies hear and their own efforts to create speech",
+      "groupId": "14-17",
+      "sourcePage": 67,
+      "answer": "C",
+      "options": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "number": 16,
+      "type": "matching",
+      "prompt": "the advantage for the baby of having two parents each speaking in a different way",
+      "groupId": "14-17",
+      "sourcePage": 67,
+      "answer": "A",
+      "options": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "number": 17,
+      "type": "matching",
+      "prompt": "the connection between the amount of baby talk babies hear and how much vocalising they do themselves",
+      "groupId": "14-17",
+      "sourcePage": 67,
+      "answer": "B",
+      "options": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "number": 18,
+      "type": "summary",
+      "prompt": "Blank 18",
+      "groupId": "18-23",
+      "sourcePage": 68,
+      "answer": "recording devices"
+    },
+    {
+      "number": 19,
+      "type": "summary",
+      "prompt": "Blank 19",
+      "groupId": "18-23",
+      "sourcePage": 68,
+      "answer": "fathers|dads"
+    },
+    {
+      "number": 20,
+      "type": "summary",
+      "prompt": "Blank 20",
+      "groupId": "18-23",
+      "sourcePage": 68,
+      "answer": "bridge hypothesis"
+    },
+    {
+      "number": 21,
+      "type": "summary",
+      "prompt": "Blank 21",
+      "groupId": "18-23",
+      "sourcePage": 68,
+      "answer": "repertoire"
+    },
+    {
+      "number": 22,
+      "type": "summary",
+      "prompt": "Blank 22",
+      "groupId": "18-23",
+      "sourcePage": 68,
+      "answer": "audio-recording vests|vests"
+    },
+    {
+      "number": 23,
+      "type": "summary",
+      "prompt": "Blank 23",
+      "groupId": "18-23",
+      "sourcePage": 68,
+      "answer": "vocabulary"
+    },
+    {
+      "number": 24,
+      "type": "paragraph-matching",
+      "prompt": "a reference to a change which occurs in babies’ brain activity before the end of their first year",
+      "groupId": "24-26",
+      "sourcePage": 68,
+      "answer": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    {
+      "number": 25,
+      "type": "paragraph-matching",
+      "prompt": "an example of what some parents do for their baby’s benefit before birth",
+      "groupId": "24-26",
+      "sourcePage": 68,
+      "answer": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    {
+      "number": 26,
+      "type": "paragraph-matching",
+      "prompt": "a mention of babies’ preference for the sounds that other babies make",
+      "groupId": "24-26",
+      "sourcePage": 68,
+      "answer": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    }
+  ],
+  "keys": [
+    "B",
+    "C",
+    "A",
+    "B",
+    "recording devices",
+    "fathers|dads",
+    "bridge hypothesis",
+    "repertoire",
+    "audio-recording vests|vests",
+    "vocabulary",
+    "F",
+    "A",
+    "E"
+  ],
+  "ocrPages": [
+    {
+      "page": 65,
+      "text": "Test 3\n\nREADING PASSAGE 2\n\nYou should spend about 20 minutes on Questions 14-26, which are based on Reading\nPassage 2 below.\n\n64\n\nHow baby talk gives infant brains a boost\n\nThe typical way of talking to a baby — high-pitched, exaggerated and repetitious — is\na source of fascination for linguists who hope to understand how ‘baby talk’ impacts\non learning. Most babies start developing their hearing while still in the womb,\nprompting some hopeful parents to play classical music to their pregnant bellies.\nSome research even suggests that infants are listening to adult speech as early\n\nas 10 weeks before being born, gathering the basic building blocks of their family’s\nnative tongue.\n\nEarly language exposure seems to have benefits to the brain — for instance, studies\nsuggest that babies raised in bilingual homes are better at learning how to mentally\nprioritize information. So how does the sweet if sometimes absurd sound of infant-\ndirected speech influence a baby’s development? Here are some recent studies\nthat explore the science behind baby talk.\n\nFathers don't use baby talk as often or in the same ways as mothers — and that’s\nperfectly OK, according to a new study. Mark VanDam of Washington State\nUniversity at Spokane and colleagues equipped parents with recording devices and\nspeech-recognition software to study the way they interacted with their youngsters\nduring a normal day. ‘We found that moms do exactly what you'd expect and what's\nbeen described many times over,’ VanDam explains. ‘But we found that dads aren't\ndoing the same thing. Dads didn't raise their pitch or fundamental frequency when\nthey talked to kids.’ Their role may be rooted in what is called the bridge hypothesis,\nwhich dates back to 1975. It suggests that fathers use less familial language to\nprovide their children with a bridge to the kind of speech they'll hear in public. ‘The\nidea is that a kid gets to practice a certain kind of speech with mom and another\nkind of speech with dad, so the kid then has a wider repertoire of kinds of speech to\npractice,’ says VanDam.\n\nScientists from the University of Washington and the University of Connecticut\ncollected thousands of 30-second conversations between parents and their babies,\nfitting 26 children with audio-recording vests that captured language and sound\nduring a typical eight-hour day. The study found that the more baby talk parents\nused, the more their youngsters began to babble. And when researchers saw\n\nthe same babies at age two, they found that frequent baby talk had dramatically\nboosted vocabulary, regardless of socioeconomic status. ‘Those children who\nlistened to a lot of baby talk were talking more than the babies that listened to more"
+    },
+    {
+      "page": 66,
+      "text": "Reading\n\nadult talk or standard speech,’ says Nairan Ramirez-Esparza of the University of\nConnecticut. ‘We also found that it really matters whether you use baby talk ina\none-on-one context,’ she adds. ‘The more parents use baby talk one-on-one, the\nmore babies babble, and the more they babble, the more words they produce later\nin life.’\n\nAnother study suggests that parents might want to pair their youngsters up so\nthey can babble more with their own kind. Researchers from McGill University\n\nand Université du Québec a Montréal found that babies seem to like listening to\neach other rather than to adults — which may be why baby talk is such a universal\ntool among parents. They played repeating vowel sounds made by a special\nsynthesizing device that mimicked sounds made by either an adult woman or\nanother baby. This way, only the impact of the auditory cues was observed. The\nteam then measured how long each type of sound held the infants’ attention. They\nfound that the ‘infant’ sounds held babies’ attention nearly 40 percent longer. The\nbaby noises also induced more reactions in the listening infants, like smiling or lip\nmoving, which approximates sound making. The team theorizes that this attraction\nto other infant sounds could help launch the learning process that leads to speech.\n‘It may be some property of the sound that is just drawing their attention,’ says\nstudy co-author Linda Polka. ‘Or maybe they are really interested in that particular\ntype of sound because they are starting to focus on their own ability to make\nsounds. We are speculating here but it might catch their attention because they\nrecognize it as a sound they could possibly make.’\n\nIn a study published in Proceedings of the National Academy of Sciences, a total\nof 57 babies from two slightly different age groups — seven months and eleven and\na half months — were played a number of syllables from both their native language\n(English) and a non-native tongue (Spanish). The infants were placed in a brain-\nactivation scanner that recorded activity in a brain region known to guide the motor\nmovements that produce speech. The results suggest that listening to baby talk\nprompts infant brains to start practicing their language skills. ‘Finding activation in\nmotor areas of the brain when infants are simply listening is significant, because\n\nit means the baby brain is engaged in trying to talk back right from the start, and\nsuggests that seven-month-olds’ brains are already trying to figure out how to make\nthe right movements that will produce words,’ says co-author Patricia Kuhl. Another\ninteresting finding was that while the seven-month-olds responded to all speech\nsounds regardless of language, the brains of the older infants worked harder at the\nmotor activations of non-native sounds compared to native sounds. The study may\nhave also uncovered a process by which babies recognize differences between\ntheir native language and other tongues.\n\n65"
+    },
+    {
+      "page": 67,
+      "text": "Test 3\n\nQuestions 14-17\n\nLook at the following ideas (Questions 14-17) and the list of researchers below.\n\nMatch each idea with the correct researcher, A, B or C.\n\nWrite the correct letter, A, B or C, in boxes 14-17 on your answer sheet.\n\nNB You may use any letter more than once.\n\n14\n15\n16\n17\n\n66\n\nthe importance of adults giving babies individual attention when talking to them\nthe connection between what babies hear and their own efforts to create speech\nthe advantage for the baby of having two parents each speaking in a different way\n\nthe connection between the amount of baby talk babies hear and how much\nvocalising they do themselves\n\nList of Researchers\nA Mark VanDam\nB_ Nairan Ramirez-Esparza\nC Patricia Kuhl"
+    },
+    {
+      "page": 68,
+      "text": "Reading\n\nQuestions 18-23\n\nComplete the summary below.\n\nChoose NO MORE THAN TWO WORDS from the passage for each answer.\n\nWrite your answers in boxes 18-23 on your answer sheet.\n\nResearch into how parents talk to babies\n\nResearchers at Washington State University Used 18 «000mm, together with\nspecialised computer programs, to analyse how parents interacted with their babies\nduring a normal day. The study revealed that 19 lnm tended not to modify\n\ntheir ordinary speech patterns when interacting with their babies. According to an idea\nknown as the 20... , they may use a more adult type of speech to\nprepare infants for the language they will hear outside the family home. According to the\nresearchers, hearing baby talk from one parent and ‘normal’ language from the other\nexpands the baby’s 21 .. Of types of speech which they can practise.\n\nMeanwhile, another study carried out by scientists from the University of Washington\nand the University of Connecticut recorded speech and sound using special\n\n22. wm that the babies were equipped with. When they studied the babies\nagain at age two, they found that those who had heard a lot of baby talk in infancy had a\nMUCH larger 23 .....nmssnnnnnnnennn than those who had not.\n\nQuestions 24-26\n\nReading Passage 2 has six paragraphs, A-F.\nWhich paragraph contains the following information?\nWrite the correct letter, A—F, in boxes 24-26 on your answer sheet.\n\n24 areference to a change which occurs in babies’ brain activity before the end of their\nfirst year\n\n25 an example of what some parents do for their baby’s benefit before birth\n\n26 amention of babies’ preference for the sounds that other babies make\n\n67"
+    }
+  ]
+}

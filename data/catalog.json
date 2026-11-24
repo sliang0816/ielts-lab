@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "books": [
+    {
+      "id": "cambridge13",
+      "book": 13,
+      "edition": "Academic",
+      "material": "materials/Cambridge-IELTS-13.pdf",
+      "index": "data/cambridge13.js",
+      "status": "indexed",
+      "parsed": "data/parsed/cambridge13",
+      "passages": 12
+    }
+  ]
+}

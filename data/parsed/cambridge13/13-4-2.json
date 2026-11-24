@@ -1,0 +1,381 @@
+{
+  "schema": 1,
+  "book": 13,
+  "test": 4,
+  "passage": 2,
+  "title": "Saving the soil",
+  "subtitle": "More than a third of the Earth’s top layer is at risk. Is there hope for our planet’s most precious resource?",
+  "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
+  "sourceSha256": "f52f605f6b296954d33f6f7e6b235854ea6c96e4876eb9d5d339dc66292ba994",
+  "reviewed": false,
+  "reviewStatus": "OCR draft; question groups and answer keys structured, full line-by-line verification pending",
+  "sourcePages": [
+    86,
+    87,
+    88,
+    89
+  ],
+  "articlePages": [
+    86,
+    87
+  ],
+  "questionPages": [
+    88,
+    89
+  ],
+  "answerPage": 126,
+  "paragraphs": [
+    {
+      "id": "A",
+      "text": "More than a third of the world’s soil is endangered, according to a recent UN report. If we don't slow the decline, all farmable soil could be gone in 60 years. Since soil grows 95% of our food, and sustains human life in other more surprising ways, that is a huge problem.",
+      "sourcePages": [
+        86
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Peter Groffman, from the Cary Institute of Ecosystem Studies in New York, points out that soil scientists have been warning about the degradation of the world’s soil for decades. At the same time, our understanding of its importance to humans has grown. A single gram of healthy soil might contain 100 million bacteria, as well as other microorganisms such as viruses and fungi, living amid decomposing plants and various minerals. That means soils do not just grow our food, but are the source of nearly all our existing antibiotics, and could be our best hope in the fight against antibiotic-resistant bacteria. Soil is also an ally against climate change: as microorganisms within soil digest dead animals and plants, they lock in their carbon content, holding three times the amount of carbon as does the entire atmosphere. Soils also store water, preventing flood damage: in the UK, damage to buildings, roads and bridges from floods caused by soil degradation costs £233 million every year.",
+      "sourcePages": [
+        86
+      ]
+    },
+    {
+      "id": "C",
+      "text": "If the soil loses its ability to perform these functions, the human race could be in big trouble. The danger is not that the soil will disappear completely, but that the microorganisms that give it its special properties will be lost. And once this has happened, it may take the soil thousands of years to recover. Agriculture is by far the biggest problem. In the wild, when plants grow they remove nutrients from the soil, but then when the plants die and decay these nutrients are returned directly to the soil. Humans tend not to return unused parts of harvested crops directly to the soil to enrich it, meaning that the soil gradually becomes less fertile. In the past we developed strategies to get around the problem, such as regularly varying the types of crops grown, or leaving fields uncultivated for a season.",
+      "sourcePages": [
+        86
+      ]
+    },
+    {
+      "id": "D",
+      "text": "But these practices became inconvenient as populations grew and agriculture had to be run on more commercial lines. A solution came in the early 20th century with the Haber-Bosch process for manufacturing ammonium nitrate. Farmers have been putting this synthetic fertiliser on their fields ever since. But over the past few decades, it has become clear this wasn’t such a bright idea. Chemical fertilisers can release polluting nitrous oxide into the atmosphere and excess is often washed away with the rain, releasing nitrogen into rivers. More recently, we have found that indiscriminate use of fertilisers hurts the soil itself, turning it acidic and salty, and degrading the soil they are supposed to nourish.",
+      "sourcePages": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": "E",
+      "text": "One of the people looking for a solution to this problem is Pius Floris, who started out running a tree-care business in the Netherlands, and now advises some of the world’s top soil scientists. He came to realise that the best way to ensure his trees flourished was to take care of the soil, and has developed a cocktail of beneficial bacteria, fungi and humus* to do this. Researchers at the University of Valladolid in Spain recently used this cocktail on soils destroyed by years of fertiliser overuse. When they applied Floris’s mix to the desert-like test plots, a good crop of plants emerged that were not just healthy at the surface, but had roots strong enough to pierce dirt as hard as rock. The few plants that grew in the control plots, fed with traditional fertilisers, were small and weak.",
+      "sourcePages": [
+        87
+      ]
+    },
+    {
+      "id": "F",
+      "text": "However, measures like this are not enough to solve the global soil degradation problem. To assess our options on a global scale we first need an accurate picture of what types of soil are out there, and the problems they face. That’s not easy. For one thing, there is no agreed international system for classifying soil. In an attempt to unify the different approaches, the UN has created the Global Soil Map project. Researchers from nine countries are working together to create a map linked to a database that can be fed measurements from field surveys, drone surveys, satellite imagery, lab analyses and so on to provide real-time data on the state of the soil. Within the next four years, they aim to have mapped soils worldwide to a depth of 100 metres, with the results freely accessible to all.",
+      "sourcePages": [
+        87
+      ]
+    },
+    {
+      "id": "G",
+      "text": "But this is only a first step. We need ways of presenting the problem that bring it home to governments and the wider public, says Pamela Chasek at the International Institute for Sustainable Development, in Winnipeg, Canada. ‘Most scientists don’t speak language that policy-makers can understand, and vice versa. Chasek and her colleagues have proposed a goal of ‘zero net land degradation’. Like the idea of carbon neutrality, it is an easily understood target that can help shape expectations and encourage action. For soils on the brink, that may be too late. Several researchers are agitating for the immediate creation of protected zones for endangered soils. One difficulty here is defining what these areas should conserve: areas where the greatest soil diversity is present? Or areas of unspoilt soils that could act as a future benchmark of quality? Whatever we do, if we want our soils to survive, we need to take action now.",
+      "sourcePages": [
+        87
+      ]
+    }
+  ],
+  "questionGroups": [
+    {
+      "id": "14-17",
+      "first": 14,
+      "last": 17,
+      "sourcePage": 88,
+      "type": "summary",
+      "instructions": "Complete the summary. Choose ONE WORD ONLY from the passage for each answer.",
+      "text": "Why soil degradation could be a disaster for humans\nHealthy soil contains a large variety of bacteria and other microorganisms, as well as plant remains and [14]. It provides us with food and also with antibiotics, and its function in storing [15] has a significant effect on the climate. In addition, it prevents damage to property and infrastructure because it holds [16].\nIf these microorganisms are lost, soil may lose its special properties. The main factor contributing to soil degradation is the [17] carried out by humans."
+    },
+    {
+      "id": "18-21",
+      "first": 18,
+      "last": 21,
+      "sourcePage": 88,
+      "type": "sentence-endings",
+      "instructions": "Choose the correct letter for each item.",
+      "options": [
+        {
+          "value": "A",
+          "label": "may improve the number and quality of plants growing there."
+        },
+        {
+          "value": "B",
+          "label": "may contain data from up to nine countries."
+        },
+        {
+          "value": "C",
+          "label": "may not be put back into the soil."
+        },
+        {
+          "value": "D",
+          "label": "may help governments to be more aware of soil-related issues."
+        },
+        {
+          "value": "E",
+          "label": "may cause damage to different aspects of the environment."
+        },
+        {
+          "value": "F",
+          "label": "may be better for use at a global level."
+        }
+      ]
+    },
+    {
+      "id": "22-26",
+      "first": 22,
+      "last": 26,
+      "sourcePage": 89,
+      "type": "paragraph-matching",
+      "instructions": "Choose the correct letter for each item.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        },
+        {
+          "value": "G",
+          "label": "G"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 14,
+      "type": "summary",
+      "prompt": "Blank 14",
+      "groupId": "14-17",
+      "sourcePage": 88,
+      "answer": "minerals"
+    },
+    {
+      "number": 15,
+      "type": "summary",
+      "prompt": "Blank 15",
+      "groupId": "14-17",
+      "sourcePage": 88,
+      "answer": "carbon"
+    },
+    {
+      "number": 16,
+      "type": "summary",
+      "prompt": "Blank 16",
+      "groupId": "14-17",
+      "sourcePage": 88,
+      "answer": "water"
+    },
+    {
+      "number": 17,
+      "type": "summary",
+      "prompt": "Blank 17",
+      "groupId": "14-17",
+      "sourcePage": 88,
+      "answer": "agriculture"
+    },
+    {
+      "number": 18,
+      "type": "sentence-endings",
+      "prompt": "Nutrients contained in the unused parts of harvested crops",
+      "groupId": "18-21",
+      "sourcePage": 88,
+      "answer": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    {
+      "number": 19,
+      "type": "sentence-endings",
+      "prompt": "Synthetic fertilisers produced with the Haber-Bosch process",
+      "groupId": "18-21",
+      "sourcePage": 88,
+      "answer": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    {
+      "number": 20,
+      "type": "sentence-endings",
+      "prompt": "Addition of a mixture developed by Pius Floris to the soil",
+      "groupId": "18-21",
+      "sourcePage": 88,
+      "answer": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    {
+      "number": 21,
+      "type": "sentence-endings",
+      "prompt": "The idea of zero net soil degradation",
+      "groupId": "18-21",
+      "sourcePage": 88,
+      "answer": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    {
+      "number": 22,
+      "type": "paragraph-matching",
+      "prompt": "a reference to one person’s motivation for a soil-improvement project",
+      "groupId": "22-26",
+      "sourcePage": 89,
+      "answer": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    {
+      "number": 23,
+      "type": "paragraph-matching",
+      "prompt": "an explanation of how soil stayed healthy before the development of farming",
+      "groupId": "22-26",
+      "sourcePage": 89,
+      "answer": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    {
+      "number": 24,
+      "type": "paragraph-matching",
+      "prompt": "examples of different ways of collecting information on soil degradation",
+      "groupId": "22-26",
+      "sourcePage": 89,
+      "answer": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    {
+      "number": 25,
+      "type": "paragraph-matching",
+      "prompt": "a suggestion for a way of keeping some types of soil safe in the near future",
+      "groupId": "22-26",
+      "sourcePage": 89,
+      "answer": "G",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    {
+      "number": 26,
+      "type": "paragraph-matching",
+      "prompt": "a reason why it is difficult to provide an overview of soil degradation",
+      "groupId": "22-26",
+      "sourcePage": 89,
+      "answer": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    }
+  ],
+  "keys": [
+    "minerals",
+    "carbon",
+    "water",
+    "agriculture",
+    "C",
+    "E",
+    "A",
+    "D",
+    "E",
+    "C",
+    "F",
+    "G",
+    "F"
+  ],
+  "ocrPages": [
+    {
+      "page": 86,
+      "text": "Reading\n\nREADING PASSAGE 2\n\nYou should spend about 20 minutes on Questions 14-26, which are based on Reading\nPassage 2 below.\n\nSAVING THE SOIL\n\nMore than a third of the Earth’s top layer is at risk. Is there hope for our planet's\nmost precious resource?\n\nA More than a third of the world’s soil is endangered, according to a recent UN report.\nIf we don't slow the decline, all farmable soil could be gone in 60 years. Since soil\ngrows 95% of our food, and sustains human life in other more surprising ways, that\nis a huge problem.\n\nB Peter Groffman, from the Cary Institute of Ecosystem Studies in New York, points\nout that soil scientists have been warning about the degradation of the world’s soil\nfor decades. At the same time, our understanding of its importance to humans has\ngrown. A single gram of healthy soil might contain 100 million bacteria, as well as\nother microorganisms such as viruses and fungi, living amid decomposing plants\nand various minerals.\n\nThat means soils do not just grow our food, but are the source of nearly all our\nexisting antibiotics, and could be our best hope in the fight against antibiotic-\nresistant bacteria. Soil is also an ally against climate change: as microorganisms\nwithin soil digest dead animals and plants, they lock in their carbon content, holding\nthree times the amount of carbon as does the entire atmosphere. Soils also store\nwater, preventing flood damage: in the UK, damage to buildings, roads and bridges\nfrom floods caused by soil degradation costs £233 million every year.\n\nC If the soil loses its ability to perform these functions, the human race could be in\nbig trouble. The danger is not that the soil will disappear completely, but that the\nmicroorganisms that give it its special properties will be lost. And once this has\nhappened, it may take the soil thousands of years to recover.\n\nAgriculture is by far the biggest problem. In the wild, when plants grow they remove\nnutrients from the soil, but then when the plants die and decay these nutrients are\nreturned directly to the soil. Humans tend not to return unused parts of harvested\ncrops directly to the soil to enrich it, meaning that the soil gradually becomes\n\nless fertile. In the past we developed strategies to get around the problem, such\n\nas regularly varying the types of crops grown, or leaving fields uncultivated for a\nseason.\n\nD___But these practices became inconvenient as populations grew and agriculture had\nto be run on more commercial lines. A solution came in the early 20th century with\nthe Haber-Bosch process for manufacturing ammonium nitrate. Farmers have been\nputting this synthetic fertiliser on their fields ever since.\n\n85"
+    },
+    {
+      "page": 87,
+      "text": "Test 4\n\n86\n\nBut over the past few decades, it has become clear this wasn’t such a bright idea.\nChemical fertilisers can release polluting nitrous oxide into the atmosphere and\nexcess is often washed away with the rain, releasing nitrogen into rivers. More\nrecently, we have found that indiscriminate use of fertilisers hurts the soil itself,\nturning it acidic and salty, and degrading the soil they are supposed to nourish.\n\nOne of the people looking for a solution to this problem is Pius Floris, who started\nout running a tree-care business in the Netherlands, and now advises some of the\nworld’s top soil scientists. He came to realise that the best way to ensure his trees\nflourished was to take care of the soil, and has developed a cocktail of beneficial\nbacteria, fungi and humus* to do this. Researchers at the University of Valladolid in\nSpain recently used this cocktail on soils destroyed by years of fertiliser overuse.\nWhen they applied Floris’s mix to the desert-like test plots, a good crop of plants\nemerged that were not just healthy at the surface, but had roots strong enough to\npierce dirt as hard as rock. The few plants that grew in the control plots, fed with\ntraditional fertilisers, were small and weak.\n\nHowever, measures like this are not enough to solve the global soil degradation\nproblem. To assess our options on a global scale we first need an accurate picture\nof what types of soil are out there, and the problems they face. That’s not easy. For\none thing, there is no agreed international system for classifying soil. In an attempt\nto unify the different approaches, the UN has created the Global Soil Map project.\nResearchers from nine countries are working together to create a map linked to a\ndatabase that can be fed measurements from field surveys, drone surveys, satellite\nimagery, lab analyses and so on to provide real-time data on the state of the soil.\nWithin the next four years, they aim to have mapped soils worldwide to a depth of\n100 metres, with the results freely accessible to all.\n\nBut this is only a first step. We need ways of presenting the problem that bring\n\nit home to governments and the wider public, says Pamela Chasek at the\nInternational Institute for Sustainable Development, in Winnipeg, Canada. ‘Most\nscientists don’t speak language that policy-makers can understand, and vice versa.\nChasek and her colleagues have proposed a goal of ‘zero net land degradation’.\nLike the idea of carbon neutrality, it is an easily understood target that can help\nshape expectations and encourage action.\n\nFor soils on the brink, that may be too late. Several researchers are agitating for\nthe immediate creation of protected zones for endangered soils. One difficulty\nhere is defining what these areas should conserve: areas where the greatest soil\ndiversity is present? Or areas of unspoilt soils that could act as a future benchmark\n\nof quality?\nWhatever we do, if we want our soils to survive, we need to take action now.\n\n* Humus: the part of the soil formed from dead plant material"
+    },
+    {
+      "page": 88,
+      "text": "Reading\n\nQuestions 14-17\nComplete the summary below.\nWrite ONE WORD ONLY from the passage for each answer.\n\nWrite your answers in boxes 14-17 on your answer sheet.\n\nWhy soil degradation could be a disaster for humans\n\nHealthy soil contains a large variety of bacteria and other microorganisms, as well\n\nAS Plant reMAINS AN 14 erence It provides us with food and also with\nantibiotics, and its function in storing 15 has a significant effect on the\nclimate. In addition, it prevents damage to property and infrastructure because it\n\nQOINS 16 crecscssssssssesseesseuseeneeneenn\n\nIf these microorganisms are lost, soil may lose its special properties. The main factor\nContributing to soil degradation is the 17 ..---ucmussssusunasenan carried out by humans.\n\nQuestions 18-21\nComplete each sentence with the correct ending, A-F, below.\nWrite the correct letter, A-F, in boxes 18-21 on your answer sheet.\n\n18 Nutrients contained in the unused parts of harvested crops\n19 Synthetic fertilisers produced with the Haber-Bosch process\n20 Addition of a mixture developed by Pius Floris to the soil\n\n21 The idea of zero net soil degradation\n\nmay improve the number and quality of plants growing there.\nmay contain data from up to nine countries.\n\nmay not be put back into the soil.\n\nmay help governments to be more aware of soil-related issues.\n\nmay cause damage to different aspects of the environment.\n\nnrmm OO DW >\n\nmay be better for use at a global level.\n\n87"
+    },
+    {
+      "page": 89,
+      "text": "Test 4\n\nQuestions 22-26\n\nReading Passage 2 has seven paragraphs, A-G.\n\nWhich section contains the following information?\n\nWrite the correct letter, A-G, in boxes 22-26 on your answer sheet.\n\nNB You may use any letter more than once.\n\n22 areference to one person’s motivation for a soil-improvement project\n\n23 an explanation of how soil stayed healthy before the development of farming\n24 examples of different ways of collecting information on soil degradation\n\n25 asuggestion for a way of keeping some types of soil safe in the near future\n\n26 areason why it is difficult to provide an overview of soil degradation\n\n88"
+    }
+  ],
+  "footnotes": [
+    "* Humus: the part of the soil formed from dead plant material"
+  ]
+}

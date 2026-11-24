@@ -22,6 +22,33 @@ async function loadText(){
   if(!v){const url='data/parsed/'+item.id+'/'+k+'.json';const response=await fetch(url,{cache:'no-cache'});if(response.ok){v=validateText(await response.json(),k,item);textCache.set(ck,v);try{localStorage.setItem(ck,JSON.stringify(v))}catch{}}else if(response.status===404){if(epoch===textEpoch&&textMode){textMessage('本篇尚未保存结构化文字。可导入解析 JSON 或返回 PDF 模式。');$('textArticle').append(el('p','已保存的页码和答案索引仍可用于 PDF 阅读与评分。'));}return}else throw Error('HTTP '+response.status)}
   if(epoch!==textEpoch||!textMode||key()!==k)return;
   $('textArticle').append(el('h2',v.title||indexEntry()?.title||k));for(const p of v.paragraphs){const node=el('p',p.text);node.dataset.paragraph=p.id||'';$('textArticle').append(node)}
+  // Translation is optional, separately versioned, and always collapsed on navigation.
+  const article=$('textArticle');
+  const toolbar=el('div',undefined,'line');
+  const status=el('span','正在读取段落译文…','muted');
+  toolbar.append(status);article.insertBefore(toolbar,article.children[1]||null);
+  try {
+   const tr=await fetch('data/translations/'+item.id+'/'+k+'.json',{cache:'no-cache'});
+   if(epoch!==textEpoch||!textMode||key()!==k)return;
+   if(!tr.ok){status.textContent=tr.status===404?'本篇译文尚未整理':'译文暂不可用';}
+   else {
+    const t=await tr.json();
+    if(epoch!==textEpoch||!textMode||key()!==k)return;
+    if(t.sourceBlob!==item.sourceBlob||t.passageKey!==k||!Array.isArray(t.paragraphs))throw Error('译文版本不匹配');
+    const nodes=[...article.querySelectorAll('p[data-paragraph]')], panels=[];
+    for(const node of nodes){
+     const entry=t.paragraphs.find(p=>String(p.id)===node.dataset.paragraph);
+     if(!entry||typeof entry.zh!=='string')continue;
+     const details=el('details',undefined,'paragraphTranslation');
+     const summary=el('summary','显示本段译文');
+     const body=el('div',entry.zh,'translationBody');
+     details.append(summary,body);details.ontoggle=()=>{summary.textContent=details.open?'隐藏本段译文':'显示本段译文'};node.after(details);panels.push(details);
+    }
+    status.textContent='中文译文 '+panels.length+'/'+nodes.length+' 段';
+    toolbar.prepend(makeButton('展开全部译文',()=>panels.forEach(p=>p.open=true)),makeButton('隐藏全部译文',()=>panels.forEach(p=>p.open=false)));
+   }
+  } catch(err){if(epoch===textEpoch)status.textContent='译文加载失败：'+err.message}
+  if(epoch!==textEpoch||!textMode||key()!==k)return;
   const qmap=new Map(v.questions.map(q=>[q.number,q]));
   const labels=[...$('answers').querySelectorAll('label')];
   for(let i=0;i<labels.length;i++){const label=labels[i],n=draft().first+i,q=qmap.get(n);if(!q)continue;const node=el('div',q.prompt,'questionPrompt');if(q.instructions)node.prepend(el('div',q.instructions,'muted'));label.prepend(node);const input=label.querySelector('input');const opts=q.options||((q.type==='tfng')?['TRUE','FALSE','NOT GIVEN']:q.type==='ynng'?['YES','NO','NOT GIVEN']:[]);if(opts.length){const choices=el('div',undefined,'choiceLine');for(const opt of opts){const value=typeof opt==='string'?opt:opt.value;const caption=typeof opt==='string'?opt:opt.label||value;if(typeof value!=='string')continue;const b=makeButton(caption,()=>{input.value=value;input.dispatchEvent(new Event('input'));for(const x of choices.children)x.classList.toggle('picked',x.dataset.value===value)});b.dataset.value=value;b.classList.toggle('picked',input.value===value);choices.append(b)}label.append(choices)}}

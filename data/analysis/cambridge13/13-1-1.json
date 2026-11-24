@@ -1,0 +1,212 @@
+{
+  "schema": 1,
+  "book": 13,
+  "test": 1,
+  "passage": 1,
+  "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
+  "title": "Case Study: Tourism New Zealand website",
+  "sourcePages": [
+    17,
+    18,
+    19,
+    20
+  ],
+  "summary": "文章介绍新西兰旅游推广网站如何通过商家数据库、特色内容、旅行规划和用户参与提升旅游体验，并讨论游客满意度与活动体验的关系。",
+  "paragraphNotes": [
+    "第1段：旅游业对新西兰经济的重要性及国家品牌推广背景。",
+    "第2段：网站数据库让旅游商家自行维护信息，并通过质量和环境评估提升可信度。",
+    "第3段：网站通过名人访谈、电影取景地和自驾线路展示旅游特色。",
+    "第4段：旅行规划工具及用户游记功能。",
+    "第5段：网站获奖及旅游支出的增长。",
+    "第6段：活动体验是游客满意度的主要来源，游客偏爱文化参与和小规模体验。",
+    "第7段：新西兰旅游具有长途、停留较久等特点，但其推广经验也适用于其他目的地。"
+  ],
+  "words": [
+    {
+      "word": "inhabitant",
+      "uk": "/ɪnˈhæb.ɪ.tənt/",
+      "us": "/ɪnˈhæb.ə.tənt/",
+      "pos": "n.",
+      "meaning": "居民",
+      "example": "The island has fewer than a thousand inhabitants.",
+      "translation": "这座岛的居民不足一千人。",
+      "collocation": "local inhabitants",
+      "synonym": "resident"
+    },
+    {
+      "word": "expenditure",
+      "uk": "/ɪkˈspen.dɪ.tʃə/",
+      "us": "/ɪkˈspen.də.tʃɚ/",
+      "pos": "n.",
+      "meaning": "支出；花费",
+      "example": "Household expenditure increased last year.",
+      "translation": "去年家庭支出增加了。",
+      "collocation": "tourism expenditure",
+      "synonym": "spending"
+    },
+    {
+      "word": "destination",
+      "uk": "/ˌdes.tɪˈneɪ.ʃən/",
+      "us": "/ˌdes.təˈneɪ.ʃən/",
+      "pos": "n.",
+      "meaning": "目的地",
+      "example": "The town is a popular holiday destination.",
+      "translation": "这座小镇是热门度假目的地。",
+      "collocation": "tourist destination",
+      "synonym": "place to visit"
+    },
+    {
+      "word": "accommodation",
+      "uk": "/əˌkɒm.əˈdeɪ.ʃən/",
+      "us": "/əˌkɑː.məˈdeɪ.ʃən/",
+      "pos": "n.",
+      "meaning": "住宿",
+      "example": "We booked accommodation near the station.",
+      "translation": "我们预订了车站附近的住宿。",
+      "collocation": "affordable accommodation",
+      "synonym": "lodging"
+    },
+    {
+      "word": "itinerary",
+      "uk": "/aɪˈtɪn.ər.ər.i/",
+      "us": "/aɪˈtɪn.ə.rer.i/",
+      "pos": "n.",
+      "meaning": "行程安排",
+      "example": "Our itinerary includes two days in the mountains.",
+      "translation": "我们的行程包括两天山区旅行。",
+      "collocation": "travel itinerary",
+      "synonym": "travel plan"
+    },
+    {
+      "word": "authentic",
+      "uk": "/ɔːˈθen.tɪk/",
+      "us": "/ɑːˈθen.t̬ɪk/",
+      "pos": "adj.",
+      "meaning": "真实的；地道的",
+      "example": "Visitors can enjoy authentic local food.",
+      "translation": "游客可以享用地道的当地美食。",
+      "collocation": "authentic experience",
+      "synonym": "genuine"
+    },
+    {
+      "word": "evaluation",
+      "uk": "/ɪˌvæl.juˈeɪ.ʃən/",
+      "us": "/ɪˌvæl.juˈeɪ.ʃən/",
+      "pos": "n.",
+      "meaning": "评估",
+      "example": "The project requires an independent evaluation.",
+      "translation": "该项目需要独立评估。",
+      "collocation": "independent evaluation",
+      "synonym": "assessment"
+    },
+    {
+      "word": "enhance",
+      "uk": "/ɪnˈhɑːns/",
+      "us": "/ɪnˈhæns/",
+      "pos": "v.",
+      "meaning": "提升；增强",
+      "example": "Good lighting can enhance the visitor experience.",
+      "translation": "良好的照明可以提升游客体验。",
+      "collocation": "enhance quality",
+      "synonym": "improve"
+    },
+    {
+      "word": "interactive",
+      "uk": "/ˌɪn.tərˈæk.tɪv/",
+      "us": "/ˌɪn.t̬ɚˈæk.tɪv/",
+      "pos": "adj.",
+      "meaning": "交互式的",
+      "example": "The museum provides an interactive map.",
+      "translation": "博物馆提供交互式地图。",
+      "collocation": "interactive tour",
+      "synonym": "responsive"
+    },
+    {
+      "word": "customised",
+      "uk": "/ˈkʌs.tə.maɪzd/",
+      "us": "/ˈkʌs.tə.maɪzd/",
+      "pos": "adj.",
+      "meaning": "定制的",
+      "example": "The agency offers customised travel plans.",
+      "translation": "该机构提供定制旅行计划。",
+      "collocation": "customised itinerary",
+      "synonym": "tailored"
+    },
+    {
+      "word": "satisfaction",
+      "uk": "/ˌsæt.ɪsˈfæk.ʃən/",
+      "us": "/ˌsæt̬.ɪsˈfæk.ʃən/",
+      "pos": "n.",
+      "meaning": "满意度",
+      "example": "The survey measures customer satisfaction.",
+      "translation": "这项调查衡量顾客满意度。",
+      "collocation": "visitor satisfaction",
+      "synonym": "contentment"
+    },
+    {
+      "word": "scenic",
+      "uk": "/ˈsiː.nɪk/",
+      "us": "/ˈsiː.nɪk/",
+      "pos": "adj.",
+      "meaning": "风景优美的",
+      "example": "We took a scenic route along the coast.",
+      "translation": "我们沿海岸选择了一条风景优美的路线。",
+      "collocation": "scenic beauty",
+      "synonym": "picturesque"
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "explanation": "定位第2段：商家可定期修改自身资料。"
+    },
+    {
+      "number": 2,
+      "explanation": "定位第2段：评估包括经营活动对自然环境的影响。"
+    },
+    {
+      "number": 3,
+      "explanation": "定位第3段：体育人物访谈涉及前队长。"
+    },
+    {
+      "number": 4,
+      "explanation": "定位第3段：虚拟游览涉及电影拍摄地点。"
+    },
+    {
+      "number": 5,
+      "explanation": "定位第3段：自驾路线会根据季节变化。"
+    },
+    {
+      "number": 6,
+      "explanation": "定位第4段：规划工具包含住宿信息。"
+    },
+    {
+      "number": 7,
+      "explanation": "定位第4段：游客可提交旅行博客链接。"
+    },
+    {
+      "number": 8,
+      "explanation": "第6段强调按游客需求定制行程，而非仅提供预先固定的行程。"
+    },
+    {
+      "number": 9,
+      "explanation": "第6段列出搜索方式，但未给出大多数人首先使用哪一种。"
+    },
+    {
+      "number": 10,
+      "explanation": "第6段的26%是交通与住宿合计，而不是住宿单项。"
+    },
+    {
+      "number": 11,
+      "explanation": "第6段指出游客喜欢参与当地文化。"
+    },
+    {
+      "number": 12,
+      "explanation": "文章没有比较大小酒店的住宿偏好。"
+    },
+    {
+      "number": 13,
+      "explanation": "末段指出许多游客视此行为一生一次的旅行。"
+    }
+  ]
+}

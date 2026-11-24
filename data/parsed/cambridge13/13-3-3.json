@@ -1,0 +1,393 @@
+{
+  "schema": 1,
+  "book": 13,
+  "test": 3,
+  "passage": 3,
+  "title": "Whatever happened to the Harappan Civilisation?",
+  "subtitle": "New research sheds light on the disappearance of an ancient society",
+  "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
+  "sourceSha256": "f52f605f6b296954d33f6f7e6b235854ea6c96e4876eb9d5d339dc66292ba994",
+  "reviewed": false,
+  "reviewStatus": "OCR draft; question groups and answer keys structured, full line-by-line verification pending",
+  "sourcePages": [
+    69,
+    70,
+    71,
+    72,
+    73
+  ],
+  "articlePages": [
+    69,
+    70
+  ],
+  "questionPages": [
+    71,
+    72,
+    73
+  ],
+  "answerPage": 124,
+  "paragraphs": [
+    {
+      "id": "A",
+      "text": "The Harappan Civilisation of ancient Pakistan and India flourished 5,000 years ago, but a thousand years later their cities were abandoned. The Harappan Civilisation was a sophisticated Bronze Age society who built ‘megacities’ and traded internationally in luxury craft products, and yet seemed to have left almost no depictions of themselves. But their lack of self-imagery — at a time when the Egyptians were carving and painting representations of themselves all over their temples — is only part of the mystery.",
+      "sourcePages": [
+        69
+      ]
+    },
+    {
+      "id": "B",
+      "text": "‘There is plenty of archaeological evidence to tell us about the rise of the Harappan Civilisation, but relatively little about its fall,’ explains archaeologist Dr Cameron Petrie of the University of Cambridge. ‘As populations increased, cities were built that had great baths, craft workshops, palaces and halls laid out in distinct sectors. Houses were arranged in blocks, with wide main streets and narrow alleyways, and many had their own wells and drainage systems. It was very much a “thriving” civilisation.’ Then around 2100 BC, a transformation began. Streets went uncleaned, buildings started to be abandoned, and ritual structures fell out of use. After their final demise, a millennium passed before really large-scale cities appeared once more in South Asia.",
+      "sourcePages": [
+        69
+      ]
+    },
+    {
+      "id": "C",
+      "text": "Some have claimed that major glacier-fed rivers changed their course, dramatically affecting the water supply and agriculture; or that the cities could not cope with an increasing population, they exhausted their resource base, the trading economy broke down or they succumbed to invasion and conflict; and yet others that climate change caused an environmental change that affected food and water provision. ‘It is unlikely that there was a single cause for the decline of the civilisation. But the fact is, until now, we have had little solid evidence from the area for most of the key elements,’ said Petrie. ‘A lot of the archaeological debate has really only been well-argued speculation.’",
+      "sourcePages": [
+        69
+      ]
+    },
+    {
+      "id": "D",
+      "text": "A research team led by Petrie, together with Dr Ravindanath Singh of Banaras Hindu University in India, found early in their investigations that many of the archaeological sites were not where they were supposed to be, completely altering understanding of the way that this region was inhabited in the past. When they carried out a survey of how the larger area was settled in relation to sources of water, they found inaccuracies in the published geographic locations of ancient settlements ranging from several hundred metres to many kilometres. They realised that any attempts to use the existing data were likely to be fundamentally flawed. Over the course of several seasons of fieldwork they carried out new surveys, finding an astonishing 198 settlement sites that were previously unknown.",
+      "sourcePages": [
+        69,
+        70
+      ]
+    },
+    {
+      "id": "E",
+      "text": "Now, research published by Dr Yama Dixit and Professor David Hodell, both from Cambridge’s Department of Earth Sciences, has provided the first definitive evidence for climate change affecting the plains of north-western India, where hundreds of Harappan sites are known to have been situated. The researchers gathered shells of Melanoides tuberculata snails from the sediments of an ancient lake and used geochemical analysis as a means of tracing the climate history of the region. ‘As today, the major source of water into the lake is likely to have been the summer monsoon,’ says Dixit. ‘But we have observed that there was an abrupt change about 4,100 years ago, when the amount of evaporation from the lake exceeded the rainfall — indicative of a drought.’ Hodell adds: ‘We estimate that the weakening of the Indian summer monsoon climate lasted about 200 years before recovering to the previous conditions, which we still see today.’",
+      "sourcePages": [
+        70
+      ]
+    },
+    {
+      "id": "F",
+      "text": "It has long been thought that other great Bronze Age civilisations also declined at a similar time, with a global-scale climate event being seen as the cause. While it is possible that these local-scale processes were linked, the real archaeological interest lies in understanding the impact of these larger-scale events on different environments and different populations. ‘Considering the vast area of the Harappan Civilisation with its variable weather systems,’ explains Singh, ‘it is essential that we obtain more climate data from areas close to the two great cities at Mohenjodaro and Harappa and also from the Indian Punjab.’",
+      "sourcePages": [
+        70
+      ]
+    },
+    {
+      "id": "G",
+      "text": "Petrie and Singh’s team is now examining archaeological records and trying to understand details of how people led their lives in the region five millennia ago. They are analysing grains cultivated at the time, and trying to work out whether they were grown under extreme conditions of water stress, and whether they were adjusting the combinations of crops they were growing for different weather systems. They are also looking at whether the types of pottery used, and other aspects of their material culture, were distinctive to specific regions or were more similar across larger areas. This gives us insight into the types of interactive networks that the population was involved in, and whether those changed.",
+      "sourcePages": [
+        70
+      ]
+    },
+    {
+      "id": "H",
+      "text": "Petrie believes that archaeologists are in a unique position to investigate how past societies responded to environmental and climatic change. ‘By investigating responses to environmental pressures and threats, we can learn from the past to engage with the public, and the relevant governmental and administrative bodies, to be more proactive in issues such as the management and administration of water supply, the balance of urban and rural development, and the importance of preserving cultural heritage in the future.’",
+      "sourcePages": [
+        70
+      ]
+    }
+  ],
+  "questionGroups": [
+    {
+      "id": "27-31",
+      "first": 27,
+      "last": 31,
+      "sourcePage": 71,
+      "type": "paragraph-matching",
+      "instructions": "Choose the correct letter for each item.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        },
+        {
+          "value": "G",
+          "label": "G"
+        },
+        {
+          "value": "H",
+          "label": "H"
+        }
+      ]
+    },
+    {
+      "id": "32-36",
+      "first": 32,
+      "last": 36,
+      "sourcePage": 72,
+      "type": "summary",
+      "instructions": "Complete the summary. Choose ONE WORD ONLY from the passage for each answer.",
+      "text": "Looking at evidence of climate change\nYama Dixit and David Hodell have found the first definitive evidence of climate change affecting the plains of north-western India thousands of years ago. By collecting the [32] of snails and analysing them, they discovered evidence of a change in water levels in a [33] in the region. This occurred when there was less [34] than evaporation, and suggests that there was an extended period of drought.\nPetrie and Singh’s team are using archaeological records to look at [35] from five millennia ago, in order to know whether people had adapted their agricultural practices to changing climatic conditions. They are also examining objects including [36], so as to find out about links between inhabitants of different parts of the region and whether these changed over time."
+    },
+    {
+      "id": "37-40",
+      "first": 37,
+      "last": 40,
+      "sourcePage": 73,
+      "type": "matching",
+      "instructions": "Choose the correct letter for each item.",
+      "options": [
+        {
+          "value": "A",
+          "label": "Cameron Petrie"
+        },
+        {
+          "value": "B",
+          "label": "Ravindanath Singh"
+        },
+        {
+          "value": "C",
+          "label": "Yama Dixit"
+        },
+        {
+          "value": "D",
+          "label": "David Hodell"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 27,
+      "type": "paragraph-matching",
+      "prompt": "proposed explanations for the decline of the Harappan Civilisation",
+      "groupId": "27-31",
+      "sourcePage": 71,
+      "answer": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "number": 28,
+      "type": "paragraph-matching",
+      "prompt": "reference to a present-day application of some archaeological research findings",
+      "groupId": "27-31",
+      "sourcePage": 71,
+      "answer": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "number": 29,
+      "type": "paragraph-matching",
+      "prompt": "a difference between the Harappan Civilisation and another culture of the same period",
+      "groupId": "27-31",
+      "sourcePage": 71,
+      "answer": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "number": 30,
+      "type": "paragraph-matching",
+      "prompt": "a description of some features of Harappan urban design",
+      "groupId": "27-31",
+      "sourcePage": 71,
+      "answer": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "number": 31,
+      "type": "paragraph-matching",
+      "prompt": "reference to the discovery of errors made by previous archaeologists",
+      "groupId": "27-31",
+      "sourcePage": 71,
+      "answer": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "number": 32,
+      "type": "summary",
+      "prompt": "Blank 32",
+      "groupId": "32-36",
+      "sourcePage": 72,
+      "answer": "shells"
+    },
+    {
+      "number": 33,
+      "type": "summary",
+      "prompt": "Blank 33",
+      "groupId": "32-36",
+      "sourcePage": 72,
+      "answer": "lake"
+    },
+    {
+      "number": 34,
+      "type": "summary",
+      "prompt": "Blank 34",
+      "groupId": "32-36",
+      "sourcePage": 72,
+      "answer": "rainfall"
+    },
+    {
+      "number": 35,
+      "type": "summary",
+      "prompt": "Blank 35",
+      "groupId": "32-36",
+      "sourcePage": 72,
+      "answer": "grains"
+    },
+    {
+      "number": 36,
+      "type": "summary",
+      "prompt": "Blank 36",
+      "groupId": "32-36",
+      "sourcePage": 72,
+      "answer": "pottery"
+    },
+    {
+      "number": 37,
+      "type": "matching",
+      "prompt": "Finding further information about changes to environmental conditions in the region is vital.",
+      "groupId": "37-40",
+      "sourcePage": 73,
+      "answer": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "number": 38,
+      "type": "matching",
+      "prompt": "Examining previous patterns of behaviour may have long-term benefits.",
+      "groupId": "37-40",
+      "sourcePage": 73,
+      "answer": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "number": 39,
+      "type": "matching",
+      "prompt": "Rough calculations indicate the approximate length of a period of water shortage.",
+      "groupId": "37-40",
+      "sourcePage": 73,
+      "answer": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "number": 40,
+      "type": "matching",
+      "prompt": "Information about the decline of the Harappan Civilisation has been lacking.",
+      "groupId": "37-40",
+      "sourcePage": 73,
+      "answer": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "keys": [
+    "C",
+    "H",
+    "A",
+    "B",
+    "D",
+    "shells",
+    "lake",
+    "rainfall",
+    "grains",
+    "pottery",
+    "B",
+    "A",
+    "D",
+    "A"
+  ],
+  "ocrPages": [
+    {
+      "page": 69,
+      "text": "Test 3\n\nREADING PASSAGE 3\n\nYou should spend about 20 minutes on Questions 27-40, which are based on Reading\nPassage 3 below.\n\n68\n\nWhatever happened to the Harappan Civilisation?\nNew research sheds light on the disappearance of an ancient society\n\nThe Harappan Civilisation of ancient Pakistan and India flourished 5,000 years\nago, but a thousand years later their cities were abandoned. The Harappan\nCivilisation was a sophisticated Bronze Age society who built ‘megacities’ and\ntraded internationally in luxury craft products, and yet seemed to have left almost\nno depictions of themselves. But their lack of self-imagery — at a time when the\nEgyptians were carving and painting representations of themselves all over their\ntemples — is only part of the mystery.\n\n‘There is plenty of archaeological evidence to tell us about the rise of the Harappan\nCivilisation, but relatively little about its fall,’ explains archaeologist Dr Cameron\nPetrie of the University of Cambridge. ‘As populations increased, cities were\n\nbuilt that had great baths, craft workshops, palaces and halls laid out in distinct\nsectors. Houses were arranged in blocks, with wide main streets and narrow\nalleyways, and many had their own wells and drainage systems. It was very much\na “thriving” civilisation.’ Then around 2100 BC, a transformation began. Streets\nwent uncleaned, buildings started to be abandoned, and ritual structures fell out of\nuse. After their final demise, a millennium passed before really large-scale cities\nappeared once more in South Asia.\n\nSome have claimed that major glacier-fed rivers changed their course, dramatically\naffecting the water supply and agriculture; or that the cities could not cope with an\nincreasing population, they exhausted their resource base, the trading economy\nbroke down or they succumbed to invasion and conflict; and yet others that climate\nchange caused an environmental change that affected food and water provision.\n\n‘It is unlikely that there was a single cause for the decline of the civilisation. But the\nfact is, until now, we have had little solid evidence from the area for most of the key\nelements,’ said Petrie. ‘A lot of the archaeological debate has really only been well-\nargued speculation.’\n\nA research team led by Petrie, together with Dr Ravindanath Singh of Banaras\nHindu University in India, found early in their investigations that many of the\narchaeological sites were not where they were supposed to be, completely altering\nunderstanding of the way that this region was inhabited in the past. When they\ncarried out a survey of how the larger area was settled in relation to sources of\nwater, they found inaccuracies in the published geographic locations of ancient\nsettlements ranging from several hundred metres to many kilometres. They realised"
+    },
+    {
+      "page": 70,
+      "text": "Reading\n\nthat any attempts to use the existing data were likely to be fundamentally flawed.\nOver the course of several seasons of fieldwork they carried out new surveys,\nfinding an astonishing 198 settlement sites that were previously unknown.\n\nNow, research published by Dr Yama Dixit and Professor David Hodell, both\n\nfrom Cambridge’s Department of Earth Sciences, has provided the first definitive\nevidence for climate change affecting the plains of north-western India, where\nhundreds of Harappan sites are known to have been situated. The researchers\ngathered shells of Melanoides tuberculata snails from the sediments of an ancient\nlake and used geochemical analysis as a means of tracing the climate history of\nthe region. ‘As today, the major source of water into the lake is likely to have been\nthe summer monsoon,’ says Dixit. ‘But we have observed that there was an abrupt\nchange about 4,100 years ago, when the amount of evaporation from the lake\nexceeded the rainfall — indicative of a drought.’ Hodell adds: ‘We estimate that the\nweakening of the Indian summer monsoon climate lasted about 200 years before\nrecovering to the previous conditions, which we still see today.’\n\nIt has long been thought that other great Bronze Age civilisations also declined at\n\na similar time, with a global-scale climate event being seen as the cause. While it\n\nis possible that these local-scale processes were linked, the real archaeological\ninterest lies in understanding the impact of these larger-scale events on different\nenvironments and different populations. ‘Considering the vast area of the Harappan\nCivilisation with its variable weather systems,’ explains Singh, ‘it is essential that we\nobtain more climate data from areas close to the two great cities at Mohenjodaro\nand Harappa and also from the Indian Punjab.’\n\nPetrie and Singh’s team is now examining archaeological records and trying to\nunderstand details of how people led their lives in the region five millennia ago.\nThey are analysing grains cultivated at the time, and trying to work out whether\nthey were grown under extreme conditions of water stress, and whether they\nwere adjusting the combinations of crops they were growing for different weather\nsystems. They are also looking at whether the types of pottery used, and other\naspects of their material culture, were distinctive to specific regions or were more\nsimilar across larger areas. This gives us insight into the types of interactive\nnetworks that the population was involved in, and whether those changed.\n\nPetrie believes that archaeologists are in a unique position to investigate how\npast societies responded to environmental and climatic change. ‘By investigating\nresponses to environmental pressures and threats, we can learn from the past to\nengage with the public, and the relevant governmental and administrative bodies,\nto be more proactive in issues such as the management and administration of\nwater supply, the balance of urban and rural development, and the importance of\npreserving cultural heritage in the future.’\n\n69"
+    },
+    {
+      "page": 71,
+      "text": "Test 3\n\nQuestions 27-31\n\nReading Passage 3 has eight paragraphs, A-H.\n\nWhich paragraph contains the following information?\n\nWrite the correct letter, A-H, in boxes 27-31 on your answer sheet.\nNB You may use any letter more than once.\n\n27 proposed explanations for the decline of the Harappan Civilisation\n28 reference to a present-day application of some archaeological research findings\n\n29 a difference between the Harappan Civilisation and another culture of the same\nperiod\n\n30 a description of some features of Harappan urban design\n31 reference to the discovery of errors made by previous archaeologists\n\n70"
+    },
+    {
+      "page": 72,
+      "text": "Reading\n\nQuestions 32-36\nComplete the summary below.\nChoose ONE WORD ONLY from the passage for each answer.\n\nWrite your answers in boxes 32-36 on your answer sheet.\n\nLooking at evidence of climate change\n\nYama Dixit and David Hodell have found the first definitive evidence of climate change\naffecting the plains of north-western India thousands of years ago. By collecting the\n32 rnnnnnnnnnnnnnnmnnne OF SNails and analysing them, they discovered evidence of a\nchange in water levels in a 33. sommnnon I the region. This occurred when\nthere was less 34 . than evaporation, and suggests that there was an\nextended period of drought.\n\nPetrie and Singh’s team are using archaeological records to lOOK at 35 ccc.\nfrom five millennia ago, in order to know whether people had adapted their agricultural\npractices to changing climatic conditions. They are also examining objects including\n\n36 ooevrnicnninnnananann , $0 a§ to find out about links between inhabitants of different parts\nof the region and whether these changed over time.\n\n71"
+    },
+    {
+      "page": 73,
+      "text": "Test 3\n\nQuestions 37-40\n\nLook at the following statements (Questions 37-40) and the list of researchers below.\nMatch each statement with the correct researcher, A, B, C or D.\n\nWrite the correct letter, A, B, C or D, in boxes 37—40 on your answer sheet.\n\nNB You may use any letter more than once.\n\n37. Finding further information about changes to environmental conditions in the region\nis vital.\n\n38 Examining previous patterns of behaviour may have long-term benefits.\n\n39 Rough calculations indicate the approximate length of a period of water shortage.\n\n40 Information about the decline of the Harappan Civilisation has been lacking.\n\nList of Researchers\nCameron Petrie\nRavindanath Singh\nYama Dixit\n\nDavid Hodell\n\n00aQoW >\n\n72"
+    }
+  ]
+}

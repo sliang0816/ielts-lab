@@ -7,10 +7,14 @@
       "edition": "Academic",
       "material": "materials/Cambridge-IELTS-13.pdf",
       "index": "data/cambridge13.js",
-      "status": "indexed",
+      "status": "parsed-unreviewed",
       "pages": 143,
       "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
-      "passages": 12
+      "passages": 12,
+      "parsed": "data/parsed/cambridge13",
+      "parsedPassages": 12,
+      "parsedQuestions": 160,
+      "reviewed": false
     },
     {
       "id": "cambridge14",

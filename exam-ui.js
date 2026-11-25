@@ -13,3 +13,14 @@ $('answers').addEventListener('input',updateExamNav);
 const oldExamGrade=$('grade').onclick;$('grade').onclick=()=>{oldExamGrade();updateExamNav()};
 $('testDeepseek').onclick=async()=>{const btn=$('testDeepseek'),status=$('deepseekStatus'),k=$('deepseekKey').value.trim();if(!k){status.textContent='请先填写 API Key';return}btn.disabled=true;status.textContent='正在测试（会发送一条极短请求，可能计费）…';try{const r=await fetch('https://api.deepseek.com/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+k},body:JSON.stringify({model:'deepseek-flash',thinking:{type:'disabled'},messages:[{role:'user',content:'Reply OK'}],max_tokens:16}),signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();if(!j.choices?.length)throw Error('响应无内容');status.textContent='连接成功：deepseek-flash'}catch(e){status.textContent='连接失败：'+e.message+'；若浏览器跨域拦截，需要自建 HTTPS 代理。'}finally{btn.disabled=false}};
 updateExamNav();
+
+
+const deepseekLocalKey='ielts-deepseek-key-v1',deepseekRememberKey='ielts-deepseek-remember-v1';
+try{$('rememberDeepseek').checked=localStorage.getItem(deepseekRememberKey)!=='false';if($('rememberDeepseek').checked)$('deepseekKey').value=localStorage.getItem(deepseekLocalKey)||''}catch{}
+function saveDeepseekPreference(){
+ try{localStorage.setItem(deepseekRememberKey,String($('rememberDeepseek').checked));const k=$('deepseekKey').value.trim();if($('rememberDeepseek').checked&&k)localStorage.setItem(deepseekLocalKey,k);else localStorage.removeItem(deepseekLocalKey);$('deepseekStatus').textContent=k?($('rememberDeepseek').checked?'密钥已保存在当前设备':'密钥仅在本页使用'):'尚未填写密钥'}catch{$('deepseekStatus').textContent='浏览器禁止本地存储，密钥仅在当前页有效'}
+}
+$('deepseekKey').addEventListener('input',saveDeepseekPreference);
+$('rememberDeepseek').onchange=saveDeepseekPreference;
+$('clearDeepseek').onclick=()=>{$('deepseekKey').value='';saveDeepseekPreference();$('deepseekStatus').textContent='本机密钥已清除'};
+if($('deepseekKey').value)$('deepseekStatus').textContent='已恢复本机保存的密钥';

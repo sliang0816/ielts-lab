@@ -5,7 +5,7 @@ const byId=id=>document.getElementById(id);
 const el=(tag,value,cls)=>{const n=document.createElement(tag);if(value!==undefined)n.textContent=value;if(cls)n.className=cls;return n};
 function makeButton(label,fn){const b=el('button',label,'secondary');b.type='button';b.onclick=fn;return b}
 function textMessage(s){$('textStatus').textContent=s}
-function setMode(on){textMode=on;$('textReader').hidden=!on;$('pdfControls').hidden=on;$('pdfMode').textContent=on?'查看 PDF 原版':'返回文字模式';if(on){$('viewer').hidden=true;$('indexedReader').hidden=true;loadText()}else{++textEpoch;if(verifiedPdf&&indexEntry())drawIndexed();else $('viewer').hidden=false}}
+function setMode(on){textMode=on;$('textReader').hidden=!on;$('pdfControls').hidden=on;$('pdfMode').textContent=on?'查看 PDF 原版':'返回文字模式';if(on){$('viewer').hidden=true;$('indexedReader').hidden=true;loadText()}else{closeWordPopup();++textEpoch;if(verifiedPdf&&indexEntry())drawIndexed();else $('viewer').hidden=false}}
 const baseDraw=drawIndexed;drawIndexed=async function(){if(!textMode)return baseDraw()};
 function cacheKey(item,k){return 'ielts-text-v1:'+item.sourceBlob+':'+k}
 function validateText(v,k,item){
@@ -14,7 +14,7 @@ function validateText(v,k,item){
  return v
 }
 async function loadText(){
- const epoch=++textEpoch,k=key();clearQuestionReview();studyAnalysis=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';for(const x of $('answers').querySelectorAll('.questionPrompt,.choiceLine,.questionTranslation,.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');
+ const epoch=++textEpoch,k=key();clearQuestionReview();closeWordPopup();studyAnalysis=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';for(const x of $('answers').querySelectorAll('.questionPrompt,.choiceLine,.questionTranslation,.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');
  try{
   const catalog=await catalogReady,item=catalog.books.find(x=>x.book===Number($('book').value));if(!item)throw Error('此册尚未入库');
   const ck=cacheKey(item,k);let v=textCache.get(ck);
@@ -55,6 +55,7 @@ async function loadText(){
   renderQuestionTranslations(v,questionTranslations);
   try{const ar=await fetch('data/analysis/'+item.id+'/'+k+'.json',{cache:'no-cache'});if(ar.ok){const a=await ar.json();if(epoch!==textEpoch||key()!==k||!textMode)return;if(a.sourceBlob===item.sourceBlob&&[a.book,a.test,a.passage].join('-')===k)studyAnalysis=a}}catch{}
   if(epoch!==textEpoch||key()!==k||!textMode)return;
+  markIeltsWords();
   if(latestQuestionReview?.key===k)showQuestionReview(latestQuestionReview.record,k);
   $('sourceText').value=v.paragraphs.map(p=>p.text).join('\n\n')+'\n\n'+v.questions.map(q=>q.number+'. '+q.prompt).join('\n');
   textMessage((v.reviewed?'已校对':'待人工校对')+' · 已加载持久化文字 · '+v.questions.length+' 道结构化题目');
@@ -69,13 +70,57 @@ function renderQuestionTranslations(v,t){
  for(let i=0;i<labels.length;i++){const q=t?.questions?.find(x=>x.number===draft().first+i);if(q?.zh){const d=foldedTranslation('显示本题译文',q.zh);labels[i].append(d);panels.push(d)}}
  if(panels.length){const bar=el('div',undefined,'line');bar.append(makeButton('展开全部题目译文',()=>panels.forEach(d=>d.open=true)),makeButton('隐藏全部题目译文',()=>panels.forEach(d=>d.open=false)));$('questionText').append(bar)}
 }
-function wordMatch(w){const lower=w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,'');const forms=[lower,lower.replace(/ies$/,'y'),lower.replace(/s$/,''),lower.replace(/es$/,''),lower.replace(/ing$/,''),lower.replace(/ed$/,'')];return studyAnalysis?.words?.find(x=>forms.includes(x.word.toLowerCase()))}
+function wordMatch(w){
+ const lower=w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,'');
+ return studyAnalysis?.words?.find(x=>{
+  const b=x.word.toLowerCase();const forms=new Set([b,b+'s',b+'es',b+'ed',b+'ing']);
+  if(b.endsWith('e')){forms.add(b+'d');forms.add(b.slice(0,-1)+'ing')}
+  if(/[^aeiou]y$/.test(b)){forms.add(b.slice(0,-1)+'ies');forms.add(b.slice(0,-1)+'ied')}
+  return forms.has(lower);
+ });
+}
+function markIeltsWords(){
+ const article=$('textArticle');let count=0;
+ for(const p of article.querySelectorAll('p[data-paragraph]')){
+  const raw=p.textContent,frag=document.createDocumentFragment();let last=0;
+  for(const m of raw.matchAll(/[A-Za-z]+(?:['’\-][A-Za-z]+)*/g)){
+   const w=wordMatch(m[0]);if(!w)continue;
+   frag.append(document.createTextNode(raw.slice(last,m.index)));
+   const span=el('span',m[0],'ieltsVocab');span.tabIndex=0;span.setAttribute('role','button');span.setAttribute('aria-label',m[0]+'，雅思重点词汇，查看释义');span.dataset.word=m[0];frag.append(span);last=m.index+m[0].length;count++;
+  }
+  frag.append(document.createTextNode(raw.slice(last)));p.replaceChildren(frag);
+ }
+ const toggle=$('vocabUnderline');toggle.disabled=!count;toggle.textContent=count?(article.classList.contains('noVocabUnderline')?'显示重点词汇下划线':'隐藏重点词汇下划线'):'本篇暂无重点词汇标注';
+ $('vocabCount').textContent=count?'已标注 '+count+' 处重点词汇':'';
+}
 function speakWord(word,lang){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(word);u.lang=lang;window.speechSynthesis.cancel();window.speechSynthesis.speak(u)}
 function displayWord(w){wordEntry=w;$('wordStatus').replaceChildren();const c=$('wordStatus');c.append(el('div',[w.pos,w.meaning].filter(Boolean).join(' ')));if(w.uk||w.us){const line=el('div',undefined,'line');if(w.uk)line.append(el('span','英 '+w.uk),makeButton('英式发音',()=>speakWord(w.word,'en-GB')));if(w.us)line.append(el('span','美 '+w.us),makeButton('美式发音',()=>speakWord(w.word,'en-US')));c.append(line)}if(w.example)c.append(el('div',w.example),el('div',w.translation||'','muted'));if(w.collocation)c.append(el('div','搭配：'+w.collocation));if(w.synonym)c.append(el('div','同义词：'+w.synonym))}
-async function lookupWord(word){const epoch=textEpoch,k=word.toLowerCase();const local=wordMatch(word)||wordCache.get(k);if(local){displayWord(local);return} $('wordStatus').textContent='词义查询中…';
- try{const res=await fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(word)+'&langpair=en%7Czh-CN',{signal:AbortSignal.timeout(8000)});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();if(Number(d.responseStatus)!==200||!d.responseData?.translatedText)throw Error('无可用译文');if(epoch!==textEpoch||selectedWord!==word)return;const entry={word,meaning:d.responseData.translatedText};wordCache.set(k,entry);displayWord(entry);$('wordStatus').append(el('div','在线机器翻译，仅供参考。','muted'))}catch{if(epoch===textEpoch&&selectedWord===word)$('wordStatus').textContent='暂无词义，可使用 AI 词义查询。'}
+let wordRequest=0,popupAnchor=null;
+function closeWordPopup(){wordRequest++;popupAnchor=null;selectedWord='';wordEntry=null;$('wordTools').hidden=true}
+function placeWordPopup(){
+ const panel=$('wordTools');if(panel.hidden||!popupAnchor)return;
+ const r=popupAnchor.getBoundingClientRect();
+ if(!r||(!r.width&&!r.height)||r.bottom<0||r.top>innerHeight){closeWordPopup();return}
+ const gap=9,pad=8;panel.style.left='0px';panel.style.top='0px';
+ const width=panel.offsetWidth,height=panel.offsetHeight;
+ const left=Math.min(Math.max(pad,r.left),Math.max(pad,innerWidth-width-pad));
+ let top=r.bottom+gap;if(top+height>innerHeight-pad&&r.top-height-gap>=pad)top=r.top-height-gap;
+ panel.style.left=left+'px';panel.style.top=Math.max(pad,Math.min(top,innerHeight-height-pad))+'px';
 }
-function selectEnglish(){const s=window.getSelection();if(!s||!s.anchorNode||!s.focusNode)return;const a=s.anchorNode.parentElement,b=s.focusNode.parentElement;if(!a||!b||!a.closest('#textArticle p[data-paragraph],#answers .questionPrompt')||!b.closest('#textArticle p[data-paragraph],#answers .questionPrompt'))return;const w=s.toString().trim();if(!/^[A-Za-z][A-Za-z\s’'-]{0,99}$/.test(w))return;selectedWord=w;wordEntry=null;$('selectedWord').textContent=w;$('wordTools').hidden=false;lookupWord(w)}
+const originalDisplayWord=displayWord;
+displayWord=function(w){originalDisplayWord(w);placeWordPopup()};
+async function lookupWord(word){
+ const ticket=++wordRequest,epoch=textEpoch,k=word.toLowerCase();const local=wordMatch(word)||wordCache.get(k);
+ if(local){displayWord(local);return}
+ $('wordStatus').textContent='词义查询中…';placeWordPopup();
+ try{const res=await fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(word)+'&langpair=en%7Czh-CN',{signal:AbortSignal.timeout(8000)});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();if(Number(d.responseStatus)!==200||!d.responseData?.translatedText)throw Error('无可用译文');if(ticket!==wordRequest||epoch!==textEpoch||selectedWord!==word)return;const entry={word,meaning:d.responseData.translatedText};wordCache.set(k,entry);displayWord(entry);$('wordStatus').append(el('div','在线机器翻译，仅供参考。','muted'));placeWordPopup()}catch{if(ticket===wordRequest&&epoch===textEpoch&&selectedWord===word){$('wordStatus').textContent='暂无词义，可使用 AI 词义查询。';placeWordPopup()}}
+}
+function openWordPopup(word,anchor){
+ if(!textMode||!word||!anchor)return;
+ if(selectedWord===word&&!$('wordTools').hidden){popupAnchor=anchor;placeWordPopup();return}
+ selectedWord=word;wordEntry=null;popupAnchor=anchor;$('selectedWord').textContent=word;$('wordStatus').textContent='';$('wordTools').hidden=false;placeWordPopup();lookupWord(word);
+}
+function selectEnglish(){const s=window.getSelection();if(!s||!s.rangeCount||!s.anchorNode||!s.focusNode)return;const a=s.anchorNode.parentElement,b=s.focusNode.parentElement;if(!a||!b||!a.closest('#textArticle p[data-paragraph],#answers .questionPrompt')||!b.closest('#textArticle p[data-paragraph],#answers .questionPrompt'))return;const w=s.toString().trim();if(!/^[A-Za-z][A-Za-z\s’'-]{0,99}$/.test(w))return;openWordPopup(w,s.getRangeAt(0).cloneRange())}
 let latestQuestionReview=null;
 function clearQuestionReview(){latestQuestionReview=null;for(const n of $('answers').querySelectorAll('.inlineQuestionReview'))n.remove()}
 function showQuestionReview(record,k){
@@ -103,11 +148,20 @@ $('grade').onclick=()=>{const before=new Set(Object.keys(state.history));baseGra
 $('answers').addEventListener('input',e=>{if(e.target.matches('input')&&latestQuestionReview){clearQuestionReview();$('result').textContent='答案已修改，请重新提交批改。'}});
 $('pdfMode').onclick=()=>setMode(!textMode);
 $('importParsed').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const item=(await catalogReady).books.find(x=>x.book===Number($('book').value));if(!item)throw Error('此册尚未入库');const k=key(),v=validateText(JSON.parse(await f.text()),k,item);const ck=cacheKey(item,k);localStorage.setItem(ck,JSON.stringify(v));textCache.set(ck,v);setMode(true)}catch(e){textMessage('导入失败：'+e.message)}finally{e.target.value=''}};
-$('textArticle').addEventListener('mouseup',selectEnglish);
-$('answers').addEventListener('mouseup',selectEnglish);
+for(const id of ['textArticle','answers']){
+ $(id).addEventListener('dblclick',selectEnglish);
+ $(id).addEventListener('mouseup',selectEnglish);
+}
+$('textArticle').addEventListener('click',e=>{const span=e.target.closest('.ieltsVocab');if(span&&(!window.getSelection()?.toString().trim()||window.getSelection().toString().trim()===span.dataset.word))openWordPopup(span.dataset.word,span)});
+$('textArticle').addEventListener('keydown',e=>{const span=e.target.closest('.ieltsVocab');if(span&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openWordPopup(span.dataset.word,span)}});
 let selectionTimer;document.addEventListener('selectionchange',()=>{clearTimeout(selectionTimer);selectionTimer=setTimeout(selectEnglish,450)});
+$('closeWordPopup').onclick=closeWordPopup;
+$('vocabUnderline').onclick=()=>{const article=$('textArticle');const hidden=article.classList.toggle('noVocabUnderline');$('vocabUnderline').textContent=hidden?'显示重点词汇下划线':'隐藏重点词汇下划线';$('vocabUnderline').setAttribute('aria-pressed',String(!hidden))};
+document.addEventListener('pointerdown',e=>{if(!$('wordTools').hidden&&!$('wordTools').contains(e.target)&&!e.target.closest('.ieltsVocab')){clearTimeout(selectionTimer);closeWordPopup()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearTimeout(selectionTimer);closeWordPopup();window.getSelection()?.removeAllRanges()}});
+window.addEventListener('resize',placeWordPopup);document.addEventListener('scroll',placeWordPopup,true);
 $('addSelected').onclick=()=>{if(!selectedWord)return;const meaning=wordEntry?.meaning||window.prompt('中文释义（可稍后填写）','');if(meaning===null)return;const existing=Object.values(state.words).find(w=>w.word.toLowerCase()===selectedWord.toLowerCase());if(existing){$('wordStatus').append(el('div','已在生词本中'));return}state.words[uuid()]={...(wordEntry||{}),word:selectedWord,meaning,example:wordEntry?.example||'',source:key(),date:now()};save();$('wordStatus').append(el('div','已加入生词本'))};
-$('lookupSelected').onclick=async()=>{if(!selectedWord)return;try{const v=await ai('请用中文简洁解释这个英文词或短语：'+selectedWord+'。给出词性、含义及一个原创例句。');$('wordStatus').textContent=v||'已复制查询请求'}catch(e){$('wordStatus').textContent=e.message}};
+$('lookupSelected').onclick=async()=>{if(!selectedWord)return;try{const ticket=wordRequest;const v=await ai('请用中文简洁解释这个英文词或短语：'+selectedWord+'。给出词性、含义及一个原创例句。');if(ticket===wordRequest){$('wordStatus').textContent=v||'已复制查询请求';placeWordPopup()}}catch(e){if(!$('wordTools').hidden){$('wordStatus').textContent=e.message;placeWordPopup()}}};
 const oldRenderText=render;render=function(){oldRenderText();if(textMode){$('viewer').hidden=true;$('indexedReader').hidden=true;loadText()}};
 for(const id of ['book','test','passage'])$(id).onchange=()=>{if(id==='book'){verifiedPdf=false;renderJob++;libraryRequest++}render();if(!textMode&&id==='book')openLibrary()};
 setMode(true);

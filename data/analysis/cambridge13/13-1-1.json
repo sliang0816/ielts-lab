@@ -31,7 +31,8 @@
       "example": "The island has fewer than a thousand inhabitants.",
       "translation": "这座岛的居民不足一千人。",
       "collocation": "local inhabitants",
-      "synonym": "resident"
+      "synonym": "resident",
+      "syllables": "in·hab·i·tant"
     },
     {
       "word": "expenditure",
@@ -42,7 +43,8 @@
       "example": "Household expenditure increased last year.",
       "translation": "去年家庭支出增加了。",
       "collocation": "tourism expenditure",
-      "synonym": "spending"
+      "synonym": "spending",
+      "syllables": "ex·pen·di·ture"
     },
     {
       "word": "destination",
@@ -53,7 +55,8 @@
       "example": "The town is a popular holiday destination.",
       "translation": "这座小镇是热门度假目的地。",
       "collocation": "tourist destination",
-      "synonym": "place to visit"
+      "synonym": "place to visit",
+      "syllables": "des·ti·na·tion"
     },
     {
       "word": "accommodation",
@@ -64,7 +67,8 @@
       "example": "We booked accommodation near the station.",
       "translation": "我们预订了车站附近的住宿。",
       "collocation": "affordable accommodation",
-      "synonym": "lodging"
+      "synonym": "lodging",
+      "syllables": "ac·com·mo·da·tion"
     },
     {
       "word": "itinerary",
@@ -75,7 +79,8 @@
       "example": "Our itinerary includes two days in the mountains.",
       "translation": "我们的行程包括两天山区旅行。",
       "collocation": "travel itinerary",
-      "synonym": "travel plan"
+      "synonym": "travel plan",
+      "syllables": "i·tin·er·ar·y"
     },
     {
       "word": "authentic",
@@ -86,7 +91,8 @@
       "example": "Visitors can enjoy authentic local food.",
       "translation": "游客可以享用地道的当地美食。",
       "collocation": "authentic experience",
-      "synonym": "genuine"
+      "synonym": "genuine",
+      "syllables": "au·then·tic"
     },
     {
       "word": "evaluation",
@@ -97,7 +103,8 @@
       "example": "The project requires an independent evaluation.",
       "translation": "该项目需要独立评估。",
       "collocation": "independent evaluation",
-      "synonym": "assessment"
+      "synonym": "assessment",
+      "syllables": "e·val·u·a·tion"
     },
     {
       "word": "enhance",
@@ -108,7 +115,8 @@
       "example": "Good lighting can enhance the visitor experience.",
       "translation": "良好的照明可以提升游客体验。",
       "collocation": "enhance quality",
-      "synonym": "improve"
+      "synonym": "improve",
+      "syllables": "en·hance"
     },
     {
       "word": "interactive",
@@ -119,7 +127,8 @@
       "example": "The museum provides an interactive map.",
       "translation": "博物馆提供交互式地图。",
       "collocation": "interactive tour",
-      "synonym": "responsive"
+      "synonym": "responsive",
+      "syllables": "in·ter·ac·tive"
     },
     {
       "word": "customised",
@@ -130,7 +139,8 @@
       "example": "The agency offers customised travel plans.",
       "translation": "该机构提供定制旅行计划。",
       "collocation": "customised itinerary",
-      "synonym": "tailored"
+      "synonym": "tailored",
+      "syllables": "cus·tom·ised"
     },
     {
       "word": "satisfaction",
@@ -141,7 +151,8 @@
       "example": "The survey measures customer satisfaction.",
       "translation": "这项调查衡量顾客满意度。",
       "collocation": "visitor satisfaction",
-      "synonym": "contentment"
+      "synonym": "contentment",
+      "syllables": "sat·is·fac·tion"
     },
     {
       "word": "scenic",
@@ -152,7 +163,8 @@
       "example": "We took a scenic route along the coast.",
       "translation": "我们沿海岸选择了一条风景优美的路线。",
       "collocation": "scenic beauty",
-      "synonym": "picturesque"
+      "synonym": "picturesque",
+      "syllables": "sce·nic"
     }
   ],
   "questions": [

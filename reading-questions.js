@@ -81,14 +81,66 @@ function renderMultipleChoice(section,group,items,prompt){
  choices.append(progress);section.append(choices);updateChoices();
 }
 
+function appendAnswerBlanks(line,text,items,inline){
+ let end=0;
+ for(const match of text.matchAll(/\[(\d+)\]/g)){
+  const n=Number(match[1]),item=items.get(n);
+  if(!item||inline.has(n))continue;
+  line.append(document.createTextNode(text.slice(end,match.index)));
+  item.classList.add('noteBlank');line.append(item);inline.add(n);
+  end=match.index+match[0].length;
+ }
+ line.append(document.createTextNode(text.slice(end)));
+}
+
+function readingQuestionTable(data,items,inline){
+ const table=el('table',undefined,'paperQuestionTable');
+ const header=el('tr');
+ for(const column of data.columns){
+  const cell=el('th',column);cell.scope='col';header.append(cell);
+ }
+ table.createTHead().append(header);
+ const body=table.createTBody();
+ for(const {heading,points} of data.rows){
+  const row=body.insertRow(),label=el('th',heading);
+  label.scope='row';row.append(label);
+  const list=el('ul');
+  for(const point of points){
+   const line=el('li');appendAnswerBlanks(line,point,items,inline);list.append(line);
+  }
+  row.insertCell().append(list);
+ }
+ return table;
+}
+
+function appendQuestionInstructions(section,instructions){
+ const explanation=el('div',undefined,'paperInstructions');
+ for(const text of (instructions||'').split('\n').filter(Boolean)){
+  const rule=text.match(/^(TRUE|FALSE|NOT GIVEN|YES|NO) (if .+)$/);
+  const line=el('p');
+  if(rule){
+   line.className='paperAnswerRule';
+   line.append(el('strong',rule[1]),el('span',rule[2]));
+  }else{
+   const phrase=text.match(/ONE WORD ONLY|NO MORE THAN [A-Z ]+(?:WORDS?|NUMBERS?)/)?.[0];
+   if(phrase){
+    const i=text.indexOf(phrase);line.append(text.slice(0,i),el('strong',phrase),text.slice(i+phrase.length));
+   }else line.textContent=text;
+  }
+  explanation.append(line);
+ }
+ section.append(explanation);
+}
+
 function renderReadingQuestions(data,translations){
  const items=new Map([...$('answers').querySelectorAll('.answerItem')].map(item=>[Number(item.dataset.number),item]));
  const questions=new Map(data.questions.map(q=>[q.number,q]));
- const panels=[],inline=new Set(),multi=new Set(),groups=new Map();
+ const panels=[],inline=new Set(),multi=new Set(),groups=new Map(),tableTranslations=new Map();
  for(const group of data.questionGroups||[]){
   const first=items.get(group.first);if(!first)continue;
   const section=el('div',undefined,'questionGroup');
-  section.append(el('strong','Questions '+group.first+'–'+group.last),el('p',group.instructions||''));
+  section.append(el('h3',group.first===group.last?'Question '+group.first:'Questions '+group.first+'–'+group.last,'paperQuestionHeading'));
+  appendQuestionInstructions(section,group.instructions);
   if(group.text)section.append(el('p',group.text));
   first.before(section);
   const translation=translations?.questionGroups?.find(t=>t.id===group.id);
@@ -101,19 +153,12 @@ function renderReadingQuestions(data,translations){
    renderMultipleChoice(section,group,items,questions.get(group.first).prompt);
    for(let n=group.first;n<=group.last;n++)multi.add(n);
   }
+  if(group.table)section.append(readingQuestionTable(group.table,items,inline));
   if(group.body){
    const notes=el('div',undefined,'questionNotes');
    for(const [i,text] of group.body.entries()){
     const line=el('div',undefined,i===0&&!text.includes('[')?'questionNotesTitle':'questionNotesLine');
-    let end=0;
-    for(const match of text.matchAll(/\[(\d+)\]/g)){
-     const n=Number(match[1]),item=items.get(n);
-     if(!item||inline.has(n))continue;
-     line.append(document.createTextNode(text.slice(end,match.index)));
-     item.classList.add('noteBlank');line.append(item);inline.add(n);
-     end=match.index+match[0].length;
-    }
-    line.append(document.createTextNode(text.slice(end)));notes.append(line);
+    appendAnswerBlanks(line,text,items,inline);notes.append(line);
    }
    section.append(notes);
   }
@@ -121,14 +166,24 @@ function renderReadingQuestions(data,translations){
  for(const [number,item] of items){
   const q=questions.get(number);if(!q||multi.has(number))continue;
   if(!inline.has(number)){
-   item.prepend(el('div',q.prompt,'questionPrompt'));
+   item.querySelector('.answerValue').before(el('div',q.prompt,'questionPrompt'));
    addAnswerChoices(item,q,groups.get(number));
   }
   const t=translations?.questions?.find(tr=>tr.number===number);
   if(t?.zh){
-   const detail=foldedTranslation('显示本题译文',t.zh);
+   const table=item.closest('.paperQuestionTable');
+   let target=item;
+   if(table){
+    if(!tableTranslations.has(table)){
+     const translations=el('details',undefined,'questionTranslation');
+     translations.append(el('summary','表格题译文'));
+     table.after(translations);tableTranslations.set(table,translations);panels.push(translations);
+    }
+    target=tableTranslations.get(table);
+   }else if(inline.has(number))target=item.parentElement;
+   const detail=foldedTranslation(table?'显示第 '+number+' 题译文':'显示本题译文',t.zh);
    panels.push(detail);
-   if(inline.has(number))item.parentElement.append(detail);else item.append(detail);
+   target.append(detail);
   }
  }
  if(panels.length){

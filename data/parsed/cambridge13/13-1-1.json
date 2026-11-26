@@ -4,6 +4,7 @@
   "test": 1,
   "passage": 1,
   "title": "Case Study: Tourism New Zealand website",
+  "titleEmphasis": "Tourism New Zealand",
   "subtitle": "",
   "sourceBlob": "059a37762c4f0858b7013ff6ca5fd61605081e65",
   "sourceSha256": "f52f605f6b296954d33f6f7e6b235854ea6c96e4876eb9d5d339dc66292ba994",
@@ -83,7 +84,22 @@
       "sourcePage": 19,
       "type": "table",
       "instructions": "Complete the table below.\nChoose ONE WORD ONLY from the passage for each answer.\nWrite your answers in boxes 1–7 on your answer sheet.",
-      "text": "Section of website | Comments\nDatabase of tourism services: easy for tourism-related businesses to get on the list."
+      "table": {
+        "columns": ["Section of website", "Comments"],
+        "rows": [
+          {"heading": "Database of tourism services", "points": [
+            "easy for tourism-related businesses to get on the list",
+            "allowed businesses to [1] information regularly",
+            "provided a country-wide evaluation of businesses, including their impact on the [2]"
+          ]},
+          {"heading": "Special features on local topics", "points": [
+            "e.g. an interview with a former sports [3], and an interactive tour of various locations used in [4]"
+          ]},
+          {"heading": "Information on driving routes", "points": ["varied depending on the [5]"]},
+          {"heading": "Travel Planner", "points": ["included a map showing selected places, details of public transport and local [6]"]},
+          {"heading": "‘Your Words’", "points": ["travellers could send a link to their [7]"]}
+        ]
+      }
     },
     {
       "id": "8-13",

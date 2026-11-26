@@ -42,11 +42,20 @@
 #summary { overflow-wrap: anywhere; }
 #readingTimer { display: flex; align-items: center; gap: 8px; }
 .readingBar #reviewActions { margin: 0; }
-#readingOptions { position: relative; }
+#readingOptions { position: relative; font-size: 13px; }
 #readingOptions[open] { z-index: 15; }
+#readingOptions > summary {
+  cursor: pointer; padding: 7px 10px; border: 1px solid #cbd5e0; border-radius: 6px; color: #2b5563;
+}
+.readingToolMenu {
+  position: absolute; z-index: 1; top: calc(100% + 6px); right: 0;
+  display: grid; gap: 5px; width: min(230px, 85vw); padding: 8px;
+  background: #fff; border: 1px solid #dce4ea; border-radius: 8px; box-shadow: 0 8px 24px #22384a20;
+}
+.readingToolMenu > button { text-align: left; }
+.readingToolMenu > details { padding: 0 8px; }
+.readingToolMenu p { margin: 5px 0 8px; }
 .readingTabs { display: none; }
-.readingSource { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
-.readingSource details > p { margin: 3px 0; }
 .readingSubtitle { color: #516b79; font-style: italic; }
 .textReader p[data-section]::before { content: attr(data-section); color: #225560; font: 700 15px system-ui; margin-right: 9px; }
 #reading .examPanels #questionPane { min-width: 0; }
@@ -66,9 +75,39 @@
   overscroll-behavior: contain;
 }
 #reading .textReader { flex: 1 1 auto; min-height: 0; height: auto; }
+#textArticle, #reading #answers {
+  font: 16px/1.35 Arial, Helvetica, sans-serif;
+  color: #171717;
+  padding: 16px clamp(12px, 2.3vw, 36px) 26px;
+}
+#textArticle[data-passage="14-1-1"] { font-family: "Times New Roman", serif; font-size: 17px; }
+.paperPassageHeading { font: 700 16px/1.2 Arial, Helvetica, sans-serif; letter-spacing: .11em; }
+#textArticle h2 { font-size: clamp(21px, 2vw, 26px); font-weight: 700; line-height: 1.2; text-align: center; margin: 25px 0 20px; }
+#textArticle > p[data-paragraph] { margin-bottom: 1.4em; }
+#textArticle > .line { margin: 0 0 16px; }
+#textArticle .paragraphTranslation { margin-top: -.72em; margin-bottom: 1.4em; }
+.textReader:not(.noVocabUnderline) .savedVocab { text-decoration: underline solid #2b7279 1.5px; text-underline-offset: 3px; }
+#reading #answers { row-gap: 6px; }
+#reading .questionGroup { background: #fff; padding: 0; margin: 5px 0 15px; }
+.paperQuestionHeading { font: italic 500 17px/1.3 Arial, Helvetica, sans-serif; margin: 0 0 13px; }
+.paperInstructions > p { margin: 0 0 10px; }
+.paperInstructions .paperAnswerRule { display: grid; grid-template-columns: 8.5ch minmax(0, 1fr); gap: 10px; margin: 2px 0 2px 1rem; }
+.paperAnswerRule strong { font-style: italic; white-space: nowrap; }
+.paperQuestionTable { table-layout: fixed; margin-top: 18px; white-space: normal; }
+.paperQuestionTable :is(th, td) { border: 1px solid #252525; padding: 7px 8px; vertical-align: top; }
+.paperQuestionTable thead th { text-align: center; }
+.paperQuestionTable :is(thead th:first-child, tbody th) { width: 27%; }
+.paperQuestionTable tbody th { font-weight: 400; text-align: left; }
+.paperQuestionTable ul { margin: 0; padding-left: 1.15em; }
+.paperQuestionTable li + li { margin-top: 5px; }
+.paperQuestionTable .answerValue { width: min(12ch, 24vw); height: 1.5em; border: 0; border-bottom: 1px dotted #333; border-radius: 0; padding: 0 2px; background: #f6f9fa; }
+.paperQuestionTable + details > summary { cursor: pointer; font-size: 13px; color: #245b75; }
 .answerItem { min-width: 0; border-bottom: 1px solid #e4ebed; padding: 5px 0 12px; }
 .questionNumber { color: #2f5966; font-weight: 700; margin-right: .35em; }
 .answerItem .questionPrompt { margin: 5px 0; }
+.answerItem:has(> .questionPrompt) { display: grid; grid-template-columns: 2.1ch minmax(0, 1fr); align-items: baseline; column-gap: 6px; }
+.answerItem:has(> .questionPrompt) > :not(.questionNumber) { grid-column: 2; }
+.answerItem > .questionPrompt { font: inherit; }
 .questionNotes { border-top: 1px solid #ccdbdc; margin-top: 10px; padding-top: 10px; }
 .questionNotesTitle { font: 700 18px/1.45 Georgia, serif; margin-bottom: 6px; }
 .questionNotesLine { line-height: 1.7; margin: 5px 0; }
@@ -90,6 +129,9 @@
 #syncIndicator { display: block; margin: 7px 0; }
 
 @media (max-width: 800px) {
+  #reading .readingBar { position: relative; }
+  #readingOptions { position: static; }
+  .readingToolMenu { right: 8px; }
   .readingTabs { display: flex; gap: 5px; margin: 0 0 8px; }
   .readingTabs button { flex: 1; background: #fff; color: #2b5563; }
   .readingTabs button[aria-pressed="true"] { background: #23606b; color: #fff; }
@@ -99,4 +141,7 @@
   .passageActions { grid-column: 1 / -1; justify-content: flex-start; }
   .libraryHeading { padding: 16px; }
   #reading .examPanels { height: calc(100dvh - 270px); min-height: 350px; }
+  #reading .examPanels > section { padding-inline: 12px; }
+  #textArticle, #reading #answers { padding-inline: 3px; font-size: 15px; }
+  .paperQuestionTable :is(th, td) { padding: 5px; }
 }

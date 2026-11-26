@@ -98,7 +98,7 @@ function setReadingPhase(phase,record){
  $('reading').dataset.phase=phase;
  $('readingPhase').textContent=review?'阅读详解':'阅读练习';
  $('questionHeading').textContent=review?'答题详解':'答题区';
- $('grade').hidden=review;$('readingTimer').hidden=review;$('reviewActions').hidden=!review;
+ $('grade').hidden=review;$('reviewActions').hidden=!review;
  $('answers').hidden=review;$('questionText').hidden=review;
  $('reviewQuestions').hidden=!review;$('reviewControls').hidden=!review;
  $('answerProgress').hidden=review;$('onlyMistakes').checked=false;$('reviewEmpty').hidden=true;

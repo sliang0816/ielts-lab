@@ -14,12 +14,28 @@ function validateText(v,k,item){
  return v
 }
 async function loadText(){
- const epoch=++textEpoch,k=key();clearQuestionReview();closeWordPopup();studyAnalysis=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';for(const x of $('answers').querySelectorAll('.questionPrompt,.choiceLine,.questionTranslation,.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');
+ const epoch=++textEpoch,k=key();closeWordPopup();studyAnalysis=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';for(const x of $('answers').querySelectorAll('.questionPrompt,.choiceLine,.questionTranslation,.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');
  try{
   const catalog=await catalogReady,item=catalog.books.find(x=>x.book===Number($('book').value));if(!item)throw Error('此册尚未入库');
   const ck=cacheKey(item,k);let v=textCache.get(ck);
-  if(!v){try{const raw=localStorage.getItem(ck);if(raw)v=validateText(JSON.parse(raw),k,item)}catch{}}
-  if(!v){const url='data/parsed/'+item.id+'/'+k+'.json';const response=await fetch(url,{cache:'no-cache'});if(response.ok){v=validateText(await response.json(),k,item);textCache.set(ck,v);try{localStorage.setItem(ck,JSON.stringify(v))}catch{}}else if(response.status===404){if(epoch===textEpoch&&textMode){textMessage('本篇尚未保存结构化文字。可导入解析 JSON 或返回 PDF 模式。');$('textArticle').append(el('p','已保存的页码和答案索引仍可用于 PDF 阅读与评分。'));}return}else throw Error('HTTP '+response.status)}
+  if(!v){try{const raw=localStorage.getItem(ck+':import');if(raw)v=validateText(JSON.parse(raw),k,item)}catch{}}
+  if(!v){
+   let loadError;
+   try{
+    const response=await fetch('data/parsed/'+item.id+'/'+k+'.json',{cache:'no-cache'});
+    if(response.ok){
+     v=validateText(await response.json(),k,item);
+     try{localStorage.setItem(ck+':download',JSON.stringify(v))}catch{}
+    }else if(response.status!==404)throw Error('HTTP '+response.status);
+   }catch(e){loadError=e}
+   if(!v){try{const raw=localStorage.getItem(ck+':download')||localStorage.getItem(ck);if(raw)v=validateText(JSON.parse(raw),k,item)}catch{}}
+   if(!v){
+    if(loadError)throw loadError;
+    if(epoch===textEpoch&&textMode){textMessage('本篇尚未保存结构化文字。可导入解析 JSON 或返回 PDF 模式。');$('textArticle').append(el('p','已保存的页码和答案索引仍可用于 PDF 阅读与评分。'))}
+    return;
+   }
+   if(!loadError&&!textCache.has(ck))textCache.set(ck,v);
+  }
   if(epoch!==textEpoch||!textMode||key()!==k)return;
   activePassageData=v; $('textArticle').append(el('h2',v.title||indexEntry()?.title||k));for(const p of v.paragraphs){const node=el('p',p.text);node.dataset.paragraph=p.id||'';$('textArticle').append(node)}
   // Translation is optional, separately versioned, and always collapsed on navigation.
@@ -51,7 +67,7 @@ async function loadText(){
   if(epoch!==textEpoch||!textMode||key()!==k)return;
   const qmap=new Map(v.questions.map(q=>[q.number,q]));
   const labels=[...$('answers').querySelectorAll('label')];
-  for(let i=0;i<labels.length;i++){const label=labels[i],n=draft().first+i,q=qmap.get(n);if(!q)continue;const node=el('div',q.prompt,'questionPrompt');if(q.instructions)node.prepend(el('div',q.instructions,'muted'));label.prepend(node);const input=label.querySelector('input');const opts=q.options||((q.type==='tfng')?['TRUE','FALSE','NOT GIVEN']:q.type==='ynng'?['YES','NO','NOT GIVEN']:[]);if(opts.length){const choices=el('div',undefined,'choiceLine');for(const opt of opts){const value=typeof opt==='string'?opt:opt.value;const caption=typeof opt==='string'?opt:opt.label||value;if(typeof value!=='string')continue;const b=makeButton(caption,()=>{input.value=value;input.dispatchEvent(new Event('input'));for(const x of choices.children)x.classList.toggle('picked',x.dataset.value===value)});b.dataset.value=value;b.classList.toggle('picked',input.value===value);choices.append(b)}label.append(choices)}}
+  for(let i=0;i<labels.length;i++){const label=labels[i],n=draft().first+i,q=qmap.get(n);if(!q)continue;const node=el('div',q.prompt,'questionPrompt');if(q.instructions)node.prepend(el('div',q.instructions,'muted'));label.prepend(node);const input=label.querySelector('input');const opts=q.options||((q.type==='tfng')?['TRUE','FALSE','NOT GIVEN']:q.type==='ynng'?['YES','NO','NOT GIVEN']:[]);if(opts.length){const choices=el('div',undefined,'choiceLine');for(const opt of opts){const value=typeof opt==='string'?opt:opt.value;const caption=typeof opt==='string'?opt:opt.label||value;if(typeof value!=='string')continue;const b=makeButton(caption,()=>{if(input.value===value)return;input.value=value;input.dispatchEvent(new Event('input',{bubbles:true}))});b.dataset.value=value;b.classList.toggle('picked',input.value===value);choices.append(b)}label.append(choices)}}
   renderQuestionTranslations(v,questionTranslations);
   try{const ar=await fetch('data/analysis/'+item.id+'/'+k+'.json',{cache:'no-cache'});if(ar.ok){const a=await ar.json();if(epoch!==textEpoch||key()!==k||!textMode)return;if(a.sourceBlob===item.sourceBlob&&[a.book,a.test,a.passage].join('-')===k)studyAnalysis=a}}catch{}
   if(epoch!==textEpoch||key()!==k||!textMode)return;
@@ -161,9 +177,13 @@ function showQuestionReview(record,k){
 }
 const baseGradeText=$('grade').onclick;
 $('grade').onclick=()=>{const before=new Set(Object.keys(state.history));baseGradeText();const id=Object.keys(state.history).find(id=>!before.has(id));if(id&&state.history[id].id===key()){latestQuestionReview={record:state.history[id],key:key()};showQuestionReview(latestQuestionReview.record,latestQuestionReview.key)}};
-$('answers').addEventListener('input',e=>{if(e.target.matches('input')&&latestQuestionReview){clearQuestionReview();$('result').textContent='答案已修改，请重新提交批改。'}});
+$('answers').addEventListener('input',e=>{
+ const input=e.target;if(!input.matches('input'))return;
+ for(const b of input.closest('label').querySelectorAll('.choiceLine button'))b.classList.toggle('picked',b.dataset.value===input.value);
+ if(latestQuestionReview){clearQuestionReview();$('result').textContent='答案已修改，请重新提交批改。'}
+});
 $('pdfMode').onclick=()=>setMode(!textMode);
-$('importParsed').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const item=(await catalogReady).books.find(x=>x.book===Number($('book').value));if(!item)throw Error('此册尚未入库');const k=key(),v=validateText(JSON.parse(await f.text()),k,item);const ck=cacheKey(item,k);localStorage.setItem(ck,JSON.stringify(v));textCache.set(ck,v);setMode(true)}catch(e){textMessage('导入失败：'+e.message)}finally{e.target.value=''}};
+$('importParsed').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const k=key(),b=Number($('book').value),item=(await catalogReady).books.find(x=>x.book===b);if(!item)throw Error('此册尚未入库');const v=validateText(JSON.parse(await f.text()),k,item),ck=cacheKey(item,k);localStorage.setItem(ck+':import',JSON.stringify(v));textCache.set(ck,v);if(k===key())setMode(true)}catch(e){textMessage('导入失败：'+e.message)}finally{e.target.value=''}};
 for(const id of ['textArticle','answers']){
  $(id).addEventListener('dblclick',selectEnglish);
  $(id).addEventListener('mouseup',selectEnglish);
@@ -178,6 +198,6 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearTimeout(select
 window.addEventListener('resize',placeWordPopup);document.addEventListener('scroll',placeWordPopup,true);
 $('addSelected').onclick=()=>{if(!selectedWord)return;const meaning=wordEntry?.meaning||window.prompt('中文释义（可稍后填写）','');if(meaning===null)return;const existing=Object.values(state.words).find(w=>w.word.toLowerCase()===selectedWord.toLowerCase());if(existing){$('wordStatus').append(el('div','已在生词本中'));return}state.words[uuid()]={...(wordEntry||{}),word:wordEntry?.word||selectedWord,meaning,example:wordEntry?.example||'',source:key(),date:now()};save();$('wordStatus').append(el('div','已加入生词本'))};
 $('lookupSelected').onclick=()=>{if(selectedWord)lookupWord(selectedWord,true)};
-const oldRenderText=render;render=function(){oldRenderText();if(textMode){$('viewer').hidden=true;$('indexedReader').hidden=true;loadText()}};
+const oldRenderText=render;render=function(){clearQuestionReview();oldRenderText();if(textMode){$('viewer').hidden=true;$('indexedReader').hidden=true;loadText()}};
 for(const id of ['book','test','passage'])$(id).onchange=()=>{if(id==='book'){verifiedPdf=false;renderJob++;libraryRequest++}render();if(!textMode&&id==='book')openLibrary()};
 setMode(true);

@@ -1,10 +1,15 @@
-# IELTS Lab V2.1
+# IELTS Learning Lab V3.1
 
-在线入口：https://sliang0816.github.io/ielts-lab/
+基于剑桥雅思真题的个人阅读练习平台，支持结构化原文、折叠译文、计时、自动批改、逐题解析、DeepSeek 词汇查询及 GitHub 学习记录同步。
 
-- 导入合法持有的本地 PDF，或使用有权访问的 HTTPS PDF 链接。PDF.js 可提取指定页的文字；扫描版需另行 OCR，远程链接需支持 CORS。
-- 按册数、Test、Passage 记录页码，录入官方答案或使用 AI 从官方答案文字中辅助提取；人工核对后保存。
-- 支持计时、答题、评分、错题、精读、生词间隔复习和学习统计。
-- GitHub 同步使用公开的 data/state.json，令牌只保留在当前页面内存中。原文及 PDF 不自动上传。不要提交未经授权的教材、密钥或敏感信息。
-- AI 可使用 ChatGPT 手动模式，或配置 OpenAI 兼容 HTTPS API、模型和 API Key。调用前确认内容发送及费用；浏览器 CORS 可能限制调用。ChatGPT Plus 不等于 API 配额。
-- 目前需手动指定 PDF 页码和答案，尚未完成整册自动索引及全部题型评分；听力、写作、口语模块尚未实现。浏览器端联调待完成。
+当前重点是 Cambridge IELTS 13 Test 1 Passage 1。剑桥 13 共 12 篇结构化文章，首篇有完整的中文译文和逐题解析。
+
+```powershell
+python -m http.server 8080 --bind 127.0.0.1
+```
+
+在浏览器打开 <http://127.0.0.1:8080/>。macOS 上可使用 `python3`。项目结构、教材进度和验证记录见 [PROJECT.md](PROJECT.md)。
+
+GitHub 同步使用公开的 `data/state.json`。DeepSeek API Key 和 GitHub Token 仅保存在当前浏览器的内存或所选的本机存储内。
+
+[在线学习入口](https://sliang0816.github.io/ielts-lab/)

@@ -4,7 +4,7 @@ function updateExamNav(){
  const d=draft(),inputs=[...$('answers').querySelectorAll('input')],review=typeof latestQuestionReview!=='undefined'&&latestQuestionReview?.key===key()?latestQuestionReview.record:null;
  nav.replaceChildren(el('span','Passage '+$('passage').value,'navCaption'));
  let answered=0;
- inputs.forEach((input,i)=>{const n=d.first+i,has=!!input.value.trim();if(has)answered++;const result=review?.items.find(x=>x.number===n);const b=el('button',String(n));b.type='button';b.className=result?(result.correct?'correctNav':'wrongNav'):has?'answered':'';b.setAttribute('aria-label','第 '+n+' 题'+(result?(result.correct?'，正确':'，错误'):has?'，已答':'，未答'));b.onclick=()=>{input.closest('label')?.scrollIntoView({block:'center',behavior:'smooth'});input.focus({preventScroll:true})};nav.append(b)});
+ inputs.forEach((input,i)=>{const n=d.first+i,has=!!input.value.trim();if(has)answered++;const result=review?.items.find(x=>x.number===n);const b=el('button',String(n));b.type='button';b.className=has?(result?(result.correct?'correctNav':'wrongNav'):'answered'):'';b.setAttribute('aria-label','第 '+n+' 题'+(has?(result?(result.correct?'，正确':'，错误'):'，已答'):'，未答'));b.onclick=()=>{input.closest('label')?.scrollIntoView({block:'center',behavior:'smooth'});input.focus({preventScroll:true})};nav.append(b)});
  $('answerProgress').textContent='已答 '+answered+'/'+inputs.length;
  const submit=el('button','提交并批改','navSubmit');submit.type='button';submit.onclick=()=>$('grade').click();nav.append(submit);
 }

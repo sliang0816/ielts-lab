@@ -256,7 +256,7 @@
       "number": 13,
       "explanation": "一生一次的旅行意味着通常不会再次到访，题干与此一致。原OCR中 lifetinme 为拼写识别误差，语义应为 lifetime。",
       "paragraphId": "7",
-      "evidence": "once-in-a-lifetinme visit",
+      "evidence": "once-in-a-lifetime visit",
       "paraphrase": "unlikely to return → once-in-a-lifetime"
     }
   ]

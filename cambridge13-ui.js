@@ -4,8 +4,9 @@ let currentPage=1,renderJob=0,activeTask=null,verifiedPdf=false;
 const previousRender=render;
 render=function(){
   const entry=indexEntry();
-  if(entry){let d=draft();if(d.first!==entry.first||d.count!==entry.count){d={...d,first:entry.first,count:entry.count,answers:[],seconds:0}}d.keys=entry.keys.slice();state.drafts[key()]=d;save()}
+  if(entry){let d=draft();if(d.first!==entry.first||d.count!==entry.count){const answers=Array.from({length:entry.count},(_,i)=>d.answers[entry.first+i-d.first]||'');d={...d,first:entry.first,count:entry.count,answers}}d.keys=entry.keys.slice();state.drafts[key()]=d;save()}
   previousRender();
+  $('keys').closest('details').hidden=!!entry;
   if(entry){$('summary').textContent='Cambridge '+key()+' · '+entry.title;$('pageFrom').value=entry.from;$('pageTo').value=entry.to;$('keys').value=entry.keys.join('\n');currentPage=entry.from;
     // Standard answers are available to the grader without displaying them during practice.
     $('keys').closest('details').open=false;

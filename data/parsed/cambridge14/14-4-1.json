@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "book": 14,
+  "test": 4,
+  "passage": 1,
+  "title": "The secret of staying young",
+  "subtitle": "",
+  "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
+  "sourceSha256": "f0f0d86e7cf93b37154696851b2e61be4f1194b05bd1651c1711e221720018ba",
+  "sourceFormat": "pdf-text-layer",
+  "answersReviewed": true,
+  "reviewed": false,
+  "reviewStatus": "已对照原版答案页。原文来自 PDF 文字层，部分识别文字与排版仍需复核。",
+  "sourcePages": [
+    82,
+    83,
+    84,
+    85
+  ],
+  "articlePages": [
+    82,
+    83
+  ],
+  "questionPages": [
+    84,
+    85
+  ],
+  "answerPage": 126,
+  "paragraphs": [
+    {
+      "id": "1",
+      "text": "Pheidole dentata, a native ant of the south-eastern U.S., isrf t immortal. But scientists have found that it doesift seem to show any signs of aging. Old worker ants can do everything just as well as the youngsters, and their brains appear just as sharp. 6We get a picture that these ants really don't decline/ says Ysabel Giraldo, who studied the ants for her doctoral thesis at Boston University.",
+      "sourcePages": [
+        82
+      ]
+    },
+    {
+      "id": "2",
+      "text": "Such age-defying feats are rare in the animal kingdom. Naked mole rats can live for almost 30 years and stay fit for nearly their entire lives. They can still reproduce even when old, and they never get cancer. But the vast majority of animals deteriorate with age just like people do. Like the naked mole rat, ants are social creatures that usually live in highly organised colonies. 6Ifs this social complexity that makes P dentata useful for studying aging in people/ says Giraldo, now at the California Institute of Technology. Humans are also highly social, a trait that has been connected to healthier aging. By contrast, most animal studies of aging use mice, worms or fruit flies, which all lead much more isolated lives.",
+      "sourcePages": [
+        82
+      ]
+    },
+    {
+      "id": "3",
+      "text": "In the lab, P. dentata worker ants typically live for around 140 days. Giraldo focused on ants at four age ranges: 20 to 22 days, 45 to 47 days, 95 to 97 days and 120 to 122 days. Unlike all previous studies, which only estimated how old the ants were, her work tracked the ants from the time the pupae became adults, so she knew their exact ages. Then she put them through a range of tests.",
+      "sourcePages": [
+        82
+      ]
+    },
+    {
+      "id": "4",
+      "text": "Giraldo watched how well the ants took care of the young of the colony, recording how often each ant attended to, carried and fed them. She compared how well 20-day-old and 95-day-old ants followed the telltale scent that the insects usually leave to mark a trail to food. She tested how ants responded to light and also measured how active they were by counting how often ants in a small dish walked across a line. And she experimented with how ants react to live prey: a tethered fruit fly. Giraldo expected the older ants to perform poorly in all these tasks. But the elderly insects were all good caretakers and trail-followers—the 95-day-old ants could track the scent even longer than their younger counterparts. They all responded to light well, and the older ants were more active. And when it came to reacting to prey, the older ants attacked the poor fruit fly just as aggressively as the young ones did, flaring their mandibles or pulling at the fly?s legs.",
+      "sourcePages": [
+        82
+      ]
+    },
+    {
+      "id": "5",
+      "text": "Then Giraldo compared the brains of 20-day-old and 95-day-old ants, identifying any cells that were close to death. She saw no major differences with age, nor was there any difference in the location of the dying cells, showing that age didn5t seem to affect specific brain functions. Ants and other insects have structures in their brains called mushroom bodies, which are important for processing information, learning and memory. She also wanted to see 讦 aging affects the density of synaptic complexes within these structures—regions where neurons come togethe匸 Again, the answer was no. What was more, the old ants didn't experience any drop in the levels of either serotonin or dopamine—brain chemicals whose decline often coincides with aging. In humans, for example, a decrease in serotonin has been linked to Alzheimer's disease.",
+      "sourcePages": [
+        82,
+        83
+      ]
+    },
+    {
+      "id": "6",
+      "text": "'This is the first time anyone has looked at both behavioral and neural changes in these ants so thoroughly/ says Giraldo, who recently published the findings in the Proceedings of the Royal Society B. Scientists have looked at some similar aspects in bees, but the results of recent bee studies were mixed—some studies showed age-related declines, which biologists call senescence, and others didn't. Tor now, the study raises more questions than it answers/ Giraldo says, \"including how P. dentata stays in such good shape.5",
+      "sourcePages": [
+        83
+      ]
+    },
+    {
+      "id": "7",
+      "text": "Also, if the ants don't deteriorate with age? why do they die at all? Out in the wild, the ants probably don't live for a foil 140 days thanks to predators, disease and just being in an environment thafs much harsher than the comforts of the lab. \"The lucky ants that do live into old age may suffer a steep decline just before dying/ Giraldo says, but she can't say for sure because her study wasn't designed to follow an anfs final moments.",
+      "sourcePages": [
+        83
+      ]
+    },
+    {
+      "id": "8",
+      "text": "“It will be important to extend these findings to other species of social insects/ says Gene E. Robinson, an entomologist at the University of Illinois at Urbana-Champaign. This ant might be unique, or it might represent a broader pattern among other social bugs with possible clues to the science of aging in larger animals. Either way, it seems that for these ants, age really doesift matter.",
+      "sourcePages": [
+        83
+      ]
+    }
+  ],
+  "questionGroups": [
+    {
+      "first": 1,
+      "last": 8,
+      "sourcePage": 84,
+      "id": "1-8",
+      "type": "notes",
+      "instructions": "Complete the notes below.\nChoose ONE WORD ONLY from the passage for each answer.\nWrite your answer in boxes 1-8 on your answer sheet.",
+      "body": [
+        "Ysabel Giraldo’s research",
+        "Focused on a total of [1]different age groups of ants, analysing",
+        "Behaviour:",
+        "• how well ants looked after their [2]",
+        "• their ability to locate [3]using a scent trail",
+        "• the effect that [4]had on them",
+        "• how [5]they attacked prey",
+        "Brains:",
+        "comparison between age and the [6]of dying cells in the",
+        "brains of ants",
+        "condition of synaptic complexes (areas in which [7]meet) in",
+        "the brain's 'mushroom bodies5",
+        "level of two [8] in the brain associated with ageing"
+      ]
+    },
+    {
+      "first": 9,
+      "last": 13,
+      "sourcePage": 85,
+      "id": "9-13",
+      "type": "tfng",
+      "instructions": "Do the following statements agree with the information given in Reading Passage 1?\nIn boxes 9-13 on your answer sheet, write",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "type": "notes",
+      "prompt": "Focused on a total of [1]different age groups of ants, analysing",
+      "sourcePage": 84,
+      "answer": "four|4"
+    },
+    {
+      "number": 2,
+      "type": "notes",
+      "prompt": "• how well ants looked after their [2]",
+      "sourcePage": 84,
+      "answer": "young"
+    },
+    {
+      "number": 3,
+      "type": "notes",
+      "prompt": "• their ability to locate [3]using a scent trail",
+      "sourcePage": 84,
+      "answer": "food"
+    },
+    {
+      "number": 4,
+      "type": "notes",
+      "prompt": "• the effect that [4]had on them",
+      "sourcePage": 84,
+      "answer": "light"
+    },
+    {
+      "number": 5,
+      "type": "notes",
+      "prompt": "• how [5]they attacked prey",
+      "sourcePage": 84,
+      "answer": "aggressively"
+    },
+    {
+      "number": 6,
+      "type": "notes",
+      "prompt": "comparison between age and the [6]of dying cells in the",
+      "sourcePage": 84,
+      "answer": "location"
+    },
+    {
+      "number": 7,
+      "type": "notes",
+      "prompt": "condition of synaptic complexes (areas in which [7]meet) in",
+      "sourcePage": 84,
+      "answer": "neurons"
+    },
+    {
+      "number": 8,
+      "type": "notes",
+      "prompt": "level of two [8] in the brain associated with ageing",
+      "sourcePage": 84,
+      "answer": "chemicals"
+    },
+    {
+      "number": 9,
+      "type": "tfng",
+      "prompt": "Pheidole dentata ants are the only known animals which remain active for almost their whole lives.",
+      "sourcePage": 85,
+      "answer": "FALSE"
+    },
+    {
+      "number": 10,
+      "type": "tfng",
+      "prompt": "Ysabel Giraldo was the first person to study Pheidole dentata ants using precise data about the insects5 ages.",
+      "sourcePage": 85,
+      "answer": "TRUE"
+    },
+    {
+      "number": 11,
+      "type": "tfng",
+      "prompt": "The ants in Giraldo's experiments behaved as she had predicted that they would.",
+      "sourcePage": 85,
+      "answer": "FALSE"
+    },
+    {
+      "number": 12,
+      "type": "tfng",
+      "prompt": "The recent studies of bees used different methods of measuring age- related decline.",
+      "sourcePage": 85,
+      "answer": "NOT GIVEN"
+    },
+    {
+      "number": 13,
+      "type": "tfng",
+      "prompt": "Pheidole dentata ants kept in laboratory conditions tend to live longer lives.",
+      "sourcePage": 85,
+      "answer": "TRUE"
+    }
+  ]
+}

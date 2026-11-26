@@ -1,0 +1,289 @@
+{
+  "schema": 1,
+  "book": 14,
+  "test": 4,
+  "passage": 3,
+  "title": "Marine debris",
+  "subtitle": "",
+  "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
+  "sourceSha256": "f0f0d86e7cf93b37154696851b2e61be4f1194b05bd1651c1711e221720018ba",
+  "sourceFormat": "pdf-text-layer",
+  "answersReviewed": true,
+  "reviewed": false,
+  "reviewStatus": "已对照原版答案页。原文来自 PDF 文字层，部分识别文字与排版仍需复核。",
+  "sourcePages": [
+    90,
+    91,
+    92,
+    93
+  ],
+  "articlePages": [
+    90,
+    91
+  ],
+  "questionPages": [
+    92,
+    93
+  ],
+  "answerPage": 126,
+  "paragraphs": [
+    {
+      "id": "1",
+      "text": "Chelsea Rochman, an ecologist at the University of California, Davis, has been trying to answer a dismal question: Is everything terrible, or are things just very, very bad?",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "2",
+      "text": "Rochman is a member of the National Center for Ecological Analysis and Synthesis's marine-debris working group, a collection of scientists who study, among other things, the growing problem of marine debris, also known as ocean trash. Plenty of studies have sounded alarm bells about the state of marine debris; in a recent paper published in the journal Ecology, Rochman and her colleagues set out to determine how many of those perceived risks are real.",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "3",
+      "text": "Often, Rochman says? scientists will end a paper by speculating about the broader impacts of what they've found. For example, a study could show that certain seabirds eat plastic bags, and go on to warn that whole bird populations are at risk of dying out. \"But the truth was that nobody had yet tested those perceived threats/ Rochman says. \"There wasn't a lot of information?",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "4",
+      "text": "Rochman and her colleagues examined more than a hundred papers on the impacts of marine debris that were published through 2013. Within each paper, they asked what threats scientists had studied -366 perceived threats in all - and what they'd actually found.",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "5",
+      "text": "In 83 percent of cases, the perceived dangers of ocean trash were proven true. In the remaining cases, the working group found the studies had weaknesses in design and content which affected the validity of their conclusions - they lacked a control group, for example, or used faulty statistics.",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "6",
+      "text": "Strikingly, Rochman says, only one well-designed study failed to find the effect it was looking for, an investigation of mussels ingesting microscopic plastic bits. The plastic moved from the mussels9 stomachs to their bloodstreams, scientists found, and stayed there for weeks — but didn't seem to stress out the shellfish.",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "7",
+      "text": "While mussels may be fine eating trash, though, the analysis also gave a clearer picture of the many ways that ocean debris is bothersome.",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "8",
+      "text": "Within the studies they looked at, most of the proven threats came from plastic debris, rather than other materials like metal or wood. Most of the dangers also involved large pieces of debris — animals getting entangled in trash, for example, or eating it and severely injuring themselves.",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "9",
+      "text": "But a lot of ocean debris is Cmicroplastic\\ or pieces smaller than five millimeters. These may be ingredients used in cosmetics and toiletries, fibers shed by synthetic clothing in the wash, or eroded remnants of larger debris. Compared to the number of studies investigating large-scale debris, Rochman's group found little research on the effects of these tiny bits. \"There are a lot of open questions still for microplastic/ Rochman says, though she notes that more papers on the subject have been published since 2013, the cutoff point for the group 9s analysis.",
+      "sourcePages": [
+        90
+      ]
+    },
+    {
+      "id": "10",
+      "text": "There are also, she adds, a lot of open questions about the ways that ocean debris can lead to sea-creature death. Many studies have looked at how plastic affects an individual animal, or that animal9s tissues or cells, rather than whole populations. And in the lab, scientists often use higher concentrations of plastic than what9s really in the ocean. None of that tells us how many birds or fish or sea turtles could die from plastic pollution — or how deaths in one species could affect that animafs predators, or the rest of the ecosystem.",
+      "sourcePages": [
+        91
+      ]
+    },
+    {
+      "id": "11",
+      "text": "cWe need to be asking more ecologically relevant questions/ Rochman says. Usually, scientists don?t know exactly how disasters such as a tanker accidentally spilling its whole cargo of oil and polluting huge areas of the ocean will affect the environment until after they9ve happened.4 We don't ask the right questions early enough,9 she says. But if ecologists can understand how the slow-moving effect of ocean trash is damaging ecosystems, they might be able to prevent things from getting worse.",
+      "sourcePages": [
+        91
+      ]
+    },
+    {
+      "id": "12",
+      "text": "Asking the right questions can help policy makers, and the public, figure out where to focus their attention. The problems that look or sound most dramatic may not be the best places to start. For example, the name of the 'Great Pacific Garbage Patch* — a collection of marine debris in the northern Pacific Ocean — might conjure up a vast, floating trash island. In reality though, much of the debris is tiny or below the surface; a person could sail through the area without seeing any trash at all. A Dutch group called 6The Ocean Cleanup5 is currently working on plans to put mechanical devices in the Pacific Garbage Patch and similar areas to suck up plastic. But a recent paper used simulations to show that strategically positioning the cleanup devices closer to shore would more effectively reduce pollution over the long term.",
+      "sourcePages": [
+        91
+      ]
+    },
+    {
+      "id": "13",
+      "text": "CI think clearing up some of these misperceptions is really important/ Rochman says. Among scientists as well as in the media, she says, 6A lot of the images about strandings and entanglement and all of that cause the perception that plastic debris is killing everything in the ocean? Interrogating the existing scientific literature can help ecologists figure out which problems really need addressing, and which ones they'd be better off - like the mussels -absorbing and ignoring.",
+      "sourcePages": [
+        91
+      ]
+    }
+  ],
+  "questionGroups": [
+    {
+      "first": 27,
+      "last": 33,
+      "sourcePage": 92,
+      "id": "27-33",
+      "type": "tfng",
+      "instructions": "Do the following statements agree with the information given in Reading Passage 3?\nIn boxes 27-33 on your answer sheet, write",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "first": 34,
+      "last": 39,
+      "sourcePage": 93,
+      "id": "34-39",
+      "type": "notes",
+      "instructions": "Complete the notes below.\nChoose ONE WORD ONLY from the passage for each answer.\nWrite your answers in boxes 34-39 on your answer sheet.",
+      "body": [
+        "Findings related to marine debris",
+        "Studies of marine debris found the biggest threats were",
+        "• plastic (not metal or wood)",
+        "• bits of debris that were [34](harmful to animals)",
+        "There was little research into [35] e.g. from synthetic fibres.",
+        "Drawbacks of the studies examined",
+        "most of them focused on individual animals, not entire [36]",
+        "the [37]of plastic used in the lab did not always reflect those",
+        "in the ocean",
+        "there was insufficient information on",
+        "numbers of animals which could be affected",
+        "— the impact of a reduction in numbers on the [38]of that",
+        "species",
+        "— the impact on the ecosystem",
+        "Rochman says more information is needed on the possible impact of future",
+        "[39] (e.g. involving oil)."
+      ]
+    },
+    {
+      "first": 40,
+      "last": 40,
+      "sourcePage": 93,
+      "id": "40-40",
+      "type": "single",
+      "instructions": "Choose the correct letter, A, B, C or D.\nWrite the correct letter in box 40 on your answer sheet.",
+      "options": [
+        {
+          "value": "A",
+          "label": "Assessing the threat of marine debris"
+        },
+        {
+          "value": "B",
+          "label": "Marine debris: who is to blame?"
+        },
+        {
+          "value": "C",
+          "label": "new solution to the problem of marine debris"
+        },
+        {
+          "value": "D",
+          "label": "Marine debris: the need for international action"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 27,
+      "type": "tfng",
+      "prompt": "Rochman and her colleagues were the first people to research the problem of marine debris.",
+      "sourcePage": 92,
+      "answer": "FALSE"
+    },
+    {
+      "number": 28,
+      "type": "tfng",
+      "prompt": "The creatures most in danger from ocean trash are certain seabirds.",
+      "sourcePage": 92,
+      "answer": "NOT GIVEN"
+    },
+    {
+      "number": 29,
+      "type": "tfng",
+      "prompt": "The studies Rochman has reviewed have already proved that populations of some birds will soon become extinct.",
+      "sourcePage": 92,
+      "answer": "FALSE"
+    },
+    {
+      "number": 30,
+      "type": "tfng",
+      "prompt": "Rochman analysed papers on the different kinds of danger caused by ocean trash.",
+      "sourcePage": 92,
+      "answer": "TRUE"
+    },
+    {
+      "number": 31,
+      "type": "tfng",
+      "prompt": "Most of the research analysed by Rochman and her colleagues was badly designed.",
+      "sourcePage": 92,
+      "answer": "FALSE"
+    },
+    {
+      "number": 32,
+      "type": "tfng",
+      "prompt": "One study examined by Rochman was expecting to find that mussels were harmed by eating plastic.",
+      "sourcePage": 92,
+      "answer": "TRUE"
+    },
+    {
+      "number": 33,
+      "type": "tfng",
+      "prompt": "Some mussels choose to eat plastic in preference to their natural diet.",
+      "sourcePage": 92,
+      "answer": "NOT GIVEN"
+    },
+    {
+      "number": 34,
+      "type": "notes",
+      "prompt": "• bits of debris that were [34](harmful to animals)",
+      "sourcePage": 93,
+      "answer": "large"
+    },
+    {
+      "number": 35,
+      "type": "notes",
+      "prompt": "There was little research into [35] e.g. from synthetic fibres.",
+      "sourcePage": 93,
+      "answer": "microplastic"
+    },
+    {
+      "number": 36,
+      "type": "notes",
+      "prompt": "most of them focused on individual animals, not entire [36]",
+      "sourcePage": 93,
+      "answer": "populations"
+    },
+    {
+      "number": 37,
+      "type": "notes",
+      "prompt": "the [37]of plastic used in the lab did not always reflect those",
+      "sourcePage": 93,
+      "answer": "concentrations"
+    },
+    {
+      "number": 38,
+      "type": "notes",
+      "prompt": "— the impact of a reduction in numbers on the [38]of that",
+      "sourcePage": 93,
+      "answer": "predators"
+    },
+    {
+      "number": 39,
+      "type": "notes",
+      "prompt": "[39] (e.g. involving oil).",
+      "sourcePage": 93,
+      "answer": "disasters"
+    },
+    {
+      "number": 40,
+      "type": "single",
+      "prompt": "What would be the best title for this passage?",
+      "sourcePage": 93,
+      "answer": "A"
+    }
+  ]
+}

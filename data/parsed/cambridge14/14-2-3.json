@@ -1,0 +1,304 @@
+{
+  "schema": 1,
+  "book": 14,
+  "test": 2,
+  "passage": 3,
+  "title": "Why companies should welcome disorder",
+  "subtitle": "",
+  "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
+  "sourceSha256": "f0f0d86e7cf93b37154696851b2e61be4f1194b05bd1651c1711e221720018ba",
+  "sourceFormat": "pdf-text-layer",
+  "answersReviewed": true,
+  "reviewed": false,
+  "reviewStatus": "已对照原版答案页。原文来自 PDF 文字层，部分识别文字与排版仍需复核。",
+  "sourcePages": [
+    46,
+    47,
+    48,
+    49
+  ],
+  "articlePages": [
+    47,
+    48
+  ],
+  "questionPages": [
+    46,
+    49
+  ],
+  "answerPage": 122,
+  "paragraphs": [
+    {
+      "id": "1",
+      "text": "Organisation is big business. Whether it is of our lives — all those inboxes and calendars —",
+      "sourcePages": [
+        47
+      ],
+      "section": "A"
+    },
+    {
+      "id": "2",
+      "text": "or how companies are structured, a multi-billion dollar industry helps to meet this need. We have more strategies for time management, project management and self-organisation than at any other time in human history. We are told that we ought to organise our company, our home life, our week, our day and even our sleep, all as a means to becoming more productive. Every week, countless seminars and workshops take place around the world to tell a paying public that they ought to structure their lives in order to achieve this. This rhetoric has also crept into the thinking of business leaders and entrepreneurs, much to the delight of self-proclaimed perfectionists with the need to get everything right. The number of business schools and graduates has massively increased over the past 50 years, essentially teaching people how to organise well.",
+      "sourcePages": [
+        47
+      ]
+    },
+    {
+      "id": "3",
+      "text": "Ironically, however, the number of businesses that fail has also steadily increased.",
+      "sourcePages": [
+        47
+      ],
+      "section": "B"
+    },
+    {
+      "id": "4",
+      "text": "Work-related stress has increased. A large proportion of workers from all demographics claim to be dissatisfied with the way their work is structured and the way they are managed. This begs the question: what has gone wrong? Why is it that on paper the drive for organisation seems a sure shot for increasing productivity, but in reality fells well short of what is expected?",
+      "sourcePages": [
+        47
+      ]
+    },
+    {
+      "id": "5",
+      "text": "This has been a problem for a while now. Frederick Taylor was one of the forefathers of",
+      "sourcePages": [
+        47
+      ],
+      "section": "C"
+    },
+    {
+      "id": "6",
+      "text": "scientific management. Writing in the first half of the 20th century, he designed a number of principles to improve the efficiency of the work process, which have since become widespread in modern companies. So the approach has been around for a while.",
+      "sourcePages": [
+        47
+      ]
+    },
+    {
+      "id": "7",
+      "text": "New research suggests that this obsession with efficiency is misguided. The problem is not",
+      "sourcePages": [
+        47
+      ],
+      "section": "D"
+    },
+    {
+      "id": "8",
+      "text": "necessarily the management theories or strategies we use to organise our work; ifs the basic assumptions we hold in approaching how we work. Here it's the assumption that order is a necessary condition for productivity. This assumption has also fostered the idea that disorder must be detrimental to organisational productivity. The result is that businesses and people spend time and money organising themselves for the sake of organising, rather than actually looking at the end goal and usefulness of such an effort,",
+      "sourcePages": [
+        47
+      ]
+    },
+    {
+      "id": "9",
+      "text": "Whafs more, recent studies show that order actually has diminishing returns. Order does increase productivity to a certain extent, but eventually the usefulness of the process of organisation, and the benefit it yields, reduce until the point where any further increase in order reduces productivity. Some argue that in a business, if the cost of formally structuring something outweighs the benefit of doing it, then that thing ought not to be formally structured. Instead, the resources involved can be better used elsewhere.",
+      "sourcePages": [
+        47
+      ],
+      "section": "E"
+    },
+    {
+      "id": "10",
+      "text": "In fact, research shows that, when innovating, the best approach is to create an environment",
+      "sourcePages": [
+        48
+      ],
+      "section": "F"
+    },
+    {
+      "id": "11",
+      "text": "devoid of structure and hierarchy and enable everyone involved to engage as one organic group. These environments can lead to new solutions that, under conventionally structured environments (filled with bottlenecks in terms of information flow, power structures, rules, and routines) would never be reached.",
+      "sourcePages": [
+        48
+      ]
+    },
+    {
+      "id": "12",
+      "text": "In recent times companies have slowly started to embrace this disorganisation. Many of them embrace it in terms of perception (embracing the idea of disorder, as opposed to fearing it) and in terms of process (putting mechanisms in place to reduce structure). For example, Oticon, a large Danish manufacturer of hearing aids, used what it called a 'spaghetti5 structure in order to reduce the organisation^ rigid hierarchies. This involved scrapping formal job titles and giving staff huge amounts of ownership over their own time and projects. This approach proved to be highly successful initially, with clear improvements in worker productivity in all facets of the business. In similar fashion, the former chairman of General Electric embraced disorganisation, putting forward the idea of the \"boundaryless9 organisation. Again, it involves breaking down the barriers between different parts of a company and encouraging virtual collaboration and flexible working. Google and a number of other tech companies have embraced (at least in part) these kinds of flexible structures, facilitated by technology and strong company values which glue people together.",
+      "sourcePages": [
+        48
+      ],
+      "section": "G"
+    },
+    {
+      "id": "13",
+      "text": "A word of warning to others thinking of jumping on this bandwagon: the evidence so far suggests disorder, much like order, also seems to have diminishing utility, and can also have detrimental effects on performance if overused. Like order, disorder should be embraced only so far as it is useful. But we should not fear it — nor venerate one over the other. This research also shows that we should continually question whether or not our existing assumptions work.",
+      "sourcePages": [
+        48
+      ],
+      "section": "H"
+    }
+  ],
+  "questionGroups": [
+    {
+      "first": 27,
+      "last": 34,
+      "sourcePage": 46,
+      "id": "27-34",
+      "type": "headings",
+      "instructions": "Reading Passage 3 has eight sections, A-HI.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-ix, in boxes 27-34 on your answer sheet.",
+      "options": [
+        {
+          "value": "i",
+          "label": "Complaints about the impact of a certain approach"
+        },
+        {
+          "value": "ii",
+          "label": "Fundamental beliefs that are in fact incorrect"
+        },
+        {
+          "value": "iii",
+          "label": "Early recommendations concerning business activities"
+        },
+        {
+          "value": "iv",
+          "label": "Organisations that put a new approach into practice"
+        },
+        {
+          "value": "v",
+          "label": "Companies that have suffered from changing their approach"
+        },
+        {
+          "value": "vi",
+          "label": "What people are increasingly expected to do"
+        },
+        {
+          "value": "vii",
+          "label": "How to achieve outcomes that are currently impossible"
+        },
+        {
+          "value": "viii",
+          "label": "Neither approach guarantees continuous improvement"
+        },
+        {
+          "value": "ix",
+          "label": "Evidence that a certain approach can have more disadvantages than advantages"
+        }
+      ]
+    },
+    {
+      "first": 35,
+      "last": 37,
+      "sourcePage": 49,
+      "id": "35-37",
+      "type": "sentences",
+      "instructions": "Complete the sentences below.\nChoose ONE WORD ONLY from the passage for each answer.\nWrite your answers in boxes 35-37 on your answer sheet.",
+      "body": [
+        "Numerous training sessions are aimed at people who feel they are not [35] enough.",
+        "Being organised appeals to people who regard themselves as [36].",
+        "Many people feel [37] with aspects of their work."
+      ]
+    },
+    {
+      "first": 38,
+      "last": 40,
+      "sourcePage": 49,
+      "id": "38-40",
+      "type": "tfng",
+      "instructions": "Do the following statements agree with the information given in Reading Passage 3?\nIn boxes 38-40 on your answer sheet, write",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 27,
+      "type": "headings",
+      "prompt": "Section A",
+      "sourcePage": 46,
+      "answer": "vi"
+    },
+    {
+      "number": 28,
+      "type": "headings",
+      "prompt": "Section B",
+      "sourcePage": 46,
+      "answer": "i"
+    },
+    {
+      "number": 29,
+      "type": "headings",
+      "prompt": "Section C",
+      "sourcePage": 46,
+      "answer": "iii"
+    },
+    {
+      "number": 30,
+      "type": "headings",
+      "prompt": "Section D",
+      "sourcePage": 46,
+      "answer": "ii"
+    },
+    {
+      "number": 31,
+      "type": "headings",
+      "prompt": "Section E",
+      "sourcePage": 46,
+      "answer": "ix"
+    },
+    {
+      "number": 32,
+      "type": "headings",
+      "prompt": "Section F",
+      "sourcePage": 46,
+      "answer": "vii"
+    },
+    {
+      "number": 33,
+      "type": "headings",
+      "prompt": "Section G",
+      "sourcePage": 46,
+      "answer": "iv"
+    },
+    {
+      "number": 34,
+      "type": "headings",
+      "prompt": "Section H",
+      "sourcePage": 46,
+      "answer": "viii"
+    },
+    {
+      "number": 35,
+      "type": "sentences",
+      "prompt": "Numerous training sessions are aimed at people who feel they are not [35] enough.",
+      "sourcePage": 49,
+      "answer": "productive"
+    },
+    {
+      "number": 36,
+      "type": "sentences",
+      "prompt": "Being organised appeals to people who regard themselves as [36].",
+      "sourcePage": 49,
+      "answer": "perfectionists"
+    },
+    {
+      "number": 37,
+      "type": "sentences",
+      "prompt": "Many people feel [37] with aspects of their work.",
+      "sourcePage": 49,
+      "answer": "dissatisfied"
+    },
+    {
+      "number": 38,
+      "type": "tfng",
+      "prompt": "Both businesses and people aim at order without really considering its value.",
+      "sourcePage": 49,
+      "answer": "TRUE"
+    },
+    {
+      "number": 39,
+      "type": "tfng",
+      "prompt": "Innovation is most successful if the people involved have distinct roles.",
+      "sourcePage": 49,
+      "answer": "FALSE"
+    },
+    {
+      "number": 40,
+      "type": "tfng",
+      "prompt": "Google was inspired to adopt flexibility by the success of General Electric.",
+      "sourcePage": 49,
+      "answer": "NOT GIVEN"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "schema": 1,
+  "book": 14,
+  "test": 2,
+  "passage": 2,
+  "title": "Back to the future of skyscraper design",
+  "subtitle": "Answers to the problem of excessive electricity use by skyscrapers and large public buildings can be found in ingenious but forgotten architectural designs of the 19th and early-20th centuries",
+  "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
+  "sourceSha256": "f0f0d86e7cf93b37154696851b2e61be4f1194b05bd1651c1711e221720018ba",
+  "sourceFormat": "pdf-text-layer",
+  "answersReviewed": true,
+  "reviewed": false,
+  "reviewStatus": "已对照原版答案页。原文来自 PDF 文字层，部分识别文字与排版仍需复核。",
+  "sourcePages": [
+    42,
+    43,
+    44,
+    45
+  ],
+  "articlePages": [
+    42,
+    43
+  ],
+  "questionPages": [
+    44,
+    45
+  ],
+  "answerPage": 122,
+  "paragraphs": [
+    {
+      "id": "1",
+      "text": "The Recovery of Natural Environments in Architecture by Professor Alan Short is the culmination of 30 years of research and award-winning green building design by Short and colleagues in Architecture, Engineering, Applied Maths and Earth Sciences at the University of Cambridge. The crisis in building design is already here,' said Short. Policy makers think you can solve energy and building problems with gadgets. You can't. As global temperatures continue to rise, we are going to continue to squander more and more energy on keeping our buildings mechanically cool until we have run out of capacity.5",
+      "sourcePages": [
+        42
+      ],
+      "section": "A"
+    },
+    {
+      "id": "2",
+      "text": "Short is calling for a sweeping reinvention of how skyscrapers and major public buildings are designed - to end the reliance on sealed buildings which exist solely via the life supporf system of vast air conditioning units. In stead, he shows it is en tirely possible to accommodate n atural ventilatio n and cooling in large buildings by looking into the past, before the widespread introduction of air conditioning systems, which were Telentlessly and aggressively marketed5 by their inventors.",
+      "sourcePages": [
+        42
+      ],
+      "section": "B"
+    },
+    {
+      "id": "3",
+      "text": "Short points out that to make most contemporary buildings habitable, they have to be sealed and air condition ed. The en ergy use and carb on emissi ons this generates is spectacular and largely unn ecessary. Buildings in the West account for 40-50% of electricity usage, gen erati ng substa ntial carb on emissi ons, and the rest of the world is catchi ng up at a frighteni ng rate. Short regards glass, steel and air-conditioned skyscrapers as symbols of status, rather than practical ways of meeting our requirements.",
+      "sourcePages": [
+        42
+      ],
+      "section": "C"
+    },
+    {
+      "id": "4",
+      "text": "Shorfs book highlights a developing and sophisticated art and scienee of ventilating buildings through the 19th and earlier-20th centuries, including the design of ingeniously ventilated hospitals. Of particular interest were those built to the desig ns of John Shaw Billin gs, includi ng the first Johns Hopkins Hospital in the US city of Baltimore (1873-1889). 'We spe nt three years digitally modelli ng Billings' final desig ns,' says Short. £We put pathoge ns* in the airstreams, modelled for some one with tuberculosis (TB) coughing in the wards and we found the ventilation systems in the room would have kept other patients safe from harm. pathogens: microorganisms that can cause disease",
+      "sourcePages": [
+        42
+      ],
+      "section": "D"
+    },
+    {
+      "id": "5",
+      "text": "£We discovered that 19th-century hospital wards could generate up to 24 air changes an hour — thafs similar to the performa nee of a moder n.day, computer-c on trolled operating theatre. We believe you could build wards based on these principles now. Single rooms are not appropriate for all patients. Communal wards appropriate for certain patients — older people with dementia, for example — would work just as well in today's hospitals, at a fraction of the energy cost/ Professor Short contends the mindset and skill-sets behind these designs have been completely lost, lamenting the disappearanee of expertly designed theatres, opera houses, and other buildings where up to half the volume of the building was given over to ensuri ng everyone got fresh air.",
+      "sourcePages": [
+        43
+      ],
+      "section": "E"
+    },
+    {
+      "id": "6",
+      "text": "Much of the in genuity prese nt in 19th-ce ntury hospital a nd building design was driven by a panicked public clamouring for buildings that could protect against what was thought to be the lethal threat of miasmas - toxic air that spread disease. Miasmas were feared as the principal agents of disease and epidemics for centuries, and were used to explain the spread of infection from the Middle Ages right through to the cholera outbreaks in London and Paris during the 1850s. Foul air, rather than germs, was believed to be the main driver of 'hospital fever5, leading to disease and frequent death. The prosperous steered clear of hospitals. While miasma theory has been long since disproved, Short has for the last 30 years advocated a return to some of the building design principles produced in its wake.",
+      "sourcePages": [
+        43
+      ],
+      "section": "F"
+    },
+    {
+      "id": "7",
+      "text": "Today, huge amounts of a building's space and construction cost are given over to air conditioning. But I have designed and built a series of buildings over the past three decades which have tried to reinvent some of these ideas and then measure what happens. 'To go forward into our new low-energy, low-carb on future, we would be well advised to look back at design before our high-e nergy, high-carb on prese nt appeared. What is surprising is what a rich legacy we have abandoned.'",
+      "sourcePages": [
+        43
+      ],
+      "section": "G"
+    },
+    {
+      "id": "8",
+      "text": "Successful examples of Shorfs approach include the Queen's Building at De Montfort University in Leicester. Containing as many as 2,000 staff and students, the entire building is naturally ventilated, passively cooled and naturally lit, including the two largest auditoria, each seating more than 150 people. The award-winning building uses a fraction of the electricity of comparable buildings in the UK. Short contends that glass skyscrapers in London and around the world will become a liability over the next 20 or 30 years if climate modelling predictions and energy price rises come to pass as expected.",
+      "sourcePages": [
+        43
+      ],
+      "section": "H"
+    },
+    {
+      "id": "9",
+      "text": "He is convinced that sufficiently cooled skyscrapers using the natural environment can be produced in almost any climate. He and his team have worked on hybrid buildings in the harsh climates of Beijing and Chicago — built with natural ventilation assisted by back-up air conditioning - which, surprisingly perhaps, can be switched off more than half the time on milder days and during the spring and autumn. Short looks at how we might reimagine the cities, offices and homes of the future. Maybe ifs time we changed our outlook,",
+      "sourcePages": [
+        43
+      ],
+      "section": "I"
+    }
+  ],
+  "questionGroups": [
+    {
+      "first": 14,
+      "last": 18,
+      "sourcePage": 44,
+      "id": "14-18",
+      "type": "match",
+      "instructions": "Reading Passage 2 has nine sections, A-I.\nWhich section contains the following information?\nWrite the correct letter, A-I, in boxes 14-18 on your answer sheet.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ]
+    },
+    {
+      "first": 19,
+      "last": 26,
+      "sourcePage": 45,
+      "id": "19-26",
+      "type": "summary",
+      "instructions": "Complete the summary below.\nChoose ONE WORD ONLY from the passage for each answer.\nWrite your answers in boxes 19-26 on your answer sheet.",
+      "body": [
+        "Ventilation in 19th-century hospital wards",
+        "Professor Alan Short examined the work of John Shaw Billings, who influenced the",
+        "architectural [19] of hospitals to ensure they had good ventilation.",
+        "He calculated that [20]in the air coming from patients suffering from",
+        "[21]would not have harmed other patients. He also found that the air",
+        "in [22] in hospitals could change as often as in a modern operating",
+        "theatre. He suggests that energy use could be reduced by locating more patients in",
+        "[23] areas.",
+        "A major reason for improving ventilation in 19th-century hospitals was the demand from",
+        "the [24] for protection against bad air, known as [25]",
+        "These were blamed for the spread of disease for hundreds of years, including epidemics",
+        "of [26] in London and Paris in the middle of the 19th century."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 14,
+      "type": "match",
+      "prompt": "why some people avoided hospitals in the 19th century",
+      "sourcePage": 44,
+      "answer": "F"
+    },
+    {
+      "number": 15,
+      "type": "match",
+      "prompt": "a suggestion that the popularity of tall buildings is linked to prestige",
+      "sourcePage": 44,
+      "answer": "C"
+    },
+    {
+      "number": 16,
+      "type": "match",
+      "prompt": "a comparison between the circulation of air in a 19th-century building and modern standards",
+      "sourcePage": 44,
+      "answer": "E"
+    },
+    {
+      "number": 17,
+      "type": "match",
+      "prompt": "how Short tested the circulation of air in a 19th-century building",
+      "sourcePage": 44,
+      "answer": "D"
+    },
+    {
+      "number": 18,
+      "type": "match",
+      "prompt": "an implication that advertising led to the large increase in the use of air conditioning",
+      "sourcePage": 44,
+      "answer": "B"
+    },
+    {
+      "number": 19,
+      "type": "summary",
+      "prompt": "architectural [19] of hospitals to ensure they had good ventilation.",
+      "sourcePage": 45,
+      "answer": "design|designs"
+    },
+    {
+      "number": 20,
+      "type": "summary",
+      "prompt": "He calculated that [20]in the air coming from patients suffering from",
+      "sourcePage": 45,
+      "answer": "pathogens"
+    },
+    {
+      "number": 21,
+      "type": "summary",
+      "prompt": "[21]would not have harmed other patients. He also found that the air",
+      "sourcePage": 45,
+      "answer": "tuberculosis"
+    },
+    {
+      "number": 22,
+      "type": "summary",
+      "prompt": "in [22] in hospitals could change as often as in a modern operating",
+      "sourcePage": 45,
+      "answer": "wards"
+    },
+    {
+      "number": 23,
+      "type": "summary",
+      "prompt": "[23] areas.",
+      "sourcePage": 45,
+      "answer": "communal"
+    },
+    {
+      "number": 24,
+      "type": "summary",
+      "prompt": "the [24] for protection against bad air, known as [25]",
+      "sourcePage": 45,
+      "answer": "public"
+    },
+    {
+      "number": 25,
+      "type": "summary",
+      "prompt": "the [24] for protection against bad air, known as [25]",
+      "sourcePage": 45,
+      "answer": "miasmas"
+    },
+    {
+      "number": 26,
+      "type": "summary",
+      "prompt": "of [26] in London and Paris in the middle of the 19th century.",
+      "sourcePage": 45,
+      "answer": "cholera"
+    }
+  ]
+}

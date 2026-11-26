@@ -28,7 +28,8 @@ function refreshViews(previous,merged){
  if(!equal(before,after)&&!started&&!$('answers').contains(document.activeElement)&&document.activeElement!==$('notes')){
   applyingRemote=true;try{render()}finally{applyingRemote=false}
  }
- if(!$('words').hidden)showWords();if(!$('history').hidden)showHistory()
+ if(!$('words').hidden)showWords();if(!$('history').hidden)showHistory();
+ if(!$('readingLibrary').hidden&&typeof renderReadingLibrary==='function')renderReadingLibrary();
 }
 async function syncNow(manual=false){
  clearTimeout(syncTimer);

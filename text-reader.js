@@ -6,7 +6,7 @@ const byId=id=>document.getElementById(id);
 const el=(tag,value,cls)=>{const n=document.createElement(tag);if(value!==undefined)n.textContent=value;if(cls)n.className=cls;return n};
 function makeButton(label,fn){const b=el('button',label,'secondary');b.type='button';b.onclick=fn;return b}
 function textMessage(s){$('textStatus').textContent=s}
-function setMode(on){textMode=on;$('textReader').hidden=!on;$('pdfControls').hidden=on;$('pdfMode').textContent=on?'查看 PDF 原版':'返回文字模式';if(on){$('viewer').hidden=true;$('indexedReader').hidden=true;loadText()}else{closeWordPopup();++textEpoch;if(verifiedPdf&&indexEntry())drawIndexed();else $('viewer').hidden=false}}
+function setMode(on){textMode=on;$('textReader').hidden=!on;$('pdfControls').hidden=on;$('pdfMode').textContent=on?'查看 PDF 原版':'返回文字模式';if(on){$('viewer').hidden=true;$('indexedReader').hidden=true;return loadText()}else{closeWordPopup();++textEpoch;if(verifiedPdf&&indexEntry())drawIndexed();else $('viewer').hidden=false}}
 const baseDraw=drawIndexed;drawIndexed=async function(){if(!textMode)return baseDraw()};
 function cacheKey(item,k){return 'ielts-text-v1:'+item.sourceBlob+':'+k}
 function validateText(v,k,item){
@@ -15,7 +15,7 @@ function validateText(v,k,item){
  return v
 }
 async function loadText(){
- const epoch=++textEpoch,k=key();closeWordPopup();studyAnalysis=null;analysisReady=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';for(const x of $('answers').querySelectorAll('.questionPrompt,.choiceLine,.questionTranslation,.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');
+ const epoch=++textEpoch,k=key();closeWordPopup();studyAnalysis=null;analysisReady=null;questionTranslations=null;activePassageData=null;wordEntry=null;selectedWord='';$('wordTools').hidden=true;$('wordStatus').textContent='';restoreAnswerItems();for(const x of $('answers').querySelectorAll('.questionGroup'))x.remove();$('textArticle').replaceChildren();$('questionText').replaceChildren();textMessage('正在读取文字资料…');$('textProvenance').textContent='';
  try{
   const catalog=await catalogReady,item=catalog.books.find(x=>x.book===Number($('book').value));if(!item)throw Error('此册尚未入库');
   const ck=cacheKey(item,k);let v=textCache.get(ck);
@@ -43,7 +43,15 @@ async function loadText(){
    const a=await response.json();
    if(epoch===textEpoch&&key()===k&&textMode&&a.sourceBlob===item.sourceBlob&&[a.book,a.test,a.passage].join('-')===k)studyAnalysis=a;
   }).catch(()=>{});
-  activePassageData=v; $('textArticle').append(el('h2',v.title||indexEntry()?.title||k));for(const p of v.paragraphs){const node=el('p',p.text);node.dataset.paragraph=p.id||'';$('textArticle').append(node)}
+  activePassageData=v;
+  const articleTitle=el('h2',v.title||indexEntry()?.title||k);
+  $('textArticle').append(articleTitle);
+  if(v.subtitle)$('textArticle').append(el('p',v.subtitle,'readingSubtitle'));
+  for(const p of v.paragraphs){
+   const node=el('p',p.text);node.dataset.paragraph=p.id||'';
+   if(p.section)node.dataset.section=p.section;
+   $('textArticle').append(node);
+  }
   // Translation is optional, separately versioned, and always collapsed on navigation.
   const article=$('textArticle');
   const toolbar=el('div',undefined,'line');
@@ -71,27 +79,18 @@ async function loadText(){
    }
   } catch(err){if(epoch===textEpoch)status.textContent='译文加载失败：'+err.message}
   if(epoch!==textEpoch||!textMode||key()!==k)return;
-  const qmap=new Map(v.questions.map(q=>[q.number,q]));
-  const labels=[...$('answers').querySelectorAll('label')];
-  for(let i=0;i<labels.length;i++){const label=labels[i],n=draft().first+i,q=qmap.get(n);if(!q)continue;const node=el('div',q.prompt,'questionPrompt');if(q.instructions)node.prepend(el('div',q.instructions,'muted'));label.prepend(node);const input=label.querySelector('input');const opts=q.options||((q.type==='tfng')?['TRUE','FALSE','NOT GIVEN']:q.type==='ynng'?['YES','NO','NOT GIVEN']:[]);if(opts.length){const choices=el('div',undefined,'choiceLine');for(const opt of opts){const value=typeof opt==='string'?opt:opt.value;const caption=typeof opt==='string'?opt:opt.label||value;if(typeof value!=='string')continue;const b=makeButton(caption,()=>{if(input.value===value)return;input.value=value;input.dispatchEvent(new Event('input',{bubbles:true}))});b.dataset.value=value;b.classList.toggle('picked',input.value===value);choices.append(b)}label.append(choices)}}
-  renderQuestionTranslations(v,questionTranslations);
+  renderReadingQuestions(v,questionTranslations);
   await analysis;
   if(epoch!==textEpoch||key()!==k||!textMode)return;
   markIeltsWords();
   if(latestQuestionReview?.key===k)showQuestionReview(latestQuestionReview.record,k);
   $('sourceText').value=v.paragraphs.map(p=>p.text).join('\n\n')+'\n\n'+v.questions.map(q=>q.number+'. '+q.prompt).join('\n');
-  textMessage((v.reviewed?'已校对':'待人工校对')+' · 已加载持久化文字 · '+v.questions.length+' 道结构化题目');
+  textMessage(v.questions.length+' 道题');
+  $('textProvenance').textContent=v.reviewStatus||(v.reviewed?'原文和题目已校对。':'原文和题目仍需对照原版。');
  }catch(e){if(epoch===textEpoch)textMessage('文字模式：'+e.message)}
 }
 
 function foldedTranslation(label,zh){const d=el('details',undefined,'questionTranslation paragraphTranslation');const t=el('summary',label);d.append(t,el('div',zh,'translationBody'));d.ontoggle=()=>t.textContent=d.open?'隐藏中文译文':label;return d}
-function renderQuestionTranslations(v,t){
- const labels=[...$('answers').querySelectorAll('label')], panels=[];
- const groups=v.questionGroups||[];
- for(const g of groups){const i=g.first-draft().first;if(!labels[i])continue;const section=el('div',undefined,'questionGroup');section.append(el('strong','Questions '+g.first+'–'+g.last),el('p',g.instructions||''));if(g.text)section.append(el('p',g.text));const tr=t?.questionGroups?.find(x=>x.id===g.id);if(tr?.zh){const d=foldedTranslation('显示题组说明译文',tr.zh);section.append(d);panels.push(d)}labels[i].before(section)}
- for(let i=0;i<labels.length;i++){const q=t?.questions?.find(x=>x.number===draft().first+i);if(q?.zh){const d=foldedTranslation('显示本题译文',q.zh);labels[i].append(d);panels.push(d)}}
- if(panels.length){const bar=el('div',undefined,'line');bar.append(makeButton('展开全部题目译文',()=>panels.forEach(d=>d.open=true)),makeButton('隐藏全部题目译文',()=>panels.forEach(d=>d.open=false)));$('questionText').append(bar)}
-}
 function wordMatch(w){
  const lower=w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,'');
  return studyAnalysis?.words?.find(x=>{
@@ -112,7 +111,7 @@ function markIeltsWords(){
   }
   frag.append(document.createTextNode(raw.slice(last)));p.replaceChildren(frag);
  }
- const toggle=$('vocabUnderline');toggle.disabled=!count;toggle.textContent=count?(article.classList.contains('noVocabUnderline')?'显示重点词汇下划线':'隐藏重点词汇下划线'):'本篇暂无重点词汇标注';
+ const toggle=$('vocabUnderline');toggle.hidden=!count;toggle.disabled=!count;toggle.textContent=count?(article.classList.contains('noVocabUnderline')?'显示重点词汇下划线':'隐藏重点词汇下划线'):'本篇暂无重点词汇标注';
  $('vocabCount').textContent=count?'已标注 '+count+' 处重点词汇':'';
 }
 function speakWord(word,lang){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(word);u.lang=lang;window.speechSynthesis.cancel();window.speechSynthesis.speak(u)}
@@ -198,35 +197,49 @@ function openWordPopup(word,anchor){
 }
 function selectEnglish(){const s=window.getSelection();if(!s||!s.rangeCount||!s.anchorNode||!s.focusNode)return;const a=s.anchorNode.parentElement,b=s.focusNode.parentElement;if(!a||!b||!a.closest('#textArticle p[data-paragraph],#answers .questionPrompt')||!b.closest('#textArticle p[data-paragraph],#answers .questionPrompt'))return;const w=s.toString().trim();if(!/^[A-Za-z][A-Za-z\s’'-]{0,99}$/.test(w))return;openWordPopup(w,s.getRangeAt(0).cloneRange())}
 let latestQuestionReview=null;
-function clearQuestionReview(){latestQuestionReview=null;for(const n of $('answers').querySelectorAll('.inlineQuestionReview'))n.remove()}
+function clearQuestionReview(){latestQuestionReview=null;$('reviewQuestions').replaceChildren()}
 function showQuestionReview(record,k){
  if(k!==key())return;
- for(const n of $('answers').querySelectorAll('.inlineQuestionReview'))n.remove();
- const labels=[...$('answers').querySelectorAll('label')].filter(n=>n.querySelector('input'));
+ const container=$('reviewQuestions');container.replaceChildren();
  for(const x of record.items){
-  const label=labels[x.number-draft().first];if(!label)continue;
   const q=studyAnalysis?.questions?.find(q=>q.number===x.number);
   const card=el('div',undefined,'inlineQuestionReview '+(x.correct?'reviewCorrect':'reviewIncorrect'));
   card.append(el('strong',(x.correct?'✓ 回答正确':x.answer.trim()?'✗ 回答错误':'— 未作答')+' · 第 '+x.number+' 题','reviewHeading'));
-  card.append(el('p','你的答案：'+(x.answer||'未作答')),el('p','正确答案：'+x.expected));
+  card.id='review-question-'+x.number;card.tabIndex=-1;
+  card.dataset.correct=String(x.correct);
+  const prompt=activePassageData?.questions.find(item=>item.number===x.number)?.prompt;
+  if(prompt)card.append(el('p',prompt.replace(/\[\d+\]/g,'____'),'reviewPrompt'));
+  const group=record.items.filter(item=>indexEntry()?.groups?.some(([a,b])=>a<=item.number&&item.number<=b&&a<=x.number&&x.number<=b));
+  const expected=group.length?group.map(item=>item.expected).join(' / ')+'（本组不分顺序）':x.expected;
+  card.append(el('p','你的答案：'+(x.answer||'未作答')),el('p','正确答案：'+expected));
   if(q){
    if(q.explanation)card.append(el('p','解题解析：'+q.explanation));
    if(q.evidence)card.append(el('p','原文依据：'+q.evidence));
    if(q.paraphrase)card.append(el('p','同义替换 / 判断线索：'+q.paraphrase));
-   if(q.paragraphId)card.append(makeButton('定位第 '+q.paragraphId+' 段',()=>{const node=[...$('textArticle').querySelectorAll('[data-paragraph]')].find(n=>n.dataset.paragraph===q.paragraphId);if(node){node.scrollIntoView({behavior:'smooth',block:'center'});node.classList.add('evidenceHighlight');setTimeout(()=>node.classList.remove('evidenceHighlight'),3000)}}));
+   if(q.paragraphId)card.append(makeButton('定位第 '+q.paragraphId+' 段',async()=>{
+    if(!textMode)await setMode(true);
+    if(k!==key())return;
+    const article=$('textArticle');
+    const paragraph=[...article.querySelectorAll('[data-paragraph]')].find(n=>n.dataset.paragraph===q.paragraphId);
+    if(!paragraph)return;
+    setReadingTab('article');
+    scrollReadingPane(article,paragraph,true);
+    paragraph.classList.add('evidenceHighlight');
+    setTimeout(()=>paragraph.classList.remove('evidenceHighlight'),3000);
+   }));
   }else card.append(el('p','本题详细解析尚未整理。','muted'));
-  label.after(card);
+  container.append(card);
  }
- $('result').textContent='正确 '+record.score+'/'+record.total+' · 已在每道题下显示判分和解析。';
+ $('result').textContent='答对 '+record.score+' / '+record.total+' 题';
+ if(typeof filterReviewQuestions==='function')filterReviewQuestions();
 }
 const baseGradeText=$('grade').onclick;
 $('grade').onclick=()=>{const before=new Set(Object.keys(state.history));baseGradeText();const id=Object.keys(state.history).find(id=>!before.has(id));if(id&&state.history[id].id===key()){latestQuestionReview={record:state.history[id],key:key()};showQuestionReview(latestQuestionReview.record,latestQuestionReview.key)}};
 $('answers').addEventListener('input',e=>{
- const input=e.target;if(!input.matches('input'))return;
- for(const b of input.closest('label').querySelectorAll('.choiceLine button'))b.classList.toggle('picked',b.dataset.value===input.value);
+ const input=e.target;if(!input.matches('.answerValue'))return;
  if(latestQuestionReview){clearQuestionReview();$('result').textContent='答案已修改，请重新提交批改。'}
 });
-$('pdfMode').onclick=()=>setMode(!textMode);
+$('pdfMode').onclick=()=>{setMode(!textMode);if(!textMode&&!verifiedPdf)openLibrary()};
 $('importParsed').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const k=key(),b=Number($('book').value),item=(await catalogReady).books.find(x=>x.book===b);if(!item)throw Error('此册尚未入库');const v=validateText(JSON.parse(await f.text()),k,item),ck=cacheKey(item,k);localStorage.setItem(ck+':import',JSON.stringify(v));textCache.set(ck,v);if(k===key())setMode(true)}catch(e){textMessage('导入失败：'+e.message)}finally{e.target.value=''}};
 for(const id of ['textArticle','answers']){
  $(id).addEventListener('dblclick',selectEnglish);

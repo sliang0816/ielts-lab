@@ -22,10 +22,15 @@
       "edition": "Academic",
       "material": "materials/Cambridge-IELTS-14.pdf",
       "index": "data/cambridge14-15.js",
-      "status": "indexed",
+      "status": "parsed",
       "pages": 142,
       "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
-      "passages": 12
+      "passages": 12,
+      "parsed": "data/parsed/cambridge14",
+      "parsedPassages": 12,
+      "parsedQuestions": 160,
+      "answersReviewed": true,
+      "reviewed": false
     },
     {
       "id": "cambridge15",

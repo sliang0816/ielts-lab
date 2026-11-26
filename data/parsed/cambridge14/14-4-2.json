@@ -1,0 +1,263 @@
+{
+  "schema": 1,
+  "book": 14,
+  "test": 4,
+  "passage": 2,
+  "title": "Why zoos are good",
+  "subtitle": "Scientist David Hone makes the case for zoos",
+  "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
+  "sourceSha256": "f0f0d86e7cf93b37154696851b2e61be4f1194b05bd1651c1711e221720018ba",
+  "sourceFormat": "pdf-text-layer",
+  "answersReviewed": true,
+  "reviewed": false,
+  "reviewStatus": "已对照原版答案页。原文来自 PDF 文字层，部分识别文字与排版仍需复核。",
+  "sourcePages": [
+    86,
+    87,
+    88,
+    89
+  ],
+  "articlePages": [
+    86,
+    87
+  ],
+  "questionPages": [
+    88,
+    89
+  ],
+  "answerPage": 126,
+  "paragraphs": [
+    {
+      "id": "1",
+      "text": "In my view, it is perfectly possible for many species of animals living in zoos or wildlife parks to have a quality of life as high as, or higher than, in the wild. Animals in good zoos get a varied and high-quality diet with all the supplements required, and any illnesses they might have will be treated. Their movement might be somewhat restricted, but they have a safe environment in which to live, and they are spared bullying and social ostracism by others of their kind. They do not suffer from the threat or stress of predators, or the irritation and pain of parasites or injuries. The average captive animal will have a greater life expectancy compared with its wild counterpart, and will not die of drought, of starvation or in the jaws of a predator. A lot of very nasty things happen to truly 'wild' animals that simply don't happen in good zoos, and to view a life that is 'free' as one that is automatically 'good' is, I think, an error. Furthermore, zoos serve several key purposes.",
+      "sourcePages": [
+        86
+      ],
+      "section": "A"
+    },
+    {
+      "id": "2",
+      "text": "Firstly, zoos aid conservation. Colossal numbers of species are becoming extinct across the world, and many more are increasingly threatened and therefore risk extinction. Moreover, some of these collapses have been sudden, dramatic and unexpected, or were simply discovered very late in the day. A species protected in captivity can be bred up to provide a reservoir population against a population crash or extinction in the wild. A good number of species only exist in captivity, with many of these living in zoos. Still more only exist in the wild because they have been reintroduced from zoos, or have wild populations that have been boosted by captive bred animals. Without these efforts there would be fewer species alive today. Although reintroduction successes are few and far between, the numbers are increasing and the very fact that species have been saved or reintroduced as a result of captive breeding proves the value of such initiatives.",
+      "sourcePages": [
+        86
+      ],
+      "section": "B"
+    },
+    {
+      "id": "3",
+      "text": "Zoos also provide educati on. Many children and adults, especially those in cities, will never see a wild animal beyond a fox or pigeon. While it is true that television documentaries are becoming ever more detailed and impressive, and many natural history specimens are on display in museums, there really is nothing to compare with seeing a living creature in the flesh, hearing it, smelling it, watching what it does and having the time to absorb details. That alone will bring a greater understanding and perspective to many, and hopefully give them a greater appreciati on for wildlife, conservati on efforts and how they can con tribute.",
+      "sourcePages": [
+        86
+      ],
+      "section": "C"
+    },
+    {
+      "id": "4",
+      "text": "In addition to this, there is also the education that can take place in zoos through signs, talks and presentations which directly communicate information to visitors about the animals they are seeing and their place in the world. This was an area where zoos used to be lacking, but they are now increasingly sophisticated in their communication and outreach work. Many zoos also work directly to educate conservation workers in other countries, or send their animal keepers abroad to con tribute their knowledge and skills to those working in zoos and reserves, thereby helping to improve conditions and reintroductions all over the world.",
+      "sourcePages": [
+        87
+      ],
+      "section": "D"
+    },
+    {
+      "id": "5",
+      "text": "Zoos also play a key role in research. If we are to save wild species and restore and repair ecosystems we need to know about how key species live, act and react. Being able to undertake research on animals in zoos where there is less risk and fewer variables means real changes can be effected on wild populations. Finding out about, for example, the oestrus cycle of an animal or its breeding rate helps us manage wild populations. Procedures such as capturing and moving at-risk or dangerous individuals are bolstered by knowledge gained in zoos about doses for an aesthetics, and by experie nee in handling and transporting an imals. This can make a real differenee to conservation efforts and to the reduction of human-animal conflicts, and can provide a knowledge base for helping with the increasing threats of habitat destruction and other problems.",
+      "sourcePages": [
+        87
+      ],
+      "section": "E"
+    },
+    {
+      "id": "6",
+      "text": "In conclusion, considering the many ongoing global threats to the environment, it is hard for me to see zoos as anything other than essential to the Iong-term survival of numerous species. They are vital not just in terms of protecting animals, but as a means of learning about them to aid those still in the wild, as well as educating and informing the general population about these animals and their world so that they can assist or at least accept the need to be more environmentally conscious. Without them, the world would be, and would increasingly become, a much poorer place.",
+      "sourcePages": [
+        87
+      ],
+      "section": "F"
+    }
+  ],
+  "questionGroups": [
+    {
+      "first": 14,
+      "last": 17,
+      "sourcePage": 88,
+      "id": "14-17",
+      "type": "match",
+      "instructions": "Reading Passage 2 has six paragraphs, A-F.\nWhich paragraph contains the following information?\nWrite the correct letter, A-F, in boxes 14-17 on your answer sheet.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    {
+      "first": 18,
+      "last": 22,
+      "sourcePage": 88,
+      "id": "18-22",
+      "type": "tfng",
+      "instructions": "Do the following statements agree with the information given in Reading Passage 2?\nIn boxes 18-22 on your answer sheet, write",
+      "options": [
+        "TRUE",
+        "FALSE",
+        "NOT GIVEN"
+      ]
+    },
+    {
+      "first": 23,
+      "last": 24,
+      "sourcePage": 89,
+      "id": "23-24",
+      "type": "multi",
+      "instructions": "Choose TWO letters, A-E.\nWrite the correct letters in boxes 23 and 24 on your answer sheet.",
+      "options": [
+        {
+          "value": "A",
+          "label": "Some take part in television documentaries about animals."
+        },
+        {
+          "value": "B",
+          "label": "Some travel to overseas locations to join teams in zoos."
+        },
+        {
+          "value": "C",
+          "label": "Some get experience with species in the wild before taking up zoo jobs."
+        },
+        {
+          "value": "D",
+          "label": "Some teach people who are involved with conservation projects."
+        },
+        {
+          "value": "E",
+          "label": "Some specialise in caring for species which are under threat."
+        }
+      ]
+    },
+    {
+      "first": 25,
+      "last": 26,
+      "sourcePage": 89,
+      "id": "25-26",
+      "type": "multi",
+      "instructions": "Choose TWO letters, A-E.\nWrite the correct letters in boxes 25 and 26 on your answer sheet.",
+      "options": [
+        {
+          "value": "A",
+          "label": "They can help children overcome their fears of wild animals."
+        },
+        {
+          "value": "B",
+          "label": "They can increase public awareness of environmental issues."
+        },
+        {
+          "value": "C",
+          "label": "They can provide employment for a range of professional people."
+        },
+        {
+          "value": "D",
+          "label": "They can generate income to support wildlife conservation projects."
+        },
+        {
+          "value": "E",
+          "label": "They can raise animals which can later be released into the wild."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "number": 14,
+      "type": "match",
+      "prompt": "a reference to how quickly animal species can die out",
+      "sourcePage": 88,
+      "answer": "B"
+    },
+    {
+      "number": 15,
+      "type": "match",
+      "prompt": "reasons why it is preferable to study animals in captivity rather than in the wild",
+      "sourcePage": 88,
+      "answer": "E"
+    },
+    {
+      "number": 16,
+      "type": "match",
+      "prompt": "mention of two ways of learning about animals other than visiting them in zoos",
+      "sourcePage": 88,
+      "answer": "C"
+    },
+    {
+      "number": 17,
+      "type": "match",
+      "prompt": "reasons why animals in zoos may be healthier than those in the wild",
+      "sourcePage": 88,
+      "answer": "A"
+    },
+    {
+      "number": 18,
+      "type": "tfng",
+      "prompt": "An animal is likely to live longer in a zoo than in the wild.",
+      "sourcePage": 88,
+      "answer": "TRUE"
+    },
+    {
+      "number": 19,
+      "type": "tfng",
+      "prompt": "There are some species in zoos which can no longer be found in the wild.",
+      "sourcePage": 88,
+      "answer": "TRUE"
+    },
+    {
+      "number": 20,
+      "type": "tfng",
+      "prompt": "Improvements in the quality of TV wildlife documentaries have resulted in increased numbers of zoo visitors.",
+      "sourcePage": 88,
+      "answer": "NOT GIVEN"
+    },
+    {
+      "number": 21,
+      "type": "tfng",
+      "prompt": "Zoos have always excelled at transmitting information about animals to the public.",
+      "sourcePage": 88,
+      "answer": "FALSE"
+    },
+    {
+      "number": 22,
+      "type": "tfng",
+      "prompt": "Studying animals in zoos is less stressful for the animals than studying them in the wild.",
+      "sourcePage": 88,
+      "answer": "NOT GIVEN"
+    },
+    {
+      "number": 23,
+      "type": "multi",
+      "prompt": "Which TWO of the following are stated about zoo staff in the text?",
+      "sourcePage": 89,
+      "answer": "B"
+    },
+    {
+      "number": 24,
+      "type": "multi",
+      "prompt": "Which TWO of the following are stated about zoo staff in the text?",
+      "sourcePage": 89,
+      "answer": "D"
+    },
+    {
+      "number": 25,
+      "type": "multi",
+      "prompt": "Which TWO of these beliefs about zoos does the writer mention in the text?",
+      "sourcePage": 89,
+      "answer": "B"
+    },
+    {
+      "number": 26,
+      "type": "multi",
+      "prompt": "Which TWO of these beliefs about zoos does the writer mention in the text?",
+      "sourcePage": 89,
+      "answer": "E"
+    }
+  ]
+}

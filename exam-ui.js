@@ -1,12 +1,41 @@
 'use strict';
+let focusedReadingQuestion=null;
+function scrollReadingPane(container,target,center=false){
+ const bounds=container.getBoundingClientRect(),row=target.getBoundingClientRect();
+ if(!center&&row.top>=bounds.top&&row.top<bounds.bottom&&row.bottom<=bounds.bottom)return;
+ const top=container.scrollTop+row.top-bounds.top;
+ container.scrollTo({top:center?top-Math.max(0,(bounds.height-row.height)/2):top});
+}
 function updateExamNav(){
  const nav=$('examQuestionNav');if(!nav)return;
- const d=draft(),inputs=[...$('answers').querySelectorAll('input')],review=typeof latestQuestionReview!=='undefined'&&latestQuestionReview?.key===key()?latestQuestionReview.record:null;
+ const inputs=answerInputs(),review=latestQuestionReview?.key===key()?latestQuestionReview.record:null;
  nav.replaceChildren(el('span','Passage '+$('passage').value,'navCaption'));
  let answered=0;
- inputs.forEach((input,i)=>{const n=d.first+i,has=!!input.value.trim();if(has)answered++;const result=review?.items.find(x=>x.number===n);const b=el('button',String(n));b.type='button';b.className=has?(result?(result.correct?'correctNav':'wrongNav'):'answered'):'';b.setAttribute('aria-label','第 '+n+' 题'+(has?(result?(result.correct?'，正确':'，错误'):'，已答'):'，未答'));b.onclick=()=>{input.closest('label')?.scrollIntoView({block:'center',behavior:'smooth'});input.focus({preventScroll:true})};nav.append(b)});
+ for(const input of inputs){
+  const n=Number(input.dataset.number),result=review?.items.find(item=>item.number===n);
+  const has=!!(result?result.answer:input.value).trim();if(has)answered++;
+  const b=el('button',String(n));b.type='button';
+  b.className=has?(result?(result.correct?'correctNav':'wrongNav'):'answered'):'';
+  b.setAttribute('aria-label','第 '+n+' 题'+(has?(result?(result.correct?'，正确':'，错误'):'，已答'):'，未答'));
+  if(focusedReadingQuestion===n)b.setAttribute('aria-current','true');
+  b.onclick=()=>{
+   focusedReadingQuestion=n;
+   nav.querySelector('[aria-current]')?.removeAttribute('aria-current');
+   b.setAttribute('aria-current','true');
+   setReadingTab('questions');
+   if(review){
+    const card=$('review-question-'+n);if(!card)return;
+    if(card.hidden){$('onlyMistakes').checked=false;filterReviewQuestions()}
+    scrollReadingPane($('reviewQuestions'),card);card.focus({preventScroll:true});
+   }else{
+    const item=input.closest('.answerItem'),group=item.closest('.multiQuestion')||item;
+    const control=input.hidden?(group.querySelector('.answerControl:checked')||group.querySelector('.answerControl')):input;
+    scrollReadingPane($('answers'),group);control?.focus({preventScroll:true});
+   }
+  };
+  nav.append(b);
+ }
  $('answerProgress').textContent='已答 '+answered+'/'+inputs.length;
- const submit=el('button','提交并批改','navSubmit');submit.type='button';submit.onclick=()=>$('grade').click();nav.append(submit);
 }
 const oldExamRender=render;render=function(){oldExamRender();updateExamNav()};
 $('answers').addEventListener('input',updateExamNav);

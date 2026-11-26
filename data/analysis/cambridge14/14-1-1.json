@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "book": 14,
+  "test": 1,
+  "passage": 1,
+  "sourceBlob": "fc09e7d1b4e54a37b5db0a473c2528afb18111ac",
+  "questions": [
+    {
+      "number": 1,
+      "paragraphId": "1",
+      "evidence": "capacity for creativity",
+      "explanation": "笔记的「建造魔法王国」定位到 Alice 的想象游戏。capacity for 后出现 creativity，题目把帮助培养这种能力改写为 may help develop。",
+      "paraphrase": "capacity for → develop"
+    },
+    {
+      "number": 2,
+      "paragraphId": "2",
+      "evidence": "follow rules and take turns",
+      "explanation": "原文列出棋盘游戏需要遵守规则并轮流行动；题面已经给出后者。",
+      "paraphrase": "follow rules and take turns → involve rules and turn-taking"
+    },
+    {
+      "number": 3,
+      "paragraphId": "5",
+      "evidence": "people in the world now live in cities",
+      "explanation": "文段先讲城市人口，再讲游戏机会变少。空格说明人口增长的地点，填 cities。",
+      "paraphrase": "people now live in cities → populations of cities"
+    },
+    {
+      "number": 4,
+      "paragraphId": "5",
+      "evidence": "risk to do with traffic",
+      "explanation": "原文列出交通风险及家长对犯罪的担忧，两空可以互换。",
+      "paraphrase": "perceptions of risk → fear"
+    },
+    {
+      "number": 5,
+      "paragraphId": "5",
+      "evidence": "victims of crime",
+      "explanation": "被犯罪侵害的担忧对应 fear of crime。第 4 和 5 题按一组批改，顺序不限。",
+      "paraphrase": "protect … from crime → fear of crime"
+    },
+    {
+      "number": 6,
+      "paragraphId": "5",
+      "evidence": "greater competition in academic learning and schools",
+      "explanation": "学业和学校里的竞争加剧。空格要接在 increased 后，填 competition。",
+      "paraphrase": "greater → increased"
+    },
+    {
+      "number": 7,
+      "paragraphId": "6",
+      "evidence": "the evidence to base policies on",
+      "explanation": "国际组织已经开始制定政策，缺的是作为政策基础的证据。",
+      "paraphrase": "base policies on → support new policies"
+    },
+    {
+      "number": 8,
+      "paragraphId": "8",
+      "evidence": "the impact it has on the child's later life",
+      "explanation": "题面把「对孩子以后人生的影响」换写为「对孩子其余人生的影响」。",
+      "paraphrase": "later life → the rest of the child’s life"
+    },
+    {
+      "number": 9,
+      "paragraphId": "12",
+      "evidence": "a key predictor of academic performance",
+      "explanation": "自我调节能力可预测学业表现，对应题目所说的自控好、以后在学校表现好。",
+      "paraphrase": "academic performance → do well at school"
+    },
+    {
+      "number": 10,
+      "paragraphId": "13",
+      "evidence": "useful in the diagnosis of neurodevelopmental disorders",
+      "explanation": "观察孩子如何玩有助于发现身心状况的线索，甚至辅助诊断某些障碍。",
+      "paraphrase": "diagnosis → information about possible medical problems"
+    },
+    {
+      "number": 11,
+      "paragraphId": "14",
+      "evidence": "Children wrote longer and better-structured stories",
+      "explanation": "结果以所有孩子为整体，文章没有比较男孩和女孩的写作收益。",
+      "paraphrase": "找不到题目新增的性别比较"
+    },
+    {
+      "number": 12,
+      "paragraphId": "14",
+      "evidence": "not a single child said this",
+      "explanation": "有了乐高活动，全年没有孩子说不知道写什么，与「孩子想不出点子」相反。",
+      "paraphrase": "they didn’t know what to write about → had problems thinking up ideas"
+    },
+    {
+      "number": 13,
+      "paragraphId": "16",
+      "evidence": "the importance of play has been lost in recent decades",
+      "explanation": "文章明确说近几十年来游戏的重要性被忽视，这直接支持今不如昔的比较。",
+      "paraphrase": "importance has been lost → regard as less significant"
+    }
+  ]
+}

@@ -26,7 +26,13 @@ function due(){return Object.entries(state.words).filter(([id,w])=>!w.due||Date.
 let reviewId=null;
 function nextReview(){const e=due()[0];reviewId=e?.[0]||null;$('reviewCard').textContent=e?syllableLabel(e[1]):'今天的待复习词汇已完成。';$('reveal').hidden=!e;$('forgot').hidden=true;$('remember').hidden=true;$('reviewCount').textContent='今日待复习：'+due().length+' 个'}
 $('reviewStart').onclick=nextReview;
-$('reveal').onclick=()=>{const w=state.words[reviewId];if(!w)return;$('reviewCard').textContent=[syllableLabel(w),[w.uk,w.us].filter(Boolean).join(' / '),w.meaning,w.example,w.translation].filter(Boolean).join(' — ');$('forgot').hidden=false;$('remember').hidden=false;$('reveal').hidden=true};
+$('reveal').onclick=()=>{
+ const w=state.words[reviewId];if(!w)return;
+ const card=$('reviewCard');
+ card.replaceChildren(el('strong',syllableLabel(w)),renderPronunciations(w));
+ for(const value of [w.meaning,w.example,w.translation].filter(Boolean))card.append(el('div',value));
+ $('forgot').hidden=false;$('remember').hidden=false;$('reveal').hidden=true;
+};
 function rate(ok){const w=state.words[reviewId];if(!w)return;w.level=ok?Math.min(5,(w.level||0)+1):0;w.due=new Date(Date.now()+(ok?[0,1,3,7,14,30][w.level]*86400000:600000)).toISOString();w.updated=now();save();showWords();nextReview()}
 $('forgot').onclick=()=>rate(false);$('remember').onclick=()=>rate(true);
 const originalHistory=showHistory;

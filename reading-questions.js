@@ -17,7 +17,7 @@ function restoreAnswerItems(){
  }
 }
 
-function addAnswerChoices(item,question,group){
+function addAnswerChoices(item,question,group,optionLists){
  const type=group?.type||question.type;
  const opts=question.options||group?.options||
   (type==='tfng'?['TRUE','FALSE','NOT GIVEN']:type==='ynng'?['YES','NO','NOT GIVEN']:[]);
@@ -27,16 +27,23 @@ function addAnswerChoices(item,question,group){
  input.hidden=true;
  if(['match','people','headings'].includes(type)){
   const control=el('select',undefined,'answerControl');
-  control.setAttribute('aria-label','题目 '+number);
-  control.add(new Option('选择答案',''));
+  control.setAttribute('aria-label','Question '+number);
+  control.add(new Option('Select an answer',''));
   for(const {value,label} of options)control.add(new Option(label===value?label:value+' · '+label,value));
   control.value=options.find(opt=>norm(opt.value)===norm(input.value))?.value||'';
   control.onchange=()=>sayAnswer(input,control.value);
   item.append(control);
+  const optionList=JSON.stringify(options);
+  if(!optionLists.has(optionList)&&options.some(({value,label})=>label!==value)){
+   optionLists.add(optionList);
+   const definitions=el('details',undefined,'answerOptionText'),list=el('ul');
+   for(const {value,label} of options)list.append(el('li',label===value?label:value+' · '+label));
+   definitions.append(el('summary','Option text'),list);item.append(definitions);
+  }
   return;
  }
  const choices=el('fieldset',undefined,'choiceLine');
- choices.append(el('legend','题目 '+number,'visuallyHidden'));
+ choices.append(el('legend','Question '+number,'visuallyHidden'));
  for(const {value,label} of options){
   const line=el('label',undefined,'choiceOption'),radio=el('input',undefined,'answerControl');
   radio.type='radio';radio.name='answer-'+number;radio.value=value;
@@ -66,7 +73,7 @@ function renderMultipleChoice(section,group,items,prompt){
  function updateChoices(){
   const checked=controls.filter(c=>c.checked);
   for(const control of controls)control.disabled=!control.checked&&checked.length>=max;
-  progress.textContent='已选 '+checked.length+' / '+max+' 项';
+  progress.textContent='Selected '+checked.length+' / '+max+'';
  }
  choices.onchange=()=>{
   const values=controls.filter(c=>c.checked).map(c=>c.value);
@@ -136,6 +143,7 @@ function renderReadingQuestions(data,translations){
  const items=new Map([...$('answers').querySelectorAll('.answerItem')].map(item=>[Number(item.dataset.number),item]));
  const questions=new Map(data.questions.map(q=>[q.number,q]));
  const panels=[],inline=new Set(),multi=new Set(),groups=new Map(),tableTranslations=new Map();
+ const optionLists=new Set();
  for(const group of data.questionGroups||[]){
   const first=items.get(group.first);if(!first)continue;
   const section=el('div',undefined,'questionGroup');
@@ -145,7 +153,7 @@ function renderReadingQuestions(data,translations){
   first.before(section);
   const translation=translations?.questionGroups?.find(t=>t.id===group.id);
   if(translation?.zh){
-   const detail=foldedTranslation('显示题组说明译文',translation.zh);
+   const detail=foldedTranslation('Show instructions translation',translation.zh);
    panels.push(detail);section.append(detail);
   }
   for(let n=group.first;n<=group.last;n++)groups.set(n,group);
@@ -167,7 +175,7 @@ function renderReadingQuestions(data,translations){
   const q=questions.get(number);if(!q||multi.has(number))continue;
   if(!inline.has(number)){
    item.querySelector('.answerValue').before(el('div',q.prompt,'questionPrompt'));
-   addAnswerChoices(item,q,groups.get(number));
+   addAnswerChoices(item,q,groups.get(number),optionLists);
   }
   const t=translations?.questions?.find(tr=>tr.number===number);
   if(t?.zh){
@@ -176,19 +184,19 @@ function renderReadingQuestions(data,translations){
    if(table){
     if(!tableTranslations.has(table)){
      const translations=el('details',undefined,'questionTranslation');
-     translations.append(el('summary','表格题译文'));
+     translations.append(el('summary','Table translations'));
      table.after(translations);tableTranslations.set(table,translations);panels.push(translations);
     }
     target=tableTranslations.get(table);
    }else if(inline.has(number))target=item.parentElement;
-   const detail=foldedTranslation(table?'显示第 '+number+' 题译文':'显示本题译文',t.zh);
+   const detail=foldedTranslation(table?'Show translation for question '+number:'Show question translation',t.zh);
    panels.push(detail);
    target.append(detail);
   }
  }
  if(panels.length){
   const bar=el('div',undefined,'line');
-  bar.append(makeButton('展开全部题目译文',()=>panels.forEach(d=>d.open=true)),makeButton('隐藏全部题目译文',()=>panels.forEach(d=>d.open=false)));
+  bar.append(makeButton('Show all question translations',()=>panels.forEach(d=>d.open=true)),makeButton('Hide all question translations',()=>panels.forEach(d=>d.open=false)));
   $('questionText').append(bar);
  }
 }

@@ -21,7 +21,7 @@ function reviewAnalysisSource(record,k){
 function cachedReviewAnalysis(context){
  if(!context)return [];
  try{
-  const entry=reviewAnalysisCache.get(context.id)||JSON.parse(localStorage.getItem(context.id));
+  const entry=state.reviewAnalysis?.[context.id]||reviewAnalysisCache.get(context.id)||JSON.parse(localStorage.getItem(context.id));
   if(entry?.version===context.version&&Array.isArray(entry.questions))return entry.questions;
  }catch{}
  return [];
@@ -32,7 +32,7 @@ function curatedReviewAnalysis(number){
 }
 
 function validateReviewAnalysis(data,wanted,paragraphs){
- if(!Array.isArray(data?.questions))throw Error('未返回逐题解析');
+ if(!Array.isArray(data?.questions))throw Error('No question explanations returned');
  const entries=new Map();
  for(const item of data.questions){
   const number=Number(item?.number),explanation=typeof item?.explanation==='string'?item.explanation.trim():'';
@@ -47,7 +47,7 @@ function validateReviewAnalysis(data,wanted,paragraphs){
   }
   entries.set(number,entry);
  }
- if(!entries.size)throw Error('未返回有效解析');
+ if(!entries.size)throw Error('No usable explanations returned');
  return [...entries.values()];
 }
 
@@ -62,14 +62,14 @@ async function requestMissingReviewAnalysis(context,missing,apiKey){
  for(const analysis of valid)combined.set(analysis.number,analysis);
  const entry={version:context.version,questions:[...combined.values()]};
  reviewAnalysisCache.set(context.id,entry);
- try{localStorage.setItem(context.id,JSON.stringify(entry));return true}catch{return false}
+ try{saveStudyCache('reviewAnalysis',context.id,entry);return true}catch{return false}
 }
 
 async function continueReviewAnalysis(record,k){
  const sameReview=()=>key()===k&&latestQuestionReview?.record===record&&!$('reviewQuestions').hidden&&!$('reading').hidden;
  const epoch=textEpoch;
  if(!sameReview()||!activePassageData)return;
- await analysisReady;
+ await Promise.all([analysisReady,initialStudySync]);
  if(!sameReview()||epoch!==textEpoch)return;
  const context=reviewAnalysisSource(record,k);
  if(!context)return;
@@ -89,8 +89,8 @@ async function continueReviewAnalysis(record,k){
  const missing=missingQuestions();
  if(!missing.length){status.textContent='';return}
  const apiKey=$('deepseekKey').value.trim();
- if(!apiKey){status.textContent='填写 DeepSeek API Key 后可以补齐缺少的解析。';return}
- status.textContent='DeepSeek 正在补齐 '+missing.length+' 题的解析…';
+ if(!apiKey){status.textContent='Add a DeepSeek API key in Settings to fill in missing explanations.';return}
+ status.textContent='DeepSeek is generating explanations for '+missing.length+' questions…';
  const requestId=context.id+'|'+context.version;
  if(!pendingReviewAnalysis.has(requestId)){
   const request=requestMissingReviewAnalysis(context,missing,apiKey).finally(()=>pendingReviewAnalysis.delete(requestId));
@@ -101,11 +101,11 @@ async function continueReviewAnalysis(record,k){
   if(!sameReview())return;
   refresh();
   const remaining=missingQuestions().length;
-  status.textContent=remaining?'已保存生成结果，还有 '+remaining+' 题待补齐。':saved?'':'当前页面已缓存，浏览器无法保存到下次访问。';
+  status.textContent=remaining?'Explanations saved. Still missing '+remaining+' questions.':saved?'':'Explanations are available in this tab.';
   retry.hidden=!remaining;
  }catch(error){
   if(!sameReview())return;
-  status.textContent='解析生成失败：'+error.message;
+  status.textContent='Generation failed: '+error.message;
   retry.hidden=false;
  }
  retry.onclick=()=>continueReviewAnalysis(record,k);

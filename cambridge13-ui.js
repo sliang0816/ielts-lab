@@ -23,13 +23,13 @@ async function drawIndexed(){
     const viewport=p.getViewport({scale:1.6}),c=$('pageCanvas');c.width=viewport.width;c.height=viewport.height;
     $('viewer').hidden=true;$('indexedReader').hidden=false;$('pageLabel').textContent='PDF '+n+' / '+entry.to;$('prevPage').disabled=n===entry.from;$('nextPage').disabled=n===entry.to;
     activeTask=p.render({canvasContext:c.getContext('2d'),viewport});await activeTask.promise;
-  }catch(e){if(job===renderJob&&e.name!=='RenderingCancelledException')$('pdfStatus').textContent='页面显示失败：'+e.message}
+  }catch(e){if(job===renderJob&&e.name!=='RenderingCancelledException')$('pdfStatus').textContent='Could not display page: '+e.message}
 }
 $('prevPage').onclick=()=>{currentPage--;drawIndexed()};
 $('nextPage').onclick=()=>{currentPage++;drawIndexed()};
 const oldPdfChange=$('pdf').onchange;
 $('pdf').onchange=async e=>{verifiedPdf=false;renderJob++;oldPdfChange(e);$('indexedReader').hidden=true;$('viewer').hidden=false;if(!pdfInput)return;
-  try{const d=await getPdf();if(d.numPages===143&&indexEntry()){verifiedPdf=confirm('这是你提供的143页剑桥雅思13扫描版（Test 1 阅读从PDF第17页开始）吗？确认后将启用专用索引。');if(verifiedPdf){currentPage=indexEntry().from;await drawIndexed();$('pdfStatus').textContent='已启用剑桥13专用索引，标准答案已内置。'}}else $('pdfStatus').textContent='已加载 PDF，共 '+d.numPages+' 页；非当前专用索引版本时请手动定位。'}catch(e){$('pdfStatus').textContent='索引加载失败：'+e.message}
+  try{const d=await getPdf();if(d.numPages===143&&indexEntry()){verifiedPdf=confirm('Is this the 143-page Cambridge IELTS 13 scan with Test 1 Reading on PDF page 17? Confirm to use its index.');if(verifiedPdf){currentPage=indexEntry().from;await drawIndexed();$('pdfStatus').textContent='Cambridge 13 index and answer key enabled.'}}else $('pdfStatus').textContent='PDF opened with '+d.numPages+' pages. Navigate manually for this edition.'}catch(e){$('pdfStatus').textContent='Could not load index: '+e.message}
 };
 const oldLink=$('loadLink').onclick;$('loadLink').onclick=()=>{verifiedPdf=false;renderJob++;$('indexedReader').hidden=true;$('viewer').hidden=false;oldLink()};
 const oldLocate=$('locate').onclick;$('locate').onclick=()=>{if(verifiedPdf&&indexEntry()){currentPage=Number($('pageFrom').value)||indexEntry().from;drawIndexed()}else oldLocate()};

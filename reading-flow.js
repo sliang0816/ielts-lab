@@ -18,7 +18,7 @@ function renderReadingLibrary(){
  if(!libraryCatalog)return;
  const book=Number($('libraryBook').value),filter=$('libraryFilter').value,target=$('readingTests');
  const entries=Object.entries(CAMBRIDGE13).filter(([id])=>id.startsWith(book+'-'));
- $('libraryBookSummary').textContent=new Set(entries.map(([id])=>id.split('-')[1])).size+' 套 · '+entries.length+' 篇';
+ $('libraryBookSummary').textContent=new Set(entries.map(([id])=>id.split('-')[1])).size+' tests · '+entries.length+' passages';
  const tests=new Map();
  for(const [id,entry] of entries){
   const [,test,passage]=id.split('-').map(Number);
@@ -30,22 +30,23 @@ function renderReadingLibrary(){
    tests.set(test,group);
   }
   const row=el('div',undefined,'passageRow');
+  row.dataset.passageId=id;
   const description=el('div',undefined,'passageDescription');
   description.append(el('span','Passage '+passage,'passageNumber'),el('strong',entry.title));
   const progress=el('div',undefined,'passageProgress');
-  progress.append(el('span',{new:'未练习',draft:'练习中',done:'已完成'}[status],'passageState '+status));
+  progress.append(el('span',{new:'Not started',draft:'In progress',done:'Completed'}[status],'passageState '+status));
   if(record){
    const date=new Date(record.date).toLocaleDateString();
    progress.append(el('span',record.score+'/'+record.total+' · '+date,'muted'));
   }
   const actions=el('div',undefined,'passageActions');
-  const practice=makeButton({new:'开始',draft:'继续',done:'继续练习'}[status],()=>openReadingPassage(id));
+  const practice=makeButton({new:'Start',draft:'Resume',done:'Resume practice'}[status],()=>openReadingPassage(id));
   actions.append(practice);
-  if(record)actions.append(makeButton('详解',()=>openReadingPassage(id,'review')));
+  if(record)actions.append(makeButton('Review',()=>openReadingPassage(id,'review')));
   row.append(description,progress,actions);tests.get(test).append(row);
  }
  target.replaceChildren(...tests.values());
- if(!tests.size)target.append(el('p','这个筛选条件下没有篇章。','muted'));
+ if(!tests.size)target.append(el('p','No passages match this filter.','muted'));
 }
 
 function writeReadingLocation(phase){
@@ -96,8 +97,8 @@ function setReadingPhase(phase,record){
  readingPhase=phase;
  const review=phase==='review';
  $('reading').dataset.phase=phase;
- $('readingPhase').textContent=review?'阅读详解':'阅读练习';
- $('questionHeading').textContent=review?'答题详解':'答题区';
+ $('readingPhase').textContent=review?'Review':'Practice';
+ $('questionHeading').textContent=review?'Review':'Practice';
  $('grade').hidden=review;$('reviewActions').hidden=!review;
  $('answers').hidden=review;$('questionText').hidden=review;
  $('reviewQuestions').hidden=!review;$('reviewControls').hidden=!review;
@@ -121,7 +122,7 @@ function openReadingPassage(id,phase='practice'){
  if(book!==previousBook){verifiedPdf=false;libraryRequest++;renderJob++}
  for(const s of ['readingLibrary','words','history','settings'])$(s).hidden=true;
  $('reading').hidden=false;$('libraryBook').value=book;$('readingOptions').open=false;
- textMode=true;$('textReader').hidden=false;$('pdfControls').hidden=true;$('pdfMode').textContent='查看 PDF 原版';
+ textMode=true;$('textReader').hidden=false;$('pdfControls').hidden=true;$('pdfMode').textContent='Open original PDF';
  clearQuestionReview();focusedReadingQuestion=null;render();
  $('textArticle').scrollTop=0;$('answers').scrollTop=0;
  const record=phase==='review'&&latestAttempt(id);
@@ -135,6 +136,7 @@ const gradeReading=$('grade').onclick;
 $('grade').onclick=()=>{
  gradeReading();
  if(latestQuestionReview?.key===key()){
+  scheduleSync(0);
   setReadingPhase('review',latestQuestionReview.record);
   setReadingTab('questions');
  }
@@ -164,10 +166,13 @@ $('libraryBook').onchange=renderReadingLibrary;
 $('libraryFilter').onchange=renderReadingLibrary;
 window.addEventListener('pagehide',()=>{if(readingPhase==='practice'&&started)put()});
 
-catalogReady.then(catalog=>{
- for(const book of catalog.books)$('libraryBook').add(new Option('剑桥 '+book.book,book.book));
+catalogReady.then(async catalog=>{
+ for(const book of catalog.books)$('libraryBook').add(new Option('Cambridge '+book.book,book.book));
  $('libraryBook').value=String(localReadingBook);
  const params=new URLSearchParams(location.search),passage=params.get('passage');
- if(Object.hasOwn(CAMBRIDGE13,passage))openReadingPassage(passage,params.get('view'));
+ if(Object.hasOwn(CAMBRIDGE13,passage)){
+  await initialStudySync;
+  if(!$('readingLibrary').hidden&&readingPhase==='library')openReadingPassage(passage,params.get('view'));
+ }
  else renderReadingLibrary();
 }).catch(error=>{$('readingTests').textContent=error.message});

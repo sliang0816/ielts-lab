@@ -106,10 +106,11 @@ body:has(#reading:not([hidden])) > main {
   padding: 16px clamp(12px, 2.3vw, 36px) 26px;
 }
 #textArticle {
-  line-height: 1.5;
-  padding-inline: max(clamp(12px, 2.3vw, 36px), calc((100% - 73ch) / 2));
+  font-size: var(--reading-size, 18px);
+  line-height: 1.65;
+  padding-inline: max(clamp(12px, 2.3vw, 36px), calc((100% - 70ch) / 2));
 }
-#textArticle[data-passage="14-1-1"] { font-family: "Times New Roman", serif; font-size: 17px; }
+#textArticle[data-passage="14-1-1"] { font-family: "Times New Roman", serif; }
 .paperPassageHeading { font: 700 16px/1.2 Arial, Helvetica, sans-serif; letter-spacing: .11em; }
 #textArticle h2 { font-size: clamp(21px, 2vw, 26px); font-weight: 700; line-height: 1.2; text-align: center; margin: 25px 0 20px; }
 #textArticle > p[data-paragraph] { margin-bottom: 1.6em; }
@@ -173,4 +174,54 @@ body:has(#reading:not([hidden])) > main {
   #textArticle, #reading #answers { padding-inline: 3px; }
   #reading #answers { font-size: 15px; }
   .paperQuestionTable :is(th, td) { padding: 5px; }
+}
+
+button { border-radius: 8px; font-weight: 600; }
+button:focus-visible, summary:focus-visible { outline: 2px solid #287e87; outline-offset: 2px; }
+button:disabled { opacity: .48; cursor: default; }
+button.secondary { background: #f5f9fa; color: #245b65; border-color: #c5d6dc; }
+header nav button { padding: 8px 13px; background: #f4f8f9; }
+.passageActions button { padding: 7px 11px; }
+#reading .readingBar button { padding: 8px 12px; border-radius: 8px; }
+.textSize { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 4px; }
+.textSize select { padding: 5px; }
+.answerOptionText { font-size: .9em; margin: 6px 0 0; }
+.answerOptionText summary { cursor: pointer; color: #245b75; }
+.answerOptionText ul { margin: 6px 0; padding-left: 22px; }
+
+#words { max-width: 1080px; margin: 16px auto; padding: 0; background: transparent; border: 0; }
+.vocabularyLayout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; gap: 18px; }
+.vocabularyList, .reviewPanel { background: #fff; border: 1px solid #dbe5e8; border-radius: 12px; padding: 20px; min-width: 0; }
+.vocabulary h2 { font-size: 22px; color: #173c49; margin: 0 0 12px; }
+.wordFilters { display: flex; gap: 8px; flex-wrap: wrap; }
+.wordFilters input { flex: 1 1 200px; min-width: 0; }
+.manualWord { margin: 14px 0; }
+.manualWord summary, .wordEntry summary { cursor: pointer; color: #315d69; font-size: 13px; width: fit-content; }
+#wordList { list-style: none; margin: 12px 0; padding: 0; border-top: 1px solid #e2e9ec; }
+#wordList > li { padding: 12px 0; border-bottom: 1px solid #e2e9ec; }
+.wordEntryHeading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 12px; }
+.wordEntryHeading strong { font: 650 19px/1.3 system-ui, sans-serif; overflow-wrap: anywhere; }
+.wordEntry p, .wordReviewCard p { margin: 6px 0; overflow-wrap: anywhere; }
+.wordEntry details { margin-top: 6px; }
+.wordEntry details p { margin-left: 12px; }
+.wordPages { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; color: #45616a; }
+.reviewPanel { background: #f5faf9; }
+.wordReviewCard { background: white; border: 1px solid #d9e6e6; border-radius: 9px; padding: 12px 15px; margin: 13px 0; }
+.reviewCue { font-weight: 650; font-size: 18px; line-height: 1.5; }
+#spellingForm label { margin: 0; font-size: 13px; }
+#spellingAnswer { flex: 1; width: 0; min-width: 7ch; }
+.wordReviewCard mark { background: #ffe0ce; color: #832f1c; border-radius: 3px; padding: 0 2px; }
+.wordTools .ipaList, .vocabulary .ipaList { width: auto; max-width: 100%; margin: 0; }
+.wordTools .ipaRow, .vocabulary .ipaRow { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; }
+.wordTools .ipaText, .vocabulary .ipaText { white-space: nowrap; max-width: 100%; overflow-x: auto; font-size: 17px; }
+.vocabulary .ipaRow button { font-size: 12px; padding: 4px 8px; }
+
+@media (max-width: 800px) {
+  .vocabularyLayout { grid-template-columns: 1fr; }
+  .reviewPanel { grid-row: 1; }
+  header nav { gap: 5px; }
+  header nav button { padding: 7px 10px; font-size: 13px; }
+  #reading .readingBar { gap: 6px 8px; padding: 8px 10px; }
+  #reading .readingBar button { padding: 6px 9px; font-size: 12px; }
+  .readingBar #reviewActions { gap: 5px; }
 }

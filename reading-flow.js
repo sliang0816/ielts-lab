@@ -106,6 +106,7 @@ function setReadingPhase(phase,record){
  if(review){
   latestQuestionReview={record,key:key()};showQuestionReview(record,key());
   $('reviewQuestions').scrollTop=0;
+  continueReviewAnalysis(record,key());
  }else{
   clearQuestionReview();$('result').textContent='';
  }

@@ -80,7 +80,10 @@ async function loadText(){
   await analysis;
   if(epoch!==textEpoch||key()!==k||!textMode)return;
   markIeltsWords();
-  if(latestQuestionReview?.key===k)showQuestionReview(latestQuestionReview.record,k);
+  if(latestQuestionReview?.key===k){
+   const record=latestQuestionReview.record;
+   showQuestionReview(record,k);continueReviewAnalysis(record,k);
+  }
   $('sourceText').value=v.paragraphs.map(p=>p.text).join('\n\n')+'\n\n'+v.questions.map(q=>q.number+'. '+q.prompt).join('\n');
   textMessage(v.questions.length+' 道题');
   $('textProvenance').textContent=v.reviewStatus||(v.reviewed?'原文和题目已校对。':'原文和题目仍需对照原版。');
@@ -240,8 +243,8 @@ function placeWordPopup(){
  panel.style.left=left+'px';panel.style.top=Math.max(pad,Math.min(top,innerHeight-height-pad))+'px';
 }
 const pendingWordLookups=new Map();
-async function requestDeepSeekJson(apiKey,messages,maxTokens){
- const res=await fetch('https://api.deepseek.com/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+apiKey},body:JSON.stringify({model:'deepseek-flash',thinking:{type:'disabled'},response_format:{type:'json_object'},temperature:0.2,max_tokens:maxTokens,messages}),signal:AbortSignal.timeout(30000)});
+async function requestDeepSeekJson(apiKey,messages,maxTokens,timeout=30000){
+ const res=await fetch('https://api.deepseek.com/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+apiKey},body:JSON.stringify({model:'deepseek-flash',thinking:{type:'disabled'},response_format:{type:'json_object'},temperature:0.2,max_tokens:maxTokens,messages}),signal:AbortSignal.timeout(timeout)});
  if(!res.ok)throw Error('HTTP '+res.status);
  const data=await res.json(),choice=data.choices?.[0];
  if(choice?.finish_reason==='length')throw Error('生成内容不完整');
@@ -285,12 +288,35 @@ function openWordPopup(word,anchor){
 }
 function selectEnglish(){const s=window.getSelection();if(!s||!s.rangeCount||!s.anchorNode||!s.focusNode)return;const a=s.anchorNode.parentElement,b=s.focusNode.parentElement;if(!a||!b||!a.closest('#textArticle p[data-paragraph],#answers .questionPrompt')||!b.closest('#textArticle p[data-paragraph],#answers .questionPrompt'))return;const w=s.toString().trim();if(!/^[A-Za-z][A-Za-z\s’'-]{0,99}$/.test(w))return;openWordPopup(w,s.getRangeAt(0).cloneRange())}
 let latestQuestionReview=null;
-function clearQuestionReview(){latestQuestionReview=null;$('reviewQuestions').replaceChildren()}
+function clearQuestionReview(){
+ latestQuestionReview=null;$('reviewQuestions').replaceChildren();
+ $('reviewAnalysisStatus').textContent='';$('retryReviewAnalysis').hidden=true;
+}
+function renderQuestionAnalysis(panel,q,k){
+ panel.replaceChildren();
+ panel.dataset.generated=String(!!q?.generated);
+ if(!q){panel.append(el('p','本题详细解析尚未整理。','muted'));return}
+ if(q.explanation)panel.append(el('p',(q.generated?'AI 解析：':'解题解析：')+q.explanation));
+ if(q.evidence)panel.append(el('p','原文依据：'+q.evidence));
+ if(q.paraphrase)panel.append(el('p','同义替换 / 判断线索：'+q.paraphrase));
+ if(q.paragraphId)panel.append(makeButton('定位第 '+q.paragraphId+' 段',async()=>{
+  if(!textMode)await setMode(true);
+  if(k!==key())return;
+  const article=$('textArticle');
+  const paragraph=[...article.querySelectorAll('[data-paragraph]')].find(n=>n.dataset.paragraph===q.paragraphId);
+  if(!paragraph)return;
+  setReadingTab('article');
+  scrollReadingPane(article,paragraph,true);
+  paragraph.classList.add('evidenceHighlight');
+  setTimeout(()=>paragraph.classList.remove('evidenceHighlight'),3000);
+ }));
+}
 function showQuestionReview(record,k){
  if(k!==key())return;
  const container=$('reviewQuestions');container.replaceChildren();
+ const cached=cachedReviewAnalysis(reviewAnalysisSource(record,k));
  for(const x of record.items){
-  const q=studyAnalysis?.questions?.find(q=>q.number===x.number);
+  const q=curatedReviewAnalysis(x.number)||cached.find(q=>q.number===x.number);
   const card=el('div',undefined,'inlineQuestionReview '+(x.correct?'reviewCorrect':'reviewIncorrect'));
   card.append(el('strong',(x.correct?'✓ 回答正确':x.answer.trim()?'✗ 回答错误':'— 未作答')+' · 第 '+x.number+' 题','reviewHeading'));
   card.id='review-question-'+x.number;card.tabIndex=-1;
@@ -300,22 +326,8 @@ function showQuestionReview(record,k){
   const group=record.items.filter(item=>indexEntry()?.groups?.some(([a,b])=>a<=item.number&&item.number<=b&&a<=x.number&&x.number<=b));
   const expected=group.length?group.map(item=>item.expected).join(' / ')+'（本组不分顺序）':x.expected;
   card.append(el('p','你的答案：'+(x.answer||'未作答')),el('p','正确答案：'+expected));
-  if(q){
-   if(q.explanation)card.append(el('p','解题解析：'+q.explanation));
-   if(q.evidence)card.append(el('p','原文依据：'+q.evidence));
-   if(q.paraphrase)card.append(el('p','同义替换 / 判断线索：'+q.paraphrase));
-   if(q.paragraphId)card.append(makeButton('定位第 '+q.paragraphId+' 段',async()=>{
-    if(!textMode)await setMode(true);
-    if(k!==key())return;
-    const article=$('textArticle');
-    const paragraph=[...article.querySelectorAll('[data-paragraph]')].find(n=>n.dataset.paragraph===q.paragraphId);
-    if(!paragraph)return;
-    setReadingTab('article');
-    scrollReadingPane(article,paragraph,true);
-    paragraph.classList.add('evidenceHighlight');
-    setTimeout(()=>paragraph.classList.remove('evidenceHighlight'),3000);
-   }));
-  }else card.append(el('p','本题详细解析尚未整理。','muted'));
+  const panel=el('div',undefined,'questionAnalysis');
+  renderQuestionAnalysis(panel,q,k);card.append(panel);
   container.append(card);
  }
  $('result').textContent='答对 '+record.score+' / '+record.total+' 题';

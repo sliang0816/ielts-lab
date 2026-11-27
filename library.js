@@ -31,4 +31,3 @@ $('grade').onclick=()=>{
  for(const [a,b] of groups){const list=items.filter(x=>x.number>=a&&x.number<=b);const remaining=list.map(x=>norm(x.expected));for(const x of list){const ix=remaining.indexOf(norm(x.answer));x.correct=!!norm(x.answer)&&ix>=0;if(x.correct)remaining.splice(ix,1)}}
  const score=items.filter(x=>x.correct).length;state.history[uuid()]={id:key(),date:now(),seconds:d.seconds,score,total:d.count,items};save();$('result').textContent='Correct '+score+'/'+d.count+' · Mistakes: '+items.filter(x=>!x.correct).map(x=>x.number+' ('+x.expected+')').join(', ')
 };
-openLibrary();
